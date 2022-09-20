@@ -4,7 +4,7 @@ import { STBodyTR, STD } from './TableDashboard.Styled'
 type TableProductProps = {
   id: string
   nameProduct: string
-  percentege: string
+  percentege: number
   icon: ReactNode
 }
 export function TableProduct({

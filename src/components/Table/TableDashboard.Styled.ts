@@ -1,5 +1,33 @@
 import styled from 'styled-components'
 
+export const WarperTitle = styled.div`
+  display: flex;
+`
+export const WarperButton = styled.div``
+
+export const BackgroundTable = styled.div`
+  height: 490px;
+  width: 490px;
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0px 7px 30px rgba(187, 192, 205, 0.4);
+  padding: 10px;
+`
+export const IconTable = styled.span<{ isClient: boolean }>`
+  background: ${({ isClient }) => (isClient ? '#001C98' : '#C5CFFF')};
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+`
+export const TableTitle = styled.span`
+  font-size: 20px;
+  line-height: 28px;
+  color: #212121;
+`
+
 export const STable = styled.table`
   width: 100%;
   border-collapse: collapse;
@@ -13,7 +41,7 @@ export const STable = styled.table`
     background-color: #f5f5f5;
   }
   tr td {
-    padding: 20px 5px;
+    padding: 15px 5px;
   }
 `
 export const STHead = styled.thead``

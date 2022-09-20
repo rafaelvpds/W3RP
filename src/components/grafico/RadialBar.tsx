@@ -26,13 +26,15 @@ const defaultOptions: ApexCharts.ApexOptions = {
     },
   },
 }
-
-export function RadialBar() {
+type RadialBarProductHightProps = {
+  serie: number
+}
+export function RadialBar({ serie }: RadialBarProductHightProps) {
   return (
     <Chart
-      series={[33]}
-      width={60}
-      height={60}
+      series={[serie]}
+      width={70}
+      height={70}
       options={defaultOptions}
       type="radialBar"
     />

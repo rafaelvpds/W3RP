@@ -1,8 +1,7 @@
-import { ReactNode } from 'react'
 import { Title } from './TitleDashboard.Styled'
 
 type TitleDashboardProps = {
-  children: ReactNode
+  children: string
   isSubtitle: boolean
 }
 
