@@ -4,6 +4,7 @@ import { IconProduct } from '../../assets/icons/IconProduct'
 import { CardItem } from '../../components/cards/CardItem'
 import { CardPrincipal } from '../../components/cards/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
+import { STD } from '../../components/Table/TableDashboard.Styled'
 
 import { ContainerTable } from './Dashboard.Styled'
 
@@ -11,7 +12,7 @@ const MokupProduct = [
   {
     id: '001',
     nameProduct: 'Papel higiênico',
-    percentege: '-72%',
+    percentege: -72,
     icon: <IconChevronRight />,
   },
   {
@@ -121,14 +122,14 @@ export function Dashboard() {
         >
           {MokupProduct.map(item => (
             <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.nameProduct}</td>
-              <td>
+              <STD>{item.id}</STD>
+              <STD>{item.nameProduct}</STD>
+              <STD center>
                 {item.percentege > 0 && '+'} {item.percentege}%
-              </td>
-              <td>
+              </STD>
+              <STD>
                 <IconChevronRight />
-              </td>
+              </STD>
             </tr>
           ))}
         </ViewDataTable>
@@ -140,12 +141,14 @@ export function Dashboard() {
         >
           {MokupClients.map(item => (
             <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.nameClient}</td>
-              {item.percentege > 0 && '+'} {item.percentege}%
-              <td>
+              <STD>{item.id}</STD>
+              <STD>{item.nameClient}</STD>
+              <STD center>
+                {item.percentege > 0 && '+'} {item.percentege}%
+              </STD>
+              <STD>
                 <IconChevronRight />
-              </td>
+              </STD>
             </tr>
           ))}
         </ViewDataTable>
