@@ -18,6 +18,7 @@ type Props = {
   text: string
   icon: ReactNode
   isClient: boolean
+  hasButton: boolean
 }
 export function ViewDataTable({
   children,
@@ -25,10 +26,16 @@ export function ViewDataTable({
   text,
   icon,
   isClient,
+  hasButton,
 }: Props) {
   return (
     <BackgroundTable>
-      <TitleTable isClient={isClient} icon={icon} text={text} />
+      <TitleTable
+        isClient={isClient}
+        icon={icon}
+        text={text}
+        hasButton={hasButton}
+      />
       <STable>
         <STHead>
           <STHeadTR>

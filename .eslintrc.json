@@ -18,22 +18,39 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
   "rules": {
     "react/jsx-filename-extension": [
       2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     ],
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
       "error",
-      { "semi": false, "arrowParens": "avoid", "endOfLine": "auto" }
+      {
+        "semi": false,
+        "arrowParens": "avoid",
+        "endOfLine": "auto"
+      }
     ],
     "jsx-a11y/label-has-associated-control": [
       "error",
       {
         "required": {
-          "some": ["nesting", "id"]
+          "some": [
+            "nesting",
+            "id"
+          ]
         }
       }
     ],
@@ -41,10 +58,16 @@
       "error",
       {
         "required": {
-          "some": ["nesting", "id"]
+          "some": [
+            "nesting",
+            "id"
+          ]
         }
       }
     ],
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/require-default-props": [
+      0
+    ]
   }
 }

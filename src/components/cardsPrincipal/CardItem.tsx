@@ -26,7 +26,7 @@ export function CardItem({ text, value, status, tag, valueSerie }: Props) {
       </ContainerGraphic>
       <ContainerInfoCard>
         <TitleCard>
-          Total <strong>{text}</strong> em {status}
+          Total {text} em {status}
         </TitleCard>
         <ContainerValueCard>
           <ValueData>{value}</ValueData>

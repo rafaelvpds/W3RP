@@ -1,9 +1,20 @@
 import styled from 'styled-components'
 
+export const WarperTitleTable = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+`
 export const WarperTitle = styled.div`
   display: flex;
+  align-items: center;
+  gap: 10px;
 `
-export const WarperButton = styled.div``
+export const WarperButton = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+`
 
 export const BackgroundTable = styled.div`
   height: 490px;
@@ -64,4 +75,8 @@ type StdProps = {
 }
 export const STD = styled.td<StdProps>`
   text-align: ${({ center }) => (center ? 'center' : 'left')};
+`
+export const ButtonDetalhes = styled.button`
+  background: none;
+  border: none;
 `

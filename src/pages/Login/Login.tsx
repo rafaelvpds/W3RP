@@ -4,7 +4,7 @@
 // import { useState } from 'react'
 import { useState } from 'react'
 import { Buttons } from '../../components/buttons/Buttons'
-import { Input } from '../../components/inputs/InputLogin'
+import { Input } from '../../components/inputsLogins/InputLogin'
 import { Title } from '../../components/titleLogin/Title'
 import {
   ContainerInput,

@@ -1,10 +1,13 @@
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
 import { IconProduct } from '../../assets/icons/IconProduct'
-import { CardItem } from '../../components/cards/CardItem'
-import { CardPrincipal } from '../../components/cards/CardPrincipal'
+import { CardItem } from '../../components/cardsPrincipal/CardItem'
+import { CardPrincipal } from '../../components/cardsPrincipal/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
-import { STD } from '../../components/Table/TableDashboard.Styled'
+import {
+  ButtonDetalhes,
+  STD,
+} from '../../components/Table/TableDashboard.Styled'
 
 import { ContainerTable } from './Dashboard.Styled'
 
@@ -37,6 +40,11 @@ const MokupProduct = [
   },
   {
     id: '006',
+    nameProduct: 'Café  ',
+    percentege: -68,
+  },
+  {
+    id: '007',
     nameProduct: 'Detergente ',
     percentege: -68,
   },
@@ -74,6 +82,12 @@ const MokupClients = [
   },
   {
     id: '006',
+    nameClient: 'Academia Smart Fit',
+    percentege: -72,
+    icon: <IconChevronRight />,
+  },
+  {
+    id: '007',
     nameClient: 'Academia Smart Fit',
     percentege: -72,
     icon: <IconChevronRight />,
@@ -116,9 +130,10 @@ export function Dashboard() {
       <ContainerTable>
         <ViewDataTable
           isClient={false}
-          icon={<IconProduct />}
+          icon={<IconProduct color="#001C98" />}
           text="Produto"
           headers={['id', 'Produto', 'Percentual', '']}
+          hasButton
         >
           {MokupProduct.map(item => (
             <tr key={item.id}>
@@ -128,7 +143,9 @@ export function Dashboard() {
                 {item.percentege > 0 && '+'} {item.percentege}%
               </STD>
               <STD>
-                <IconChevronRight />
+                <ButtonDetalhes type="button">
+                  <IconChevronRight />
+                </ButtonDetalhes>
               </STD>
             </tr>
           ))}
@@ -138,6 +155,7 @@ export function Dashboard() {
           icon={<IconEveryUser />}
           text="Cliente"
           headers={['id', 'Cliente', 'Percentual', '']}
+          hasButton
         >
           {MokupClients.map(item => (
             <tr key={item.id}>
@@ -147,7 +165,9 @@ export function Dashboard() {
                 {item.percentege > 0 && '+'} {item.percentege}%
               </STD>
               <STD>
-                <IconChevronRight />
+                <ButtonDetalhes type="button">
+                  <IconChevronRight />
+                </ButtonDetalhes>
               </STD>
             </tr>
           ))}
