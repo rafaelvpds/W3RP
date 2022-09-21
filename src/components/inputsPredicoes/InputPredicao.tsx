@@ -13,12 +13,19 @@ type Props = {
   placeholder: string
   icon: React.ReactNode
 }
+
+const filterFunction = () => {
+  alert('Deu Certo')
+}
+
 export function InputPredicao({ onChange, placeholder, icon }: Props) {
   return (
     <ContainerInput>
       <InputPred onChange={onChange} placeholder={placeholder} type="text" />
       <ContainerIconSeach>
-        <ButtonIcon type="button">{icon}</ButtonIcon>
+        <ButtonIcon onClick={filterFunction} type="button">
+          {icon}
+        </ButtonIcon>
       </ContainerIconSeach>
     </ContainerInput>
   )
