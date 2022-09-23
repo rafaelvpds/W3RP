@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
 import { IconProduct } from '../../assets/icons/IconProduct'
@@ -95,45 +97,82 @@ const MokupClients = [
 ]
 
 export function Dashboard() {
+  const [inAltaProduto, setInAltaProduto] = useState(true)
+  const [inAltaCliente, setInAltaCliente] = useState(true)
+  const navigator = useNavigate()
+
+  const pageDetalhar = (id: string) => {
+    navigator(`/detalhamento/${id}`)
+  }
   return (
     <>
-      <CardPrincipal>
+      <CardPrincipal
+        backgroundCard="#001C98"
+        widthCard="100%"
+        text=" Dashboard"
+        color="#ffffff"
+      >
         <CardItem
-          text="Produto"
-          status="alta"
-          tag={20}
+          backgroundCardItem="#02156a"
+          heightCardItem="124px"
+          widthCardItem="220px"
+          colorCardItem="#c5cfff"
+          text="Total produtos em alta "
+          tag={13}
           value={50}
           valueSerie={60}
+          padding="0px"
+          fontSize="12px"
         />
         <CardItem
-          text="Produto"
-          status="baixa"
+          backgroundCardItem="#02156a"
+          heightCardItem="124px"
+          widthCardItem="220px"
+          colorCardItem="#c5cfff"
+          text="Total produtos em baixa"
           tag={-20}
           value={90}
           valueSerie={40}
+          padding="0px"
+          fontSize="12px"
         />
         <CardItem
-          text="Cliente"
-          status="alta"
+          backgroundCardItem="#02156a"
+          heightCardItem="124px"
+          widthCardItem="220px"
+          colorCardItem="#c5cfff"
+          text="Total clientes em alta "
           tag={100}
           value={510}
           valueSerie={30}
+          padding="0px"
+          fontSize="12px"
         />
         <CardItem
-          text="Cliente"
-          status="baixa"
+          backgroundCardItem="#02156a"
+          heightCardItem="124px"
+          widthCardItem="220px"
+          colorCardItem="#c5cfff"
+          text="Total clientes em baixa"
           tag={-50}
           value={600}
           valueSerie={70}
+          padding="0px"
+          fontSize="12px"
         />
       </CardPrincipal>
       <ContainerTable>
         <ViewDataTable
-          isClient={false}
+          colorText="#212121"
+          height="520px"
+          widht="50%"
+          color="#C5CFFF"
           icon={<IconProduct color="#001C98" />}
           text="Produto"
           headers={['id', 'Produto', 'Percentual', '']}
           hasButton
+          inAlta={inAltaProduto}
+          setInAlta={() => setInAltaProduto(!inAltaProduto)}
         >
           {MokupProduct.map(item => (
             <tr key={item.id}>
@@ -143,7 +182,7 @@ export function Dashboard() {
                 {item.percentege > 0 && '+'} {item.percentege}%
               </STD>
               <STD>
-                <ButtonDetalhes type="button">
+                <ButtonDetalhes onClick={() => pageDetalhar('1')} type="button">
                   <IconChevronRight />
                 </ButtonDetalhes>
               </STD>
@@ -151,11 +190,16 @@ export function Dashboard() {
           ))}
         </ViewDataTable>
         <ViewDataTable
-          isClient
+          colorText="#212121"
+          height="520px"
+          widht="50%"
+          color="#001C98"
           icon={<IconEveryUser />}
           text="Cliente"
           headers={['id', 'Cliente', 'Percentual', '']}
           hasButton
+          inAlta={inAltaCliente}
+          setInAlta={() => setInAltaCliente(!inAltaCliente)}
         >
           {MokupClients.map(item => (
             <tr key={item.id}>

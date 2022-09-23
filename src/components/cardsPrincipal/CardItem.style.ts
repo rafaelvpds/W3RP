@@ -5,13 +5,18 @@ export const WarperCard = styled.div`
   gap: 5px;
 `
 
-export const CardSecundario = styled.div`
-  height: 124px;
-  width: 220px;
+export const CardSecundario = styled.div<{
+  heightCardItem: string
+  backgroundCardItem: string
+  colorCardItem: string
+  widthCardItem: string
+}>`
+  height: ${({ heightCardItem }) => `${heightCardItem}`};
+  width: ${({ widthCardItem }) => `${widthCardItem}`};
   border-radius: 24px;
-  background: #02156a;
+  background: ${({ backgroundCardItem }) => `${backgroundCardItem}`};
   display: flex;
-  color: #c5cfff;
+  color: ${({ colorCardItem }) => `${colorCardItem}`};
 `
 
 export const ContainerGraphic = styled.div`
@@ -38,10 +43,11 @@ export const TagStyle = styled.div<{ value: number }>`
   text-align: center;
   padding: 2px, 13px, 2px, 13px;
 `
-export const TitleCard = styled.span`
+export const TitleCard = styled.span<{ fontSize: string; padding: string }>`
   font-weight: 600;
-  font-size: 12px;
+  font-size: ${({ fontSize }) => `${fontSize}`};
   line-height: 24px;
+  padding-left: ${({ padding }) => `${padding}`};
 `
 export const ValueData = styled.span`
   font-size: 30px;

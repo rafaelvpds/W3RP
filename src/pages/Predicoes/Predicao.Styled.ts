@@ -9,8 +9,14 @@ export const ContainerTopPred = styled.div`
   height: 100px;
   background: #ffffff;
 `
+
+export const DivContentTablePred = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
 export const ContainerTablePred = styled.div`
-  width: 347px;
+  width: 285px;
   min-height: 230px;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(163, 163, 163, 0.2);

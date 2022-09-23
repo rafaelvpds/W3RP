@@ -4,7 +4,7 @@ import {
   ContainerTitulPred,
   SpanIconTablePred,
   TiteDataPred,
-} from '../../pages/Predições/Predicao.Styled'
+} from '../../pages/Predicoes/Predicao.Styled'
 
 type Props = {
   icon: React.ReactNode

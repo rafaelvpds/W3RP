@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Icon() {
+export function IconChevronLeft() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,5 +20,3 @@ function Icon() {
     </svg>
   )
 }
-
-export default Icon

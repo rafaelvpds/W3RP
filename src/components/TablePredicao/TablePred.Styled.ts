@@ -4,11 +4,9 @@ export const STablePred = styled.table`
   width: 100%;
   border-collapse: collapse;
   text-align: center;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
   overflow: hidden;
   tr td {
-    padding: 5px 5px;
+    padding: 5px 1px;
   }
 `
 export const STHeadTRPred = styled.thead`

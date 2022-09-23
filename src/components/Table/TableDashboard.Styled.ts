@@ -13,19 +13,38 @@ export const WarperTitle = styled.div`
 export const WarperButton = styled.div`
   display: flex;
   align-items: center;
-  gap: 5px;
+
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 15px;
+`
+export const ButtonAlta = styled.button`
+  width: 65px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: #00c247;
+  color: #ffffff;
+`
+export const ButtonBaixa = styled.button`
+  width: 65px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: #ff3333;
+  color: #ffffff;
 `
 
-export const BackgroundTable = styled.div`
-  height: 490px;
-  width: 490px;
+export const BackgroundTable = styled.div<{ height: string; widht: string }>`
+  height: ${({ height }) => height};
+  width: ${({ widht }) => widht};
   border-radius: 24px;
   background: #ffffff;
   box-shadow: 0px 7px 30px rgba(187, 192, 205, 0.4);
   padding: 10px;
 `
-export const IconTable = styled.span<{ isClient: boolean }>`
-  background: ${({ isClient }) => (isClient ? '#001C98' : '#C5CFFF')};
+export const IconTable = styled.span<{ color: string }>`
+  background-color: ${({ color }) => color};
   width: 50px;
   height: 50px;
   display: flex;
@@ -33,10 +52,11 @@ export const IconTable = styled.span<{ isClient: boolean }>`
   align-items: center;
   border-radius: 8px;
 `
-export const TableTitle = styled.span`
+export const TableTitle = styled.span<{ colorText: string }>`
   font-size: 20px;
   line-height: 28px;
-  color: #212121;
+  color: ${({ colorText }) => colorText};
+  /* color: #212121; */
 `
 
 export const STable = styled.table`

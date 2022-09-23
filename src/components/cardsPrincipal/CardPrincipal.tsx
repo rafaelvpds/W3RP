@@ -8,11 +8,26 @@ import { WarperCard } from './CardItem.style'
 
 type CardPrincipalProps = {
   children: ReactNode
+  widthCard: string
+  backgroundCard: string
+  text: string
+  color: string
 }
-export function CardPrincipal({ children }: CardPrincipalProps) {
+export function CardPrincipal({
+  children,
+  widthCard,
+  text,
+  backgroundCard,
+  color,
+}: CardPrincipalProps) {
   return (
-    <ContainerCardPrincipal>
-      <TitleDashboard isSubtitle={false}>Dashbord</TitleDashboard>
+    <ContainerCardPrincipal
+      widthCard={widthCard}
+      backgroundCard={backgroundCard}
+    >
+      <TitleDashboard color={color} isSubtitle={false}>
+        {text}
+      </TitleDashboard>
       <WarperCard>{children}</WarperCard>
     </ContainerCardPrincipal>
   )

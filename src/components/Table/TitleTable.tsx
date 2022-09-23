@@ -1,7 +1,9 @@
 // @flow
 import * as React from 'react'
-import { Buttons } from '../buttons/Buttons'
+
 import {
+  ButtonAlta,
+  ButtonBaixa,
   IconTable,
   TableTitle,
   WarperButton,
@@ -12,21 +14,53 @@ import {
 type Props = {
   text: string
   icon: React.ReactNode
-  isClient: boolean
   hasButton: boolean
+  color: string
+  inAlta?: boolean
+  colorText: string
+  setInAlta?: () => void
 }
-export function TitleTable({ text, icon, isClient, hasButton }: Props) {
+export function TitleTable({
+  text,
+  icon,
+  hasButton,
+  color,
+  inAlta,
+  setInAlta,
+  colorText,
+}: Props) {
   return (
     <WarperTitleTable>
       <WarperTitle>
-        <IconTable isClient={isClient}>{icon}</IconTable>
-        <TableTitle>{text}</TableTitle>
+        <IconTable color={color}>{icon}</IconTable>
+        <TableTitle colorText={colorText}>{text}</TableTitle>
       </WarperTitle>
 
-      {hasButton && (
+      {hasButton && setInAlta && (
         <WarperButton>
-          <Buttons name="Em alta" theme="statusAlta" />
-          <Buttons name="Em baixa" theme="statusBaixa" />
+          <ButtonAlta
+            type="button"
+            style={{ background: inAlta ? '#00c247' : '#E0E0E0' }}
+            onClick={() => {
+              if (!inAlta) {
+                setInAlta()
+              }
+            }}
+          >
+            Em Alta
+          </ButtonAlta>
+
+          <ButtonBaixa
+            type="button"
+            style={{ background: !inAlta ? '#ff3333' : '#E0E0E0' }}
+            onClick={() => {
+              if (inAlta) {
+                setInAlta()
+              }
+            }}
+          >
+            Em baixa
+          </ButtonBaixa>
         </WarperButton>
       )}
     </WarperTitleTable>

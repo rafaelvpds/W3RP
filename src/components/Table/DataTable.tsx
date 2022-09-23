@@ -12,28 +12,41 @@ import {
 import { TitleTable } from './TitleTable'
 
 type Props = {
+  widht: string
+  height: string
   children: ReactNode
   headers: string[]
   text: string
   icon: ReactNode
-  isClient: boolean
+  color: string
+  colorText: string
   hasButton: boolean
+  inAlta?: boolean
+  setInAlta?: () => void
 }
 export function ViewDataTable({
   children,
   headers,
   text,
   icon,
-  isClient,
+  color,
   hasButton,
+  inAlta,
+  widht,
+  height,
+  colorText,
+  setInAlta,
 }: Props) {
   return (
-    <BackgroundTable>
+    <BackgroundTable widht={widht} height={height}>
       <TitleTable
-        isClient={isClient}
+        colorText={colorText}
+        color={color}
         icon={icon}
         text={text}
         hasButton={hasButton}
+        inAlta={inAlta}
+        setInAlta={setInAlta}
       />
       <STable>
         <STHead>

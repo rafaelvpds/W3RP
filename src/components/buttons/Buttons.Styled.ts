@@ -23,20 +23,4 @@ export const ActionsButtons = styled.button`
     width: 400px;
     height: 56px;
   }
-  &.statusAlta {
-    width: 65px;
-    height: 30px;
-    border: none;
-    border-radius: 8px;
-    background: #00c247;
-    color: #ffffff;
-  }
-  &.statusBaixa {
-    width: 65px;
-    height: 30px;
-    border: none;
-    border-radius: 8px;
-    background: #ff3333;
-    color: #ffffff;
-  }
 `

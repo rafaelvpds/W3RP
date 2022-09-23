@@ -13,26 +13,51 @@ import {
 
 type Props = {
   text: string
-  status: 'alta' | 'baixa'
-  value: number
-  tag: number
-  valueSerie: number
+  value?: number
+  tag?: number
+  valueSerie?: number
+  widthCardItem: string
+  heightCardItem: string
+  backgroundCardItem: string
+  colorCardItem: string
+  padding: string
+  fontSize: string
 }
-export function CardItem({ text, value, status, tag, valueSerie }: Props) {
+export function CardItem({
+  widthCardItem,
+  heightCardItem,
+  backgroundCardItem,
+  colorCardItem,
+  text,
+  value,
+  tag,
+  valueSerie,
+  padding,
+  fontSize,
+}: Props) {
   return (
-    <CardSecundario>
-      <ContainerGraphic>
-        <RadialBar serie={valueSerie} />
-      </ContainerGraphic>
+    <CardSecundario
+      widthCardItem={widthCardItem}
+      heightCardItem={heightCardItem}
+      backgroundCardItem={backgroundCardItem}
+      colorCardItem={colorCardItem}
+    >
+      {valueSerie && (
+        <ContainerGraphic>
+          <RadialBar serie={valueSerie} />
+        </ContainerGraphic>
+      )}
       <ContainerInfoCard>
-        <TitleCard>
-          Total {text} em {status}
+        <TitleCard fontSize={fontSize} padding={padding}>
+          {text}
         </TitleCard>
         <ContainerValueCard>
           <ValueData>{value}</ValueData>
-          <TagStyle value={tag}>
-            {tag > 0 && '+'} {tag}%
-          </TagStyle>
+          {tag && (
+            <TagStyle value={tag}>
+              {tag > 0 && '+'} {tag}%
+            </TagStyle>
+          )}
         </ContainerValueCard>
       </ContainerInfoCard>
     </CardSecundario>

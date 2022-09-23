@@ -1,6 +1,10 @@
 import React from 'react'
 
-export function IconUser() {
+type Props = {
+  color?: string
+}
+
+export function IconUser({ color }: Props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,7 +14,7 @@ export function IconUser() {
       viewBox="0 0 32 32"
     >
       <path
-        stroke="#fff"
+        stroke={color ?? '#fff'}
         strokeLinecap="round"
         strokeWidth="2"
         d="M26.303 27.263c-.607-1.701-1.947-3.204-3.81-4.277-1.862-1.072-4.145-1.653-6.493-1.653-2.348 0-4.63.581-6.493 1.654-1.863 1.072-3.202 2.575-3.81 4.276"
@@ -18,7 +22,7 @@ export function IconUser() {
       <ellipse
         cx="16"
         cy="10.667"
-        stroke="#fff"
+        stroke={color ?? '#fff'}
         strokeLinecap="round"
         strokeWidth="2"
         rx="5.333"
