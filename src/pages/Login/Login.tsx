@@ -1,11 +1,8 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/no-children-prop */
-// @flow
-// import { useState } from 'react'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Buttons } from '../../components/buttons/Buttons'
 import { Input } from '../../components/inputsLogins/InputLogin'
-import { Title } from '../../components/titleLogin/Title'
+import { Title } from '../../components/TitleLogin/Title'
 import {
   ContainerInput,
   ContainerLabel,
@@ -18,11 +15,22 @@ import {
 import Imagem from '../../assets/images/BannerLatral.jpg'
 import { Label } from '../../components/label/Label'
 import { Checkbox } from '../../components/Checkbox/Checkbox'
+import { AuthLogin } from '../../services/Auth/Auth'
 
 export function Login() {
   const [check, setCheck] = useState(false)
-  const hadleUser = () => {
-    console.log('meu nome')
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+  const navigation = useNavigate()
+
+  const doLogin = async () => {
+    const resultLogin = await AuthLogin(email, senha)
+    console.log(resultLogin)
+    if (resultLogin.logged) {
+      navigation('/dashboard')
+      return
+    }
+    alert(resultLogin.message)
   }
   return (
     <ContenerLogin>
@@ -30,19 +38,23 @@ export function Login() {
         <Title isSubtitle text="Seja bem vindo!" />
         <Title isSubtitle={false} text="Realize seu Login" />
         <ContainerInput>
-          <Input placeholder="E-mail" isPassword={false} onChange={hadleUser} />
+          <Input
+            placeholder="E-mail"
+            isPassword={false}
+            onChange={event => setEmail(event.target.value)}
+          />
           <ContainerLabel>
-            <Label children="E-mail" htmlFor="email" />
+            <Label htmlFor="email">E-mail</Label>
           </ContainerLabel>
         </ContainerInput>
         <ContainerInput>
           <Input
             placeholder="Insira sua senha"
             isPassword
-            onChange={hadleUser}
+            onChange={event => setSenha(event.target.value)}
           />
           <ContainerLabel>
-            <Label children="Senha" htmlFor="senha" />
+            <Label htmlFor="senha">Senha</Label>
           </ContainerLabel>
         </ContainerInput>
         <ContainerSapan>
@@ -52,7 +64,7 @@ export function Login() {
           </SpanPassword>
           <span>Esqueci minha senha</span>
         </ContainerSapan>
-        <Buttons theme="login" name="Entrar" />
+        <Buttons theme="login" name="Entrar" onClick={doLogin} />
       </Wrapper>
       <ImagemLateral src={Imagem} />
     </ContenerLogin>

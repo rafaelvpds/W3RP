@@ -5,7 +5,7 @@ import { ActionsButtons } from './Buttons.Styled'
 
 type ButtonsProps = {
   name: string
-  theme: 'faleConosco' | 'login' | 'statusAlta' | 'statusBaixa'
+  theme: 'faleConosco' | 'login' | 'modalFilter'
 } & React.ComponentPropsWithoutRef<'button'>
 
 export function Buttons({ name, theme, ...buttonProps }: ButtonsProps) {

@@ -16,8 +16,8 @@ type Props = {
   icon: React.ReactNode
   hasButton: boolean
   color: string
-  inAlta?: boolean
   colorText: string
+  inAlta?: boolean
   setInAlta?: () => void
 }
 export function TitleTable({

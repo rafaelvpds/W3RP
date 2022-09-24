@@ -2,7 +2,7 @@
 
 import { ReactNode } from 'react'
 
-import { TitleDashboard } from '../titleDashbord/TitleDashboard'
+import { TitleDashboard } from '../TitleDashbord/TitleDashboard'
 import { ContainerCardPrincipal } from './CardPrincipal.Styled'
 import { WarperCard } from './CardItem.style'
 

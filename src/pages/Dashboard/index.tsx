@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
 import { IconProduct } from '../../assets/icons/IconProduct'
-import { CardItem } from '../../components/cardsPrincipal/CardItem'
-import { CardPrincipal } from '../../components/cardsPrincipal/CardPrincipal'
+import { CardItem } from '../../components/CardsPrincipal/CardItem'
+import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
 import {
   ButtonDetalhes,

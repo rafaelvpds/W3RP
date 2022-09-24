@@ -1,13 +1,24 @@
+import { useState } from 'react'
 import { IconFilter } from '../../assets/icons/IconFilter'
 import { IconSearch } from '../../assets/icons/IconSearch'
+import { Buttons } from '../../components/buttons/Buttons'
 import { InputPredicao } from '../../components/inputsPredicoes/InputPredicao'
+import { ModalFilter } from '../../components/ModalFilter'
+import { DivButtonModalFilter } from '../../components/ModalFilter/ModalFilter.Styled'
 import { TableProduct } from '../../components/TableProduto/TableProduct'
 import { StatusProduct } from '../../components/TableProduto/TableProduct.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
+
 import {
   DivContainerInput,
   ButtonDropFilter,
   ContainerProduct,
+  DivButtonFilter,
+  ModalFilterProduct,
+  WarperModalFilter,
+  SpanTitleFilter,
+  LineModal,
+  SpanSubtitleFilter,
 } from './Product.Styled'
 
 const MokupProduct = [
@@ -56,12 +67,14 @@ const MokupProduct = [
 ]
 
 export function Produto() {
+  const [showFilter, setShowFilter] = useState(false)
+  const [checkTodos, setCheckTodos] = useState(false)
+  const [checkAlta, setCheckAlta] = useState(false)
+  const [checkBaixa, setCheckBaixa] = useState(false)
   const filter = () => {
     console.log('dsa')
   }
-  const onFilter = () => {
-    alert('Deu certo')
-  }
+
   return (
     <>
       <TitePages size={20}>Produtos</TitePages>
@@ -72,9 +85,45 @@ export function Produto() {
             placeholder="Pesquise uma palavra-chave"
             icon={<IconSearch />}
           />
-          <ButtonDropFilter onClick={onFilter} type="button">
-            <IconFilter />
-          </ButtonDropFilter>
+          <DivButtonFilter>
+            <ButtonDropFilter
+              onClick={() => setShowFilter(!showFilter)}
+              type="button"
+            >
+              <IconFilter />
+            </ButtonDropFilter>
+          </DivButtonFilter>
+          <WarperModalFilter>
+            {showFilter && (
+              <ModalFilterProduct>
+                <SpanTitleFilter>Filtrar por:</SpanTitleFilter>
+                <LineModal />
+                <SpanSubtitleFilter>Status</SpanSubtitleFilter>
+
+                <ModalFilter
+                  isCheck={checkTodos}
+                  setCheck={() => setCheckTodos(!checkTodos)}
+                  typeFilter="Todos"
+                  totalFilter={1231}
+                />
+                <ModalFilter
+                  isCheck={checkAlta}
+                  setCheck={() => setCheckAlta(!checkAlta)}
+                  typeFilter="Em alta"
+                  totalFilter={1231}
+                />
+                <ModalFilter
+                  isCheck={checkBaixa}
+                  setCheck={() => setCheckBaixa(!checkBaixa)}
+                  typeFilter="Em baixa"
+                  totalFilter={1231}
+                />
+                <DivButtonModalFilter>
+                  <Buttons name="Aplicar" theme="modalFilter" />
+                </DivButtonModalFilter>
+              </ModalFilterProduct>
+            )}
+          </WarperModalFilter>
         </DivContainerInput>
 
         <TableProduct headers={['ID', 'Produto', 'Status', 'Percentual']}>

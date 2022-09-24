@@ -16,8 +16,12 @@ export const ContainerUser = styled.div`
   align-items: center;
   gap: 10px;
   margin: 37px 48px;
+  position: relative;
 `
-
+export const ButtonChevronDown = styled.button`
+  border: none;
+  background: none;
+`
 export const DivIcon = styled.div`
   display: flex;
   width: 56px;
@@ -26,4 +30,9 @@ export const DivIcon = styled.div`
   border-radius: 50%;
   justify-content: center;
   align-items: center;
+`
+export const ContainerModalUser = styled.div`
+  position: absolute;
+  top: 60px;
+  right: 0;
 `

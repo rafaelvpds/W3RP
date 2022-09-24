@@ -26,12 +26,12 @@ export function Input({ onChange, isPassword, placeholder }: InputProps) {
       <InputLogin
         onChange={onChange}
         placeholder={placeholder}
-        type={show ? 'email' : 'password'}
+        type={show ? 'password' : 'email'}
       />
       <ContainerButton>
         {isPassword && (
           <ButtonEyes type="button" onClick={toggle}>
-            {show ? <IconEyes /> : <IconEyeOffLine />}
+            {!show ? <IconEyes /> : <IconEyeOffLine />}
           </ButtonEyes>
         )}
       </ContainerButton>
