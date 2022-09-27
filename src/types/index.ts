@@ -21,6 +21,23 @@ export type ResumePredicao = {
   ultimos90Dias: number
 }
 
+export type PredicaoClient = {
+  id: number
+  nome: string
+  percentual: number
+  quantidade: number
+}
+
+export type ResumoPredicaoClients = {
+  media120Dias: number
+  nome: string
+  percentualUltimos30Dias: number
+  ultimos120Dias: number
+  ultimos30Dias: number
+  ultimos60Dias: number
+  ultimos90Dias: number
+}
+
 export type ResumeDashboard = {
   percentualTotalClientesAlta: number
   percentualTotalClientesBaixa: number

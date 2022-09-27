@@ -109,7 +109,7 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 120 dias"
-          value={resumPred?.media120Dias}
+          value={resumPred?.ultimos120Dias}
           padding="20px"
           fontSize="16px"
         />

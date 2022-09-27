@@ -53,8 +53,11 @@ export function Dashboard() {
   useEffect(() => {
     getResumo()
   }, [])
-  const pageDetalhar = (id: number) => {
+  const pageDetalharProduct = (id: number) => {
     navigator(`/detalhamento/${id}`)
+  }
+  const pageDetalharClients = (id: number) => {
+    navigator(`/detalhamentocliente/${id}`)
   }
   return (
     <>
@@ -129,7 +132,7 @@ export function Dashboard() {
               </STD>
               <STD>
                 <ButtonDetalhes
-                  onClick={() => pageDetalhar(item.id)}
+                  onClick={() => pageDetalharProduct(item.id)}
                   type="button"
                 >
                   <IconChevronRight />
@@ -157,7 +160,10 @@ export function Dashboard() {
                 {item.percentual > 0 && '+'} {item.percentual}%
               </STD>
               <STD>
-                <ButtonDetalhes type="button">
+                <ButtonDetalhes
+                  onClick={() => pageDetalharClients(item.id)}
+                  type="button"
+                >
                   <IconChevronRight />
                 </ButtonDetalhes>
               </STD>

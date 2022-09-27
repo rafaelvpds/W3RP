@@ -10,6 +10,6 @@ export const GetResumeProduct = async (id: string): Promise<ResumePredicao> => {
     })
     return result.data
   } catch (error) {
-    throw new Error('Lascou tudo')
+    throw new Error('')
   }
 }
