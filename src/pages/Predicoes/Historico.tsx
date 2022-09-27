@@ -7,7 +7,7 @@ import { IconProduct } from '../../assets/icons/IconProduct'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { ViewDataTable } from '../../components/Table/DataTable'
 import { STD } from '../../components/Table/TableDashboard.Styled'
-
+import fundo from '../../assets/images/fundoW3.png'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import {
   ButtonDetalhesCheck,
@@ -15,7 +15,10 @@ import {
   ContainerInfoHist,
   DivChevron,
   DivTopHistorico,
+  FundoImage,
 } from './Historico.Styled'
+import { IconMail } from '../../assets/icons/IconMail'
+import { IconPhone } from '../../assets/icons/IconPhone'
 
 const MokupPredicao = [
   {
@@ -129,16 +132,18 @@ export function Historico() {
       </DivTopHistorico>
       <ContainerInfoClient>
         <DataClients
+          iconDataEmailClient={<IconMail />}
+          iconDataPhoneClient={<IconPhone />}
           nameClients="Hotel Ibis"
           emailClient="hotelibis@gmail.com"
           foneClients="31 99468-9894"
         />
+        <FundoImage src={fundo} />
       </ContainerInfoClient>
 
       <ContainerInfoHist>
         <ViewDataTable
           colorText="#212121"
-          height="100%"
           widht="800px"
           hasButton={false}
           headers={['ID', 'Produto', 'Última compra', 'Qtd.', 'Dar baixa']}
@@ -162,7 +167,6 @@ export function Historico() {
         </ViewDataTable>
         <ViewDataTable
           colorText="#FF3333"
-          height="100%"
           widht="100%"
           hasButton={false}
           headers={[

@@ -25,12 +25,11 @@ export const ActionsButtons = styled.button`
   }
   &.modalFilter {
     background: #001c98;
-
     color: #ffffff;
     border: none;
     border-radius: 16px;
     font-weight: 600;
-    width: 60%;
+    width: 200px;
     height: 30px;
   }
 `

@@ -1,7 +1,6 @@
 // @flow
 import * as React from 'react'
-import { IconMail } from '../../assets/icons/IconMail'
-import { IconPhone } from '../../assets/icons/IconPhone'
+
 import {
   ContainerSpanClients,
   CotainerDataClients,
@@ -13,15 +12,25 @@ type Props = {
   nameClients: string
   foneClients: string
   emailClient: string
+  iconDataPhoneClient: React.ReactNode
+  iconDataEmailClient: React.ReactNode
 }
-export function DataClients({ nameClients, foneClients, emailClient }: Props) {
+export function DataClients({
+  iconDataPhoneClient,
+  iconDataEmailClient,
+  nameClients,
+  foneClients,
+  emailClient,
+}: Props) {
   return (
     <CotainerDataClients>
       <TitleClient>{nameClients}</TitleClient>
       <ContainerSpanClients>
-        <IconPhone />
+        {iconDataPhoneClient}
+
         <SpanDataClient>{foneClients}</SpanDataClient>
-        <IconMail />
+        {iconDataEmailClient}
+
         <SpanDataClient>{emailClient}</SpanDataClient>
       </ContainerSpanClients>
     </CotainerDataClients>

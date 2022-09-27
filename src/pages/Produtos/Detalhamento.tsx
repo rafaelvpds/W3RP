@@ -1,5 +1,7 @@
 // @flow
 import * as React from 'react'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconTrendingDown } from '../../assets/icons/IconTrendingDown'
 import { IconTrendingUp } from '../../assets/icons/IconTrendingUp'
@@ -8,43 +10,44 @@ import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
 import { STD } from '../../components/Table/TableDashboard.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
+import { GetPrediProduto } from '../../services/ProductPredicao'
+import { GetResumeProduct } from '../../services/ResumeProduct'
+import { Predicao, ResumePredicao } from '../../types'
+
 import { DivChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
 
-const MokupDetalhe = [
-  {
-    id: '001',
-    nameClient: 'Hótel Ibis',
-    percentege: -72,
-    Qtd: 25,
-  },
-  {
-    id: '002',
-    nameClient: 'Restaurante Carretão',
-    percentege: -72,
-    Qtd: 20,
-  },
-  {
-    id: '003',
-    nameClient: 'Nobile Hotel',
-    percentege: -72,
-    Qtd: 10,
-  },
-  {
-    id: '004',
-    nameClient: 'Mc Donald’s',
-    percentege: -72,
-    Qtd: 5,
-  },
-  {
-    id: '005',
-    nameClient: 'Hótel Ibis',
-    percentege: -72,
-    Qtd: 16,
-  },
-]
-
 export function Detalhamento() {
+  const { id } = useParams()
+  const [predicaoAlta, setPredicacaoAlta] = useState<Predicao[]>([])
+  const [predicaoBaixa, setPredicacaoBaixa] = useState<Predicao[]>([])
+  const [resumPred, setResumPred] = useState<ResumePredicao>()
+  // const [inAlta, setInAlta] = useState(true)
+
+  const getPredProdutoAlta = async () => {
+    const dataPrediAlta = await GetPrediProduto(id!, 'EM_ALTA')
+    setPredicacaoAlta(dataPrediAlta)
+  }
+  useEffect(() => {
+    getPredProdutoAlta()
+  }, [])
+
+  const getPredProdutoBaixa = async () => {
+    const dataPrediBaixa = await GetPrediProduto(id!, 'EM_BAIXA')
+    setPredicacaoBaixa(dataPrediBaixa)
+  }
+  useEffect(() => {
+    getPredProdutoBaixa()
+  }, [])
+
+  const getResumPred = async () => {
+    const dataResumPred = await GetResumeProduct(id!)
+    setResumPred(dataResumPred)
+  }
+
+  useEffect(() => {
+    getResumPred()
+  }, [])
   return (
     <>
       <DivTopHistorico>
@@ -55,10 +58,9 @@ export function Detalhamento() {
         <TitePages size={20}>Detalhamento</TitePages>
       </DivTopHistorico>
       <CardPrincipal
-        text="Papel higiênico"
+        text={resumPred?.nome || ''}
         color="#001C98"
         backgroundCard="#F5F5F5"
-        widthCard="100%"
       >
         <CardItem
           backgroundCardItem="#02156a"
@@ -66,7 +68,7 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Média 120 dias"
-          value={300}
+          value={resumPred?.media120Dias}
           padding="20px"
           fontSize="16px"
         />
@@ -76,7 +78,8 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 30 dias"
-          value={300}
+          value={resumPred?.ultimos30Dias}
+          tag={resumPred?.percentualUltimos30Dias}
           padding="20px"
           fontSize="16px"
         />
@@ -86,7 +89,7 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 60 dias"
-          value={300}
+          value={resumPred?.ultimos60Dias}
           padding="20px"
           fontSize="16px"
         />
@@ -96,7 +99,7 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 90 dias"
-          value={300}
+          value={resumPred?.ultimos90Dias}
           padding="20px"
           fontSize="16px"
         />
@@ -106,7 +109,7 @@ export function Detalhamento() {
           widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 120 dias"
-          value={300}
+          value={resumPred?.media120Dias}
           padding="20px"
           fontSize="16px"
         />
@@ -114,7 +117,6 @@ export function Detalhamento() {
       <ContainerTableAround>
         <ViewDataTable
           colorText="#212121"
-          height="380px"
           widht="515px"
           hasButton={false}
           headers={['ID', 'Cliente', 'Percetual', 'Qtd.']}
@@ -122,20 +124,19 @@ export function Detalhamento() {
           text="Clientes em baixa"
           color="#FF3333"
         >
-          {MokupDetalhe.map(item => (
+          {predicaoBaixa.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameClient}</STD>
+              <STD>{item.nome}</STD>
               <STD center>
-                {item.percentege > 0 && '+'} {item.percentege}%
+                {item.percentual > 0 && '+'} {item.percentual}%
               </STD>
-              <STD>{item.Qtd}</STD>
+              <STD>{item.quantidade}</STD>
             </tr>
           ))}
         </ViewDataTable>
         <ViewDataTable
           colorText="#212121"
-          height="380px"
           widht="515px"
           hasButton={false}
           headers={['ID', 'Cliente', 'Percetual', 'Qtd.']}
@@ -143,14 +144,14 @@ export function Detalhamento() {
           text="Clientes em alta"
           color="#00C247"
         >
-          {MokupDetalhe.map(item => (
+          {predicaoAlta.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameClient}</STD>
+              <STD>{item.nome}</STD>
               <STD center>
-                {item.percentege > 0 && '+'} {item.percentege}%
+                {item.percentual > 0 && '+'} {item.percentual}%
               </STD>
-              <STD>{item.Qtd}</STD>
+              <STD>{item.quantidade}</STD>
             </tr>
           ))}
         </ViewDataTable>

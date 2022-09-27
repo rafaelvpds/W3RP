@@ -55,7 +55,7 @@ export function CardItem({
           <ValueData>{value}</ValueData>
           {tag && (
             <TagStyle value={tag}>
-              {tag > 0 && '+'} {tag}%
+              {tag >= 0 && '+'} {tag}%
             </TagStyle>
           )}
         </ContainerValueCard>

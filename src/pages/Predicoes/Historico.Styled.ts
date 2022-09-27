@@ -15,6 +15,7 @@ export const DivTopHistorico = styled.div`
   margin-bottom: 32px;
 `
 export const ContainerInfoClient = styled.div`
+  position: relative;
   width: 100%;
   height: 152px;
   background-color: #001c98;
@@ -33,4 +34,11 @@ export const ButtonDetalhesCheck = styled.button`
   padding: 7px;
   border: 1px solid #e0e0e0;
   border-radius: 100%;
+`
+export const FundoImage = styled.img`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  border-radius: 30px;
 `

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
@@ -10,117 +10,64 @@ import {
   ButtonDetalhes,
   STD,
 } from '../../components/Table/TableDashboard.Styled'
+import { GetListClient } from '../../services/ClientsDashboard'
+import { GetProductClient } from '../../services/ProductDashboard'
+import { GetResumeDashboard } from '../../services/ResumeDashboard'
+import { DataDashboard, ResumeDashboard } from '../../types'
 
 import { ContainerTable } from './Dashboard.Styled'
-
-const MokupProduct = [
-  {
-    id: '001',
-    nameProduct: 'Papel higiênico',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '002',
-    nameProduct: 'Álcool em gel',
-    percentege: 68,
-  },
-  {
-    id: '003',
-    nameProduct: 'Sabonete',
-    percentege: -68,
-  },
-  {
-    id: '004',
-    nameProduct: 'Perfume',
-    percentege: -72,
-  },
-  {
-    id: '005',
-    nameProduct: 'Água sanitária',
-    percentege: 68,
-  },
-  {
-    id: '006',
-    nameProduct: 'Café  ',
-    percentege: -68,
-  },
-  {
-    id: '007',
-    nameProduct: 'Detergente ',
-    percentege: -68,
-  },
-]
-const MokupClients = [
-  {
-    id: '001',
-    nameClient: 'Hótel Ibis',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '002',
-    nameClient: 'Restaurante Carretão',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '003',
-    nameClient: 'Nobile Hotel',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '004',
-    nameClient: 'Mc Donald’s',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '005',
-    nameClient: 'Hótel Ibis',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '006',
-    nameClient: 'Academia Smart Fit',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-  {
-    id: '007',
-    nameClient: 'Academia Smart Fit',
-    percentege: -72,
-    icon: <IconChevronRight />,
-  },
-]
 
 export function Dashboard() {
   const [inAltaProduto, setInAltaProduto] = useState(true)
   const [inAltaCliente, setInAltaCliente] = useState(true)
+  const [clients, setClients] = useState<DataDashboard[]>([])
+  const [product, setProduct] = useState<DataDashboard[]>([])
+  const [resume, setResume] = useState<ResumeDashboard>()
   const navigator = useNavigate()
 
-  const pageDetalhar = (id: string) => {
+  const getClients = async () => {
+    const dataClients = await GetListClient(
+      inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA'
+    )
+    setClients(dataClients)
+  }
+
+  useEffect(() => {
+    getClients()
+  }, [inAltaCliente])
+
+  const getProduct = async () => {
+    const dataProduct = await GetProductClient(
+      inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA'
+    )
+    setProduct(dataProduct)
+  }
+  useEffect(() => {
+    getProduct()
+  }, [inAltaProduto])
+  const getResumo = async () => {
+    const dataResume = await GetResumeDashboard()
+    setResume(dataResume)
+  }
+
+  useEffect(() => {
+    getResumo()
+  }, [])
+  const pageDetalhar = (id: number) => {
     navigator(`/detalhamento/${id}`)
   }
   return (
     <>
-      <CardPrincipal
-        backgroundCard="#001C98"
-        widthCard="100%"
-        text=" Dashboard"
-        color="#ffffff"
-      >
+      <CardPrincipal backgroundCard="#001C98" text=" Dashboard" color="#ffffff">
         <CardItem
           backgroundCardItem="#02156a"
           heightCardItem="124px"
           widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total produtos em alta "
-          tag={13}
-          value={50}
-          valueSerie={60}
+          tag={resume?.percentualVariacaoProdutosAlta}
+          value={resume?.quantidadeProdutosAlta}
+          valueSerie={resume?.percentualTotalProdutosAlta}
           padding="0px"
           fontSize="12px"
         />
@@ -130,9 +77,9 @@ export function Dashboard() {
           widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total produtos em baixa"
-          tag={-20}
-          value={90}
-          valueSerie={40}
+          tag={resume?.percentualVariacaoProdutosBaixa}
+          value={resume?.quantidadeProdutosBaixa}
+          valueSerie={resume?.percentualTotalProdutosBaixa}
           padding="0px"
           fontSize="12px"
         />
@@ -142,9 +89,9 @@ export function Dashboard() {
           widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total clientes em alta "
-          tag={100}
-          value={510}
-          valueSerie={30}
+          tag={resume?.percentualVariacaoClientesAlta}
+          value={resume?.quantidadeClientesAlta}
+          valueSerie={resume?.percentualTotalClientesAlta}
           padding="0px"
           fontSize="12px"
         />
@@ -154,9 +101,9 @@ export function Dashboard() {
           widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total clientes em baixa"
-          tag={-50}
-          value={600}
-          valueSerie={70}
+          tag={resume?.percentualVariacaoClientesBaixa}
+          value={resume?.quantidadeClientesBaixa}
+          valueSerie={resume?.percentualTotalClientesBaixa}
           padding="0px"
           fontSize="12px"
         />
@@ -164,7 +111,6 @@ export function Dashboard() {
       <ContainerTable>
         <ViewDataTable
           colorText="#212121"
-          height="520px"
           widht="50%"
           color="#C5CFFF"
           icon={<IconProduct color="#001C98" />}
@@ -174,15 +120,18 @@ export function Dashboard() {
           inAlta={inAltaProduto}
           setInAlta={() => setInAltaProduto(!inAltaProduto)}
         >
-          {MokupProduct.map(item => (
+          {product.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameProduct}</STD>
+              <STD>{item.nome}</STD>
               <STD center>
-                {item.percentege > 0 && '+'} {item.percentege}%
+                {item.percentual > 0 && '+'} {item.percentual}%
               </STD>
               <STD>
-                <ButtonDetalhes onClick={() => pageDetalhar('1')} type="button">
+                <ButtonDetalhes
+                  onClick={() => pageDetalhar(item.id)}
+                  type="button"
+                >
                   <IconChevronRight />
                 </ButtonDetalhes>
               </STD>
@@ -191,7 +140,6 @@ export function Dashboard() {
         </ViewDataTable>
         <ViewDataTable
           colorText="#212121"
-          height="520px"
           widht="50%"
           color="#001C98"
           icon={<IconEveryUser />}
@@ -201,12 +149,12 @@ export function Dashboard() {
           inAlta={inAltaCliente}
           setInAlta={() => setInAltaCliente(!inAltaCliente)}
         >
-          {MokupClients.map(item => (
+          {clients.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameClient}</STD>
+              <STD>{item.nome}</STD>
               <STD center>
-                {item.percentege > 0 && '+'} {item.percentege}%
+                {item.percentual > 0 && '+'} {item.percentual}%
               </STD>
               <STD>
                 <ButtonDetalhes type="button">

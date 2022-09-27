@@ -13,7 +13,6 @@ import { TitleTable } from './TitleTable'
 
 type Props = {
   widht: string
-  height: string
   children: ReactNode
   headers: string[]
   text: string
@@ -33,12 +32,11 @@ export function ViewDataTable({
   hasButton,
   inAlta,
   widht,
-  height,
   colorText,
   setInAlta,
 }: Props) {
   return (
-    <BackgroundTable widht={widht} height={height}>
+    <BackgroundTable widht={widht}>
       <TitleTable
         colorText={colorText}
         color={color}

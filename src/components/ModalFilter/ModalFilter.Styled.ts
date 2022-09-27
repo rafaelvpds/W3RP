@@ -9,6 +9,7 @@ export const ContendModal = styled.div`
   display: flex;
   justify-content: space-between;
   width: 90%;
+  margin-bottom: 5px;
 `
 
 export const DivTypeFilter = styled.div`

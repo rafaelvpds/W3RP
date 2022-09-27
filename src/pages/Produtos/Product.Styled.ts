@@ -35,6 +35,7 @@ export const ModalFilterProduct = styled.div`
   background: #ffffff;
   box-shadow: 0px 7px 30px rgba(187, 192, 205, 0.4);
   border-radius: 16px;
+  padding: 10px 0px 10px 10px;
 `
 export const SpanTitleFilter = styled.span`
   color: #212121;

@@ -27,7 +27,7 @@ export function Login() {
     const resultLogin = await AuthLogin(email, senha)
     console.log(resultLogin)
     if (resultLogin.logged) {
-      navigation('/dashboard')
+      navigation('/')
       return
     }
     alert(resultLogin.message)

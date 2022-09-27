@@ -35,8 +35,7 @@ export const ButtonBaixa = styled.button`
   color: #ffffff;
 `
 
-export const BackgroundTable = styled.div<{ height: string; widht: string }>`
-  height: ${({ height }) => height};
+export const BackgroundTable = styled.div<{ widht: string }>`
   width: ${({ widht }) => widht};
   border-radius: 24px;
   background: #ffffff;
