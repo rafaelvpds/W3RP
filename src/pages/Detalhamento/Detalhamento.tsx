@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -25,24 +24,24 @@ export function Detalhamento() {
   // const [inAlta, setInAlta] = useState(true)
 
   const getPredProdutoAlta = async () => {
-    const dataPrediAlta = await GetPrediProduto(id!, 'EM_ALTA')
-    setPredicacaoAlta(dataPrediAlta)
+    const data = await GetPrediProduto(id!, 'EM_ALTA')
+    setPredicacaoAlta(data)
   }
   useEffect(() => {
     getPredProdutoAlta()
   }, [])
 
   const getPredProdutoBaixa = async () => {
-    const dataPrediBaixa = await GetPrediProduto(id!, 'EM_BAIXA')
-    setPredicacaoBaixa(dataPrediBaixa)
+    const data = await GetPrediProduto(id!, 'EM_BAIXA')
+    setPredicacaoBaixa(data)
   }
   useEffect(() => {
     getPredProdutoBaixa()
   }, [])
 
   const getResumPred = async () => {
-    const dataResumPred = await GetResumeProduct(id!)
-    setResumPred(dataResumPred)
+    const data = await GetResumeProduct(id!)
+    setResumPred(data)
   }
 
   useEffect(() => {
@@ -58,6 +57,7 @@ export function Detalhamento() {
         <TitePages size={20}>Detalhamento</TitePages>
       </DivTopHistorico>
       <CardPrincipal
+        isFilterData={false}
         text={resumPred?.nome || ''}
         color="#001C98"
         backgroundCard="#F5F5F5"

@@ -68,6 +68,7 @@
     "import/prefer-default-export": "off",
     "react/require-default-props": [
       0
-    ]
+    ],
+    "react/jsx-no-constructed-context-values": "off"
   }
 }

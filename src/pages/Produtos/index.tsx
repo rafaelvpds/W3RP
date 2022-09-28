@@ -11,7 +11,6 @@ import { StatusProduct } from '../../components/TableProduto/TableProduct.Styled
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetDataProduct } from '../../services/Produto/Product'
 import { Product } from '../../types'
-
 import {
   DivContainerInput,
   ButtonDropFilter,
@@ -26,18 +25,21 @@ import {
 
 export function Produto() {
   const [showFilter, setShowFilter] = useState(false)
-  const [checkTodos, setCheckTodos] = useState(false)
+  const [checkTodos, setCheckTodos] = useState(true)
   const [checkAlta, setCheckAlta] = useState(false)
   const [checkBaixa, setCheckBaixa] = useState(false)
   const [page, setPage] = useState(0)
   const [totalPage, setTotalPage] = useState(0)
   const [product, setProduct] = useState<Product[]>([])
-  const filter = () => {
-    console.log('dsa')
-  }
+  const [search, setSearch] = useState('')
 
   const GetProduct = async () => {
-    const dataProduct = await GetDataProduct(page)
+    let classificacao: 'EM_ALTA' | 'EM_BAIXA' | undefined
+
+    if (!checkTodos) {
+      classificacao = checkAlta ? 'EM_ALTA' : 'EM_BAIXA'
+    }
+    const dataProduct = await GetDataProduct(search, page, classificacao)
     setTotalPage(dataProduct.totalItens)
     setProduct(dataProduct.data)
   }
@@ -52,8 +54,10 @@ export function Produto() {
       <ContainerProduct>
         <DivContainerInput>
           <InputPredicao
-            onChange={filter}
+            value={search}
+            onChange={event => setSearch(event.target.value)}
             placeholder="Pesquise uma palavra-chave"
+            filterButton={GetProduct}
             icon={<IconSearch />}
           />
           <DivButtonFilter>
@@ -73,24 +77,43 @@ export function Produto() {
 
                 <ModalFilter
                   isCheck={checkTodos}
-                  setCheck={() => setCheckTodos(!checkTodos)}
+                  setCheck={() => {
+                    setCheckTodos(true)
+                    setCheckAlta(false)
+                    setCheckBaixa(false)
+                  }}
                   typeFilter="Todos"
                   totalFilter={1231}
                 />
                 <ModalFilter
                   isCheck={checkAlta}
-                  setCheck={() => setCheckAlta(!checkAlta)}
+                  setCheck={() => {
+                    setCheckTodos(false)
+                    setCheckAlta(true)
+                    setCheckBaixa(false)
+                  }}
                   typeFilter="Em alta"
                   totalFilter={1231}
                 />
                 <ModalFilter
                   isCheck={checkBaixa}
-                  setCheck={() => setCheckBaixa(!checkBaixa)}
+                  setCheck={() => {
+                    setCheckTodos(false)
+                    setCheckAlta(false)
+                    setCheckBaixa(true)
+                  }}
                   typeFilter="Em baixa"
                   totalFilter={1231}
                 />
                 <DivButtonModalFilter>
-                  <Buttons name="Aplicar" theme="modalFilter" />
+                  <Buttons
+                    onClick={() => {
+                      GetProduct()
+                      setShowFilter(false)
+                    }}
+                    name="Aplicar"
+                    theme="modalFilter"
+                  />
                 </DivButtonModalFilter>
               </ModalFilterProduct>
             )}

@@ -12,18 +12,27 @@ type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
   placeholder: string
   icon: React.ReactNode
+  filterButton: () => void
+  value: string
 }
 
-const filterFunction = () => {
-  alert('Deu Certo')
-}
-
-export function InputPredicao({ onChange, placeholder, icon }: Props) {
+export function InputPredicao({
+  onChange,
+  placeholder,
+  icon,
+  filterButton,
+  value,
+}: Props) {
   return (
     <ContainerInput>
-      <InputPred onChange={onChange} placeholder={placeholder} type="text" />
+      <InputPred
+        onChange={onChange}
+        placeholder={placeholder}
+        type="text"
+        value={value}
+      />
       <ContainerIconSeach>
-        <ButtonIcon onClick={filterFunction} type="button">
+        <ButtonIcon onClick={filterButton} type="button">
           {icon}
         </ButtonIcon>
       </ContainerIconSeach>

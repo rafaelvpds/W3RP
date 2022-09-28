@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+
 import { Buttons } from '../../components/buttons/Buttons'
 import { Input } from '../../components/inputsLogins/InputLogin'
 import { Title } from '../../components/TitleLogin/Title'
@@ -21,16 +21,17 @@ export function Login() {
   const [check, setCheck] = useState(false)
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
-  const navigation = useNavigate()
+  // const navigation = useNavigate()
 
   const doLogin = async () => {
-    const resultLogin = await AuthLogin(email, senha)
-    console.log(resultLogin)
-    if (resultLogin.logged) {
-      navigation('/dashboard')
+    const data = await AuthLogin(email, senha)
+    console.log(data)
+    if (data.logged) {
+      // navigation('/dashboard')
+      window.location.href = '/dashboard'
       return
     }
-    alert(resultLogin.message)
+    alert(data.message)
   }
   return (
     <ContenerLogin>

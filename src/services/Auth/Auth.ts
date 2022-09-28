@@ -9,6 +9,7 @@ export const AuthLogin = async (login: string, password: string) => {
     })
     if (result.status === 200) {
       apiService.defaults.headers.common.Authorization = `${result.data.type} ${result.data.token}`
+      localStorage.setItem('token', JSON.stringify(result.data))
       return {
         logged: true,
       }

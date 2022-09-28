@@ -26,10 +26,8 @@ export function Dashboard() {
   const navigator = useNavigate()
 
   const getClients = async () => {
-    const dataClients = await GetListClient(
-      inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA'
-    )
-    setClients(dataClients)
+    const data = await GetListClient(inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA')
+    setClients(data)
   }
 
   useEffect(() => {
@@ -37,22 +35,22 @@ export function Dashboard() {
   }, [inAltaCliente])
 
   const getProduct = async () => {
-    const dataProduct = await GetProductClient(
-      inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA'
-    )
-    setProduct(dataProduct)
+    const data = await GetProductClient(inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA')
+    setProduct(data)
   }
   useEffect(() => {
     getProduct()
   }, [inAltaProduto])
+
   const getResumo = async () => {
-    const dataResume = await GetResumeDashboard()
-    setResume(dataResume)
+    const data = await GetResumeDashboard()
+    setResume(data)
   }
 
   useEffect(() => {
     getResumo()
   }, [])
+
   const pageDetalharProduct = (id: number) => {
     navigator(`/detalhamento/${id}`)
   }
@@ -61,7 +59,12 @@ export function Dashboard() {
   }
   return (
     <>
-      <CardPrincipal backgroundCard="#001C98" text=" Dashboard" color="#ffffff">
+      <CardPrincipal
+        backgroundCard="#001C98"
+        text=" Dashboard"
+        color="#ffffff"
+        isFilterData
+      >
         <CardItem
           backgroundCardItem="#02156a"
           heightCardItem="124px"

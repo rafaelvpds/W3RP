@@ -1,5 +1,3 @@
-// @flow
-import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
@@ -23,16 +21,16 @@ export function DetalhamentoClients() {
   const { id } = useParams()
 
   const getPredClientsAlta = async () => {
-    const dataPredClient = await GetPredicaoClients(id!, 'EM_ALTA')
-    setPredicaoAlta(dataPredClient)
+    const data = await GetPredicaoClients(id!, 'EM_ALTA')
+    setPredicaoAlta(data)
   }
   useEffect(() => {
     getPredClientsAlta()
   }, [])
 
   const getPredClientsBaixa = async () => {
-    const dataPredClientBaixa = await GetPredicaoClients(id!, 'EM_BAIXA')
-    setPredicaoBaixa(dataPredClientBaixa)
+    const data = await GetPredicaoClients(id!, 'EM_BAIXA')
+    setPredicaoBaixa(data)
   }
   useEffect(() => {
     getPredClientsBaixa()

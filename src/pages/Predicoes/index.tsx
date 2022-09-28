@@ -25,18 +25,16 @@ import { GetPrediction } from '../../services/Predicao'
 export function Predicao() {
   const navigator = useNavigate()
   const [dataClient, setDataClients] = useState<PredictionPage>()
+  const [search, setSearch] = useState('')
 
   const getPrediction = async () => {
-    const dataPrediction = await GetPrediction()
-    setDataClients(dataPrediction)
+    const data = await GetPrediction(search)
+    setDataClients(data)
   }
 
   useEffect(() => {
     getPrediction()
   }, [])
-  const filter = () => {
-    console.log('Deu certo')
-  }
 
   const nextPage = (id: number) => {
     navigator(`/historico/${id}`)
@@ -47,7 +45,9 @@ export function Predicao() {
       <TitePages size={32}>Predições</TitePages>
       <ContainerTopPred>
         <InputPredicao
-          onChange={filter}
+          value={search}
+          filterButton={getPrediction}
+          onChange={event => setSearch(event.target.value)}
           placeholder="Pesquise uma palavra-chave"
           icon={<IconSearch />}
         />
