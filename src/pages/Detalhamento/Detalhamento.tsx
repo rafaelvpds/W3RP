@@ -14,7 +14,7 @@ import { GetPrediProduto } from '../../services/ProductPredicao'
 import { GetResumeProduct } from '../../services/ResumeProduct'
 import { Predicao, ResumePredicao } from '../../types'
 
-import { DivChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
+import { ButtonChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
 
 export function Detalhamento() {
@@ -51,9 +51,9 @@ export function Detalhamento() {
   return (
     <>
       <DivTopHistorico>
-        <DivChevron>
+        <ButtonChevron>
           <IconChevronLeft />
-        </DivChevron>
+        </ButtonChevron>
 
         <TitePages size={20}>Detalhamento</TitePages>
       </DivTopHistorico>

@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconSearch } from '../../assets/icons/IconSearch'
 
@@ -18,31 +19,29 @@ import {
   DivTablePred,
 } from './Predicao.Styled'
 import { IconUser } from '../../assets/icons/IconUser'
+import { PredictionPage } from '../../types'
+import { GetPrediction } from '../../services/Predicao'
 
 export function Predicao() {
   const navigator = useNavigate()
+  const [dataClient, setDataClients] = useState<PredictionPage>()
+
+  const getPrediction = async () => {
+    const dataPrediction = await GetPrediction()
+    setDataClients(dataPrediction)
+  }
+
+  useEffect(() => {
+    getPrediction()
+  }, [])
   const filter = () => {
     console.log('Deu certo')
   }
 
-  const nextPage = (id: string) => {
+  const nextPage = (id: number) => {
     navigator(`/historico/${id}`)
   }
 
-  const MokupProduct = [
-    {
-      nameProduct: 'Papel higiênico',
-      data: '02/09/22',
-    },
-    {
-      nameProduct: 'Água sanitária',
-      data: '05/09/22',
-    },
-    {
-      nameProduct: 'Papel higiênico',
-      data: '10/09/22',
-    },
-  ]
   return (
     <>
       <TitePages size={32}>Predições</TitePages>
@@ -55,159 +54,33 @@ export function Predicao() {
       </ContainerTopPred>
 
       <DivContentTablePred>
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('1')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
-
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('2')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
-
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('3')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('3')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('3')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
-        <ContainerTablePred>
-          <ContainerTitleCardPred>
-            <TitleCardPred
-              icon={<IconUser color="#001C98" />}
-              text="Hermes Pardini"
-            />
-            <DivButtonPred>
-              <ButtonPred onClick={() => nextPage('3')} type="button">
-                <IconChevronRight />
-              </ButtonPred>
-            </DivButtonPred>
-          </ContainerTitleCardPred>
-          <DivTablePred>
-            <ContainerDataPred>
-              <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
-                {MokupProduct.map(item => (
-                  <tr>
-                    <STDPred>{item.nameProduct}</STDPred>
-                    <STDPred>{item.data}</STDPred>
-                  </tr>
-                ))}
-              </TableDataPredicao>
-            </ContainerDataPred>
-          </DivTablePred>
-        </ContainerTablePred>
+        {dataClient?.content.map(item => (
+          <ContainerTablePred>
+            <ContainerTitleCardPred>
+              <TitleCardPred
+                icon={<IconUser color="#001C98" />}
+                text={item.nome}
+              />
+              <DivButtonPred>
+                <ButtonPred onClick={() => nextPage(item.id)} type="button">
+                  <IconChevronRight />
+                </ButtonPred>
+              </DivButtonPred>
+            </ContainerTitleCardPred>
+            <DivTablePred>
+              <ContainerDataPred>
+                <TableDataPredicao headers={['Produto', 'Próx.Compras']}>
+                  {item.produtos.map(itens => (
+                    <tr>
+                      <STDPred>{itens.nome}</STDPred>
+                      <STDPred>{itens.proximaCompra}</STDPred>
+                    </tr>
+                  ))}
+                </TableDataPredicao>
+              </ContainerDataPred>
+            </DivTablePred>
+          </ContainerTablePred>
+        ))}
       </DivContentTablePred>
     </>
   )

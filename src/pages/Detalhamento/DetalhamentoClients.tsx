@@ -13,7 +13,7 @@ import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetPredicaoClients } from '../../services/ClientsPredicao'
 import { GetResumeClients } from '../../services/ResumeClients'
 import { PredicaoClient, ResumoPredicaoClients } from '../../types'
-import { DivChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
+import { ButtonChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
 
 export function DetalhamentoClients() {
@@ -48,9 +48,9 @@ export function DetalhamentoClients() {
   return (
     <>
       <DivTopHistorico>
-        <DivChevron>
+        <ButtonChevron>
           <IconChevronLeft />
-        </DivChevron>
+        </ButtonChevron>
 
         <TitePages size={20}>Detalhamento</TitePages>
       </DivTopHistorico>

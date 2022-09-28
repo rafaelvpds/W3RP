@@ -12,11 +12,11 @@ export function RoutesType() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Login />} path="/login" />
+        <Route element={<Login />} path="/" />
       </Routes>
       <LayoutBase>
         <Routes>
-          <Route element={<Dashboard />} path="/" />
+          <Route element={<Dashboard />} path="/dashboard" />
           <Route element={<Predicao />} path="/predicao" />
           <Route element={<Historico />} path="/historico/:id" />
           <Route element={<Produto />} path="/produto" />

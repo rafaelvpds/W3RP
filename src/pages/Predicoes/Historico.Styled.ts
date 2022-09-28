@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 
-export const DivChevron = styled.div`
-  padding: 10px;
-  width: 40px;
-  height: 40px;
+export const ButtonChevron = styled.button`
+  border: none;
+  padding: 7px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   background: #eeeeee;
 `

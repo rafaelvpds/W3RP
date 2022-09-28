@@ -33,7 +33,7 @@ export function ModalUser({
 
         <LineModalUser />
         <ContainerLogout>
-          <LinkLogOut to="/login">
+          <LinkLogOut to="/">
             <span>{iconLogOut}</span>
             <SpanTextConfig> {textLogOut}</SpanTextConfig>
           </LinkLogOut>

@@ -25,7 +25,7 @@ const menuMain = [
   {
     text: 'Dashboard',
     icone: <Chart />,
-    url: '/',
+    url: '/dashboard',
   },
   {
     text: 'Predição',

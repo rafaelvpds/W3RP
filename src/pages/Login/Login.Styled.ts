@@ -9,7 +9,7 @@ export const ContenerLogin = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: auto;
 `
 export const ContainerInput = styled.div`
   position: relative;
@@ -32,7 +32,6 @@ export const SpanPassword = styled.span`
   font-weight: 600;
   display: flex;
   align-items: center;
-
   gap: 5px;
 `
 export const ImagemLateral = styled.img`

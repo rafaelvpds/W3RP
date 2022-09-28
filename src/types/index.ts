@@ -10,7 +10,31 @@ export type Predicao = {
   percentual: number
   quantidade: number
 }
+export type User = {
+  email: string
+  id: number
+  nome: string
+}
 
+export type Historic = {
+  id: number
+  nome: string
+  quantidade: number
+  ultimaCompra: string
+}
+export type SoldOffProduct = {
+  id: number
+  nome: string
+  proximaCompra: string
+  quantidade: number
+  ultimaCompra: string
+}
+
+export type TypeClients = {
+  email: string
+  nome: string
+  telefone: string
+}
 export type ResumePredicao = {
   media120Dias: number
   nome: string
@@ -26,6 +50,25 @@ export type PredicaoClient = {
   nome: string
   percentual: number
   quantidade: number
+}
+
+export type PredictionPage = {
+  content: {
+    id: number
+    nome: string
+    produtos: {
+      id: number
+      nome: string
+      proximaCompra: string
+    }[]
+  }[]
+}
+
+export type Product = {
+  classificacao: 'EM_ALTA' | 'EM_BAIXA'
+  id: number
+  nome: string
+  percentual: number
 }
 
 export type ResumoPredicaoClients = {

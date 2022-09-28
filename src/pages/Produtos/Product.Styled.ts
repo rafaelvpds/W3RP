@@ -26,6 +26,7 @@ export const ButtonDropFilter = styled.button`
   padding: 5px;
   border-radius: 10px;
   text-align: center;
+  margin-left: 15px;
 `
 export const ModalFilterProduct = styled.div`
   position: absolute;

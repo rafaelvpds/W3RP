@@ -1,132 +1,77 @@
-// @flow
 import * as React from 'react'
+import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import { IconCheckOne } from '../../assets/icons/IconCheckOne'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconHistory } from '../../assets/icons/IconHistory'
 import { IconProduct } from '../../assets/icons/IconProduct'
-import { DataClients } from '../../components/DataClients/DataClients'
 import { ViewDataTable } from '../../components/Table/DataTable'
 import { STD } from '../../components/Table/TableDashboard.Styled'
 import fundo from '../../assets/images/fundoW3.png'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import {
+  ButtonChevron,
   ButtonDetalhesCheck,
   ContainerInfoClient,
   ContainerInfoHist,
-  DivChevron,
   DivTopHistorico,
   FundoImage,
 } from './Historico.Styled'
 import { IconMail } from '../../assets/icons/IconMail'
 import { IconPhone } from '../../assets/icons/IconPhone'
+import { GetHistoric } from '../../services/ProductHistoric'
+import { TypeClients, Historic, SoldOffProduct } from '../../types'
+import { GetSoldOffProduct } from '../../services/ProductEsgotado'
+import { GetDataClients } from '../../services/ClientesHistoricos'
+import { DataClients } from '../../components/DataClients/DataClients'
+import { PostProduct } from '../../services/BaixaProduct'
 
-const MokupPredicao = [
-  {
-    id: '001',
-    nameProduct: 'Papel higiênico',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '002',
-    nameProduct: 'Álcool em gel',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '003',
-    nameProduct: 'Sabonete',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '004',
-    nameProduct: 'Detergente',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '005',
-    nameProduct: 'Água sanitária',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '005',
-    nameProduct: 'Papel higiênico',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '007',
-    nameProduct: 'Sabonete',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '008',
-    nameProduct: 'Detergente',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-  {
-    id: '008',
-    nameProduct: 'Água sanitária',
-    ultimaCom: '23/08',
-    qtd: '03',
-  },
-]
-const MokupPredicaoEsgotado = [
-  {
-    id: '001',
-    nameProduct: 'Papel higiênico',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-  {
-    id: '002',
-    nameProduct: 'Álcool em gel',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-  {
-    id: '003',
-    nameProduct: 'Sabonete',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-  {
-    id: '004',
-    nameProduct: 'Detergente',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-  {
-    id: '005',
-    nameProduct: 'Água sanitária',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-  {
-    id: '005',
-    nameProduct: 'Papel higiênico',
-    ultimaCom: '23/08',
-    ProxCompra: '23/09',
-    qtd: '03',
-  },
-]
 export function Historico() {
+  const { id } = useParams()
+  const [historic, setHistoric] = useState<Historic[]>([])
+  const [soldOffProduct, setSoldOffProduct] = useState<SoldOffProduct[]>([])
+  const [clientsData, setClients] = useState<TypeClients>()
+
+  const getHistoric = async () => {
+    const data = await GetHistoric(id!)
+    setHistoric(data)
+  }
+
+  useEffect(() => {
+    getHistoric()
+  }, [])
+
+  const getSoldOffProduct = async () => {
+    const data = await GetSoldOffProduct(id!)
+    setSoldOffProduct(data)
+  }
+  useEffect(() => {
+    getSoldOffProduct()
+  }, [])
+
+  const getDataClients = async () => {
+    const data = await GetDataClients(id!)
+    setClients(data)
+  }
+  useEffect(() => {
+    getDataClients()
+  }, [])
+
+  const darBaixaHistorico = async (produtoId: number) => {
+    await PostProduct(id!, produtoId)
+    getHistoric()
+  }
+  const darBaixaProdutoEsgotados = async (produtoId: number) => {
+    await PostProduct(id!, produtoId)
+    getSoldOffProduct()
+  }
+
   return (
     <>
       <DivTopHistorico>
-        <DivChevron>
+        <ButtonChevron>
           <IconChevronLeft />
-        </DivChevron>
+        </ButtonChevron>
 
         <TitePages size={20}>Predição </TitePages>
       </DivTopHistorico>
@@ -134,9 +79,9 @@ export function Historico() {
         <DataClients
           iconDataEmailClient={<IconMail />}
           iconDataPhoneClient={<IconPhone />}
-          nameClients="Hotel Ibis"
-          emailClient="hotelibis@gmail.com"
-          foneClients="31 99468-9894"
+          nameClients={clientsData?.nome || ''}
+          emailClient={clientsData?.email || ''}
+          foneClients={clientsData?.telefone || ''}
         />
         <FundoImage src={fundo} />
       </ContainerInfoClient>
@@ -151,14 +96,17 @@ export function Historico() {
           text="Histórico"
           color="#EEEEEE"
         >
-          {MokupPredicao.map(item => (
+          {historic.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameProduct}</STD>
-              <STD>{item.ultimaCom}</STD>
-              <STD>{item.qtd}</STD>
+              <STD>{item.nome}</STD>
+              <STD>{item.ultimaCompra}</STD>
+              <STD>{item.quantidade}</STD>
               <STD>
-                <ButtonDetalhesCheck type="button">
+                <ButtonDetalhesCheck
+                  onClick={() => darBaixaHistorico(item.id)}
+                  type="button"
+                >
                   <IconCheckOne />
                 </ButtonDetalhesCheck>
               </STD>
@@ -181,15 +129,18 @@ export function Historico() {
           text="Produtos esgotando"
           color="#FFE1E1"
         >
-          {MokupPredicaoEsgotado.map(item => (
+          {soldOffProduct.map(item => (
             <tr key={item.id}>
               <STD>{item.id}</STD>
-              <STD>{item.nameProduct}</STD>
-              <STD>{item.ultimaCom}</STD>
-              <STD>{item.ProxCompra}</STD>
-              <STD>{item.qtd}</STD>
+              <STD>{item.nome}</STD>
+              <STD>{item.ultimaCompra}</STD>
+              <STD>{item.proximaCompra}</STD>
+              <STD>{item.quantidade}</STD>
               <STD>
-                <ButtonDetalhesCheck type="button">
+                <ButtonDetalhesCheck
+                  type="button"
+                  onClick={() => darBaixaProdutoEsgotados(item.id)}
+                >
                   <IconCheckOne />
                 </ButtonDetalhesCheck>
               </STD>

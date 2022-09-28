@@ -12,6 +12,7 @@ export const ActionsButtons = styled.button`
     padding: 12px 50px;
     border-radius: 100px;
     font-weight: 600;
+    cursor: pointer;
   }
   &.login {
     background: #001c98;
@@ -22,6 +23,7 @@ export const ActionsButtons = styled.button`
     font-weight: 600;
     width: 400px;
     height: 56px;
+    cursor: pointer;
   }
   &.modalFilter {
     background: #001c98;
@@ -31,5 +33,6 @@ export const ActionsButtons = styled.button`
     font-weight: 600;
     width: 200px;
     height: 30px;
+    cursor: pointer;
   }
 `

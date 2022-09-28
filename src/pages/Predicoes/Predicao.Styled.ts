@@ -12,8 +12,8 @@ export const ContainerTopPred = styled.div`
 
 export const DivContentTablePred = styled.div`
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  gap: 20px;
 `
 export const ContainerTablePred = styled.div`
   width: 285px;
@@ -33,7 +33,7 @@ export const ContainerTitleCardPred = styled.div`
 export const DivButtonPred = styled.div`
   position: absolute;
   top: 24px;
-  right: 50px;
+  right: 0px;
 `
 export const ContainerTitulPred = styled.div`
   display: flex;

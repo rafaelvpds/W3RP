@@ -21,6 +21,7 @@ export const ContainerUser = styled.div`
 export const ButtonChevronDown = styled.button`
   border: none;
   background: none;
+  cursor: pointer;
 `
 export const DivIcon = styled.div`
   display: flex;
