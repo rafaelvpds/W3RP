@@ -21,6 +21,7 @@ import {
 import { IconUser } from '../../assets/icons/IconUser'
 import { PredictionPage } from '../../types'
 import { GetPrediction } from '../../services/Predicao'
+import { dateToBr } from '../../ModifyDate'
 
 export function Predicao() {
   const navigator = useNavigate()
@@ -73,7 +74,7 @@ export function Predicao() {
                   {item.produtos.map(itens => (
                     <tr>
                       <STDPred>{itens.nome}</STDPred>
-                      <STDPred>{itens.proximaCompra}</STDPred>
+                      <STDPred>{dateToBr(itens.proximaCompra)}</STDPred>
                     </tr>
                   ))}
                 </TableDataPredicao>

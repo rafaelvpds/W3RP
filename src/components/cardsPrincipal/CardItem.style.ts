@@ -6,13 +6,11 @@ export const WarperCard = styled.div`
 `
 
 export const CardSecundario = styled.div<{
-  heightCardItem: string
+  paddingCard: string
   backgroundCardItem: string
   colorCardItem: string
-  widthCardItem: string
 }>`
-  height: ${({ heightCardItem }) => `${heightCardItem}`};
-  width: ${({ widthCardItem }) => `${widthCardItem}`};
+  padding: ${({ paddingCard }) => `${paddingCard}`};
   border-radius: 24px;
   background: ${({ backgroundCardItem }) => `${backgroundCardItem}`};
   display: flex;

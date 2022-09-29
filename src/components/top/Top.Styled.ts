@@ -11,6 +11,10 @@ export const DivMenu = styled.div`
   display: flex;
   align-items: center;
 `
+export const ButtonIconMenu = styled.button`
+  background: none;
+  border: none;
+`
 export const ContainerUser = styled.div`
   display: flex;
   align-items: center;

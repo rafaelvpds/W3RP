@@ -17,8 +17,7 @@ export const DivTopHistorico = styled.div`
 `
 export const ContainerInfoClient = styled.div`
   position: relative;
-  width: 100%;
-  height: 152px;
+
   background-color: #001c98;
 
   border-radius: 24px;

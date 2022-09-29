@@ -17,7 +17,9 @@ export const SpanNumPage = styled.span`
   width: 24px;
   height: 24px;
   text-align: center;
-  background: #001c98;
+  &.active {
+    background: #001c98;
+  }
   border-radius: 4px;
   margin-right: 15px;
 `

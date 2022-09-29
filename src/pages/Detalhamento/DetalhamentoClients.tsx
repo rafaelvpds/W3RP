@@ -58,9 +58,8 @@ export function DetalhamentoClients() {
         backgroundCard="#F5F5F5"
       >
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Média 120 dias"
           value={resumClient?.media120Dias}
@@ -68,9 +67,8 @@ export function DetalhamentoClients() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 30 dias"
           value={resumClient?.ultimos30Dias}
@@ -79,9 +77,8 @@ export function DetalhamentoClients() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 60 dias"
           value={resumClient?.ultimos60Dias}
@@ -89,9 +86,8 @@ export function DetalhamentoClients() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 90 dias"
           value={resumClient?.ultimos90Dias}
@@ -99,9 +95,8 @@ export function DetalhamentoClients() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 120 dias"
           value={resumClient?.ultimos120Dias}

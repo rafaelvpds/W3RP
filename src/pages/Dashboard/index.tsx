@@ -66,9 +66,8 @@ export function Dashboard() {
         isFilterData
       >
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total produtos em alta "
           tag={resume?.percentualVariacaoProdutosAlta}
@@ -78,9 +77,8 @@ export function Dashboard() {
           fontSize="12px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total produtos em baixa"
           tag={resume?.percentualVariacaoProdutosBaixa}
@@ -90,9 +88,8 @@ export function Dashboard() {
           fontSize="12px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total clientes em alta "
           tag={resume?.percentualVariacaoClientesAlta}
@@ -102,9 +99,8 @@ export function Dashboard() {
           fontSize="12px"
         />
         <CardItem
+          paddingCard="1px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Total clientes em baixa"
           tag={resume?.percentualVariacaoClientesBaixa}

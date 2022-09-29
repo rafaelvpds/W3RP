@@ -16,29 +16,26 @@ type Props = {
   value?: number
   tag?: number
   valueSerie?: number
-  widthCardItem: string
-  heightCardItem: string
   backgroundCardItem: string
   colorCardItem: string
   padding: string
   fontSize: string
+  paddingCard: string
 }
 export function CardItem({
-  widthCardItem,
-  heightCardItem,
   backgroundCardItem,
   colorCardItem,
   text,
   value,
   tag,
   valueSerie,
+  paddingCard,
   padding,
   fontSize,
 }: Props) {
   return (
     <CardSecundario
-      widthCardItem={widthCardItem}
-      heightCardItem={heightCardItem}
+      paddingCard={paddingCard}
       backgroundCardItem={backgroundCardItem}
       colorCardItem={colorCardItem}
     >

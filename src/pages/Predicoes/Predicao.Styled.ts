@@ -16,8 +16,6 @@ export const DivContentTablePred = styled.div`
   gap: 20px;
 `
 export const ContainerTablePred = styled.div`
-  width: 285px;
-  min-height: 230px;
   background: #ffffff;
   box-shadow: 0px 0px 25px rgba(163, 163, 163, 0.2);
   border-radius: 24px;
@@ -59,8 +57,6 @@ export const TiteDataPred = styled.h1`
   color: #212121;
 `
 export const ContainerDataPred = styled.div`
-  width: 320px;
-  height: 140px;
   background: #eeeeee;
   border-radius: 16px;
   opacity: 50%;

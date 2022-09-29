@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { IconFilter } from '../../assets/icons/IconFilter'
 import { IconSearch } from '../../assets/icons/IconSearch'
 import { Buttons } from '../../components/buttons/Buttons'
@@ -24,6 +25,7 @@ import {
 } from './Product.Styled'
 
 export function Produto() {
+  const navigator = useNavigate()
   const [showFilter, setShowFilter] = useState(false)
   const [checkTodos, setCheckTodos] = useState(true)
   const [checkAlta, setCheckAlta] = useState(false)
@@ -47,7 +49,9 @@ export function Produto() {
   useEffect(() => {
     GetProduct()
   }, [page])
-
+  const pageDetalharProduct = (id: number) => {
+    navigator(`/detalhamento/${id}`)
+  }
   return (
     <>
       <TitePages size={20}>Produtos</TitePages>
@@ -122,7 +126,7 @@ export function Produto() {
 
         <TableProduct headers={['ID', 'Produto', 'Status', 'Percentual']}>
           {product.map(item => (
-            <tr key={item.id}>
+            <tr key={item.id} onClick={() => pageDetalharProduct(item.id)}>
               <td>{item.id}</td>
               <td>{item.nome}</td>
               <td>
@@ -150,6 +154,7 @@ export function Produto() {
         </TableProduct>
         <Pagination
           currentPage={page}
+          size={7}
           totalItens={totalPage}
           updatePage={(pageNumber: number) => setPage(pageNumber)}
         />

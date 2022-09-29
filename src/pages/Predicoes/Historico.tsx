@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IconCheckOne } from '../../assets/icons/IconCheckOne'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
@@ -25,9 +25,11 @@ import { GetSoldOffProduct } from '../../services/ProductEsgotado'
 import { GetDataClients } from '../../services/ClientesHistoricos'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { PostProduct } from '../../services/BaixaProduct'
+import { dateToBr } from '../../ModifyDate'
 
 export function Historico() {
   const { id } = useParams()
+  const navigator = useNavigate()
   const [historic, setHistoric] = useState<Historic[]>([])
   const [soldOffProduct, setSoldOffProduct] = useState<SoldOffProduct[]>([])
   const [clientsData, setClients] = useState<TypeClients>()
@@ -66,10 +68,14 @@ export function Historico() {
     getSoldOffProduct()
   }
 
+  const backPage = () => {
+    navigator('/predicao')
+  }
+
   return (
     <>
       <DivTopHistorico>
-        <ButtonChevron>
+        <ButtonChevron onClick={backPage}>
           <IconChevronLeft />
         </ButtonChevron>
 
@@ -100,7 +106,7 @@ export function Historico() {
             <tr key={item.id}>
               <STD>{item.id}</STD>
               <STD>{item.nome}</STD>
-              <STD>{item.ultimaCompra}</STD>
+              <STD>{dateToBr(item.ultimaCompra)}</STD>
               <STD>{item.quantidade}</STD>
               <STD>
                 <ButtonDetalhesCheck
@@ -133,8 +139,8 @@ export function Historico() {
             <tr key={item.id}>
               <STD>{item.id}</STD>
               <STD>{item.nome}</STD>
-              <STD>{item.ultimaCompra}</STD>
-              <STD>{item.proximaCompra}</STD>
+              <STD>{dateToBr(item.ultimaCompra)}</STD>
+              <STD>{dateToBr(item.proximaCompra)}</STD>
               <STD>{item.quantidade}</STD>
               <STD>
                 <ButtonDetalhesCheck

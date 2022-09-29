@@ -33,8 +33,8 @@ export function RadialBar({ serie }: RadialBarProductHightProps) {
   return (
     <Chart
       series={[serie]}
-      width={70}
-      height={70}
+      width={60}
+      height={60}
       options={defaultOptions}
       type="radialBar"
     />

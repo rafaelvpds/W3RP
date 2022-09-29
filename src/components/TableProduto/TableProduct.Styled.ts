@@ -27,15 +27,12 @@ export const StatusProduct = styled.p<{
   bacgroundStatus: string
   colorStatus: string
 }>`
-  width: 80px;
-  height: 40px;
   background: ${({ bacgroundStatus }) => `${bacgroundStatus}`};
   color: ${({ colorStatus }) => `${colorStatus}`};
   text-align: center;
   font-size: 16px;
-  padding-top: 8px;
+  padding: 8px, 0px 8px 0px;
   border-radius: 8px;
-
   font-weight: 400;
   letter-spacing: 0.2px;
 `

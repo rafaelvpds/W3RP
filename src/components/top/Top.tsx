@@ -15,6 +15,7 @@ import { ModalUser } from '../ModalUser/ModalUser'
 import { User as UserType } from '../../types'
 import {
   ButtonChevronDown,
+  ButtonIconMenu,
   ContainerModalUser,
   ContainerUser,
   DivIcon,
@@ -22,6 +23,11 @@ import {
   TopUser,
 } from './Top.Styled'
 import { User } from '../user/User'
+
+// type TopProps = {
+//   isMenu: boolean
+//   isMiniMenu: () => void
+// }
 
 export function Top() {
   const [isShowModal, setIsShowModal] = useState(false)
@@ -38,7 +44,9 @@ export function Top() {
   return (
     <TopUser>
       <DivMenu>
-        <IconMenu />
+        <ButtonIconMenu>
+          <IconMenu />
+        </ButtonIconMenu>
       </DivMenu>
       <ContainerUser>
         <DivIcon>

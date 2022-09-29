@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconTrendingDown } from '../../assets/icons/IconTrendingDown'
 import { IconTrendingUp } from '../../assets/icons/IconTrendingUp'
@@ -20,6 +20,7 @@ export function Detalhamento() {
   const { id } = useParams()
   const [predicaoAlta, setPredicacaoAlta] = useState<Predicao[]>([])
   const [predicaoBaixa, setPredicacaoBaixa] = useState<Predicao[]>([])
+  const navigator = useNavigate()
   const [resumPred, setResumPred] = useState<ResumePredicao>()
   // const [inAlta, setInAlta] = useState(true)
 
@@ -47,10 +48,14 @@ export function Detalhamento() {
   useEffect(() => {
     getResumPred()
   }, [])
+
+  const backPage = () => {
+    navigator('/dashboard')
+  }
   return (
     <>
       <DivTopHistorico>
-        <ButtonChevron>
+        <ButtonChevron onClick={backPage}>
           <IconChevronLeft />
         </ButtonChevron>
 
@@ -63,9 +68,8 @@ export function Detalhamento() {
         backgroundCard="#F5F5F5"
       >
         <CardItem
+          paddingCard="5px"
           backgroundCardItem="#02156a"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem="#c5cfff"
           text="Média 120 dias"
           value={resumPred?.media120Dias}
@@ -73,9 +77,8 @@ export function Detalhamento() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 30 dias"
           value={resumPred?.ultimos30Dias}
@@ -84,9 +87,8 @@ export function Detalhamento() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 60 dias"
           value={resumPred?.ultimos60Dias}
@@ -94,9 +96,8 @@ export function Detalhamento() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 90 dias"
           value={resumPred?.ultimos90Dias}
@@ -104,9 +105,8 @@ export function Detalhamento() {
           fontSize="16px"
         />
         <CardItem
+          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
-          heightCardItem="124px"
-          widthCardItem="220px"
           colorCardItem=" #001C98;"
           text="Últimos 120 dias"
           value={resumPred?.ultimos120Dias}
