@@ -22,7 +22,6 @@ export function Detalhamento() {
   const [predicaoBaixa, setPredicacaoBaixa] = useState<Predicao[]>([])
   const navigator = useNavigate()
   const [resumPred, setResumPred] = useState<ResumePredicao>()
-  // const [inAlta, setInAlta] = useState(true)
 
   const getPredProdutoAlta = async () => {
     const data = await GetPrediProduto(id!, 'EM_ALTA')
@@ -68,50 +67,41 @@ export function Detalhamento() {
         backgroundCard="#F5F5F5"
       >
         <CardItem
-          paddingCard="5px"
           backgroundCardItem="#02156a"
           colorCardItem="#c5cfff"
+          colorTextCard="#FFFFFF"
           text="Média 120 dias"
           value={resumPred?.media120Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 30 dias"
           value={resumPred?.ultimos30Dias}
           tag={resumPred?.percentualUltimos30Dias}
-          padding="20px"
-          fontSize="16px"
+          colorTag="#FFFFFF"
         />
         <CardItem
-          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 60 dias"
           value={resumPred?.ultimos60Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 90 dias"
           value={resumPred?.ultimos90Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="5px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 120 dias"
           value={resumPred?.ultimos120Dias}
-          padding="20px"
-          fontSize="16px"
         />
       </CardPrincipal>
       <ContainerTableAround>

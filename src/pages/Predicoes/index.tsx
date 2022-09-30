@@ -21,7 +21,7 @@ import {
 import { IconUser } from '../../assets/icons/IconUser'
 import { PredictionPage } from '../../types'
 import { GetPrediction } from '../../services/Predicao'
-import { dateToBr } from '../../ModifyDate'
+import { dateToBr } from '../../util/ModifyDate'
 
 export function Predicao() {
   const navigator = useNavigate()

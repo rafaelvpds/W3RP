@@ -11,10 +11,11 @@ import {
   STD,
 } from '../../components/Table/TableDashboard.Styled'
 import { GetListClient } from '../../services/ClientsDashboard'
-import { GetProductClient } from '../../services/ProductDashboard'
+import { getProductApi } from '../../services/ProductDashboard'
 import { GetResumeDashboard } from '../../services/ResumeDashboard'
-import { DataDashboard, ResumeDashboard } from '../../types'
+import { ResumeDashboard, DataDashboard } from '../../types'
 
+import { dateHelper } from '../../util'
 import { ContainerTable } from './Dashboard.Styled'
 
 export function Dashboard() {
@@ -23,33 +24,42 @@ export function Dashboard() {
   const [clients, setClients] = useState<DataDashboard[]>([])
   const [product, setProduct] = useState<DataDashboard[]>([])
   const [resume, setResume] = useState<ResumeDashboard>()
+  const [date, setDate] = useState(dateHelper.thisMonth())
   const navigator = useNavigate()
 
   const getClients = async () => {
-    const data = await GetListClient(inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA')
+    const data = await GetListClient(
+      inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA',
+      date.end,
+      date.start
+    )
     setClients(data)
   }
 
   useEffect(() => {
     getClients()
-  }, [inAltaCliente])
+  }, [inAltaCliente, date])
 
   const getProduct = async () => {
-    const data = await GetProductClient(inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA')
+    const data = await getProductApi(
+      inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA',
+      date.end,
+      date.start
+    )
     setProduct(data)
   }
   useEffect(() => {
     getProduct()
-  }, [inAltaProduto])
+  }, [inAltaProduto, date])
 
   const getResumo = async () => {
-    const data = await GetResumeDashboard()
+    const data = await GetResumeDashboard(date.end, date.start)
     setResume(data)
   }
 
   useEffect(() => {
     getResumo()
-  }, [])
+  }, [date])
 
   const pageDetalharProduct = (id: number) => {
     navigator(`/detalhamento/${id}`)
@@ -60,54 +70,51 @@ export function Dashboard() {
   return (
     <>
       <CardPrincipal
+        setDate={setDate}
         backgroundCard="#001C98"
         text=" Dashboard"
         color="#ffffff"
         isFilterData
       >
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#02156a"
-          colorCardItem="#c5cfff"
+          colorCardItem="#FFFFFF"
+          colorTextCard="#C5CFFF"
           text="Total produtos em alta "
           tag={resume?.percentualVariacaoProdutosAlta}
           value={resume?.quantidadeProdutosAlta}
           valueSerie={resume?.percentualTotalProdutosAlta}
-          padding="0px"
-          fontSize="12px"
+          colorTag="#FFFFFF"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#02156a"
-          colorCardItem="#c5cfff"
+          colorCardItem="#FFFFFF"
+          colorTextCard="#C5CFFF"
           text="Total produtos em baixa"
           tag={resume?.percentualVariacaoProdutosBaixa}
           value={resume?.quantidadeProdutosBaixa}
           valueSerie={resume?.percentualTotalProdutosBaixa}
-          padding="0px"
-          fontSize="12px"
+          colorTag="#FFFFFF"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#02156a"
-          colorCardItem="#c5cfff"
+          colorCardItem="#FFFFFF"
+          colorTextCard="#C5CFFF"
           text="Total clientes em alta "
           tag={resume?.percentualVariacaoClientesAlta}
           value={resume?.quantidadeClientesAlta}
           valueSerie={resume?.percentualTotalClientesAlta}
-          padding="0px"
-          fontSize="12px"
+          colorTag="#FFFFFF"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#02156a"
-          colorCardItem="#c5cfff"
+          colorCardItem="#FFFFFF"
+          colorTextCard="#C5CFFF"
           text="Total clientes em baixa"
           tag={resume?.percentualVariacaoClientesBaixa}
           value={resume?.quantidadeClientesBaixa}
           valueSerie={resume?.percentualTotalClientesBaixa}
-          padding="0px"
-          fontSize="12px"
+          colorTag="#FFFFFF"
         />
       </CardPrincipal>
       <ContainerTable>

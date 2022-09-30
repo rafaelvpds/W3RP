@@ -1,5 +1,4 @@
 export type DataDashboard = {
-  // DataClientDashboard
   id: number
   nome: string
   percentual: number
@@ -15,7 +14,6 @@ export type User = {
   id: number
   nome: string
 }
-
 export type Historic = {
   id: number
   nome: string
@@ -70,7 +68,6 @@ export type Product = {
   nome: string
   percentual: number
 }
-
 export type ResumoPredicaoClients = {
   media120Dias: number
   nome: string
@@ -80,7 +77,6 @@ export type ResumoPredicaoClients = {
   ultimos60Dias: number
   ultimos90Dias: number
 }
-
 export type ResumeDashboard = {
   percentualTotalClientesAlta: number
   percentualTotalClientesBaixa: number

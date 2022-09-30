@@ -13,7 +13,6 @@ export const AuthLogin = async (login: string, password: string) => {
       return {
         logged: true,
       }
-      // eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwcmVkaWNhb0B3M2VycC5jb20uYnIiLCJpYXQiOjE2NjM5NTY2NDcsImV4cCI6MTY2NDA0MzA0N30.yPgEJu6HG1uOpdpETpOd82ThT6JRAgN25OFuxrWScFsDGKuLDt61gNj4OOBYVZ4wYJAVbPWUXt_mtDsAs_OBuQ
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {

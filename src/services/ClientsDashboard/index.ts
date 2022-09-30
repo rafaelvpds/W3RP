@@ -2,18 +2,16 @@ import { DataDashboard } from '../../types'
 import { apiService } from '../config/apiService'
 
 export const GetListClient = async (
-  classificacao: 'EM_ALTA' | 'EM_BAIXA'
+  classificacao: 'EM_ALTA' | 'EM_BAIXA',
+  dataFim: string,
+  dataInicio: string
 ): Promise<DataDashboard[]> => {
   try {
-    const today = new Date()
-
     const result = await apiService.get('/dashboard/clientes', {
       params: {
         classificacao,
-        dataFim: today.toLocaleDateString('pt-BR'),
-        dataInicio: new Date(
-          new Date().setDate(today.getDate() - 30)
-        ).toLocaleDateString('pt-BR'),
+        dataFim,
+        dataInicio,
       },
     })
     return result.data

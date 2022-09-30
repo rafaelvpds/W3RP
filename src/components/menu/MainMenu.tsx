@@ -14,8 +14,10 @@ import {
   ImagemLogo,
   ImagemMiniLogo,
   LinkDirection,
+  LiStyled,
   MenuPrincipal,
   SquareImage,
+  UlStyled,
 } from './MainMenu.Styled'
 import logo from '../../assets/images/logo.png'
 
@@ -41,7 +43,7 @@ const menuMain = [
     url: '/produto',
   },
 ]
-const IconMain = [
+const miniMenu = [
   {
     icone: <Chart />,
     url: '/dashboard',
@@ -60,8 +62,6 @@ type MainMenuProps = {
 }
 
 export function MainMenu({ isMinimenu }: MainMenuProps) {
-  console.log(`Aquie e isMenu do Menu latera${isMinimenu}`)
-
   return (
     <MenuPrincipal isMinimenu={isMinimenu}>
       <ContainerList>
@@ -78,22 +78,22 @@ export function MainMenu({ isMinimenu }: MainMenuProps) {
 
         {!isMinimenu && (
           <DivList>
-            <ul>
-              {menuMain.map(newMenu => (
-                <li>
-                  <LinkDirection to={newMenu.url}>
-                    {newMenu.icone}
-                    {newMenu.text}
-                  </LinkDirection>
-                </li>
+            <UlStyled>
+              {menuMain.map(item => (
+                <LinkDirection to={item.url}>
+                  <LiStyled>
+                    <span> {item.icone}</span>
+                    <span>{item.text}</span>
+                  </LiStyled>
+                </LinkDirection>
               ))}
-            </ul>
+            </UlStyled>
           </DivList>
         )}
         {isMinimenu && (
           <DivList>
             <ul>
-              {IconMain.map(newMenu => (
+              {miniMenu.map(newMenu => (
                 <li>
                   <LinkDirection to={newMenu.url}>
                     {newMenu.icone}

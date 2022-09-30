@@ -25,7 +25,7 @@ import { GetSoldOffProduct } from '../../services/ProductEsgotado'
 import { GetDataClients } from '../../services/ClientesHistoricos'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { PostProduct } from '../../services/BaixaProduct'
-import { dateToBr } from '../../ModifyDate'
+import { dateToBr } from '../../util/ModifyDate'
 
 export function Historico() {
   const { id } = useParams()

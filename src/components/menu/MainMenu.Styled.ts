@@ -17,26 +17,6 @@ export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
   background-color: #001c98;
   padding: 20px;
   color: #ffff;
-
-  ul {
-    li {
-      list-style: none;
-      padding: 20px;
-      cursor: pointer;
-      margin-bottom: 5px;
-      svg {
-        margin-right: 20px;
-        width: 20px;
-        height: 20px;
-      }
-      &:hover {
-        width: 200px;
-        height: 56px;
-        background: #7682c1;
-        border-radius: 8px;
-      }
-    }
-  }
 `
 export const DivImage = styled.div`
   display: flex;
@@ -48,9 +28,23 @@ export const ImagemLogo = styled.img`
 export const ImagemMiniLogo = styled.img`
   margin: 30px 0;
 `
+export const UlStyled = styled.ul`
+  margin: 40px;
+  list-style-type: none;
+`
+export const LiStyled = styled.li`
+  margin-bottom: 50px;
+  margin-left: 5px;
+  display: flex;
+  gap: 10px;
+`
+
 export const DivList = styled.div`
   display: flex;
-  justify-content: start;
+  flex-direction: column;
+`
+export const DivItemMenu = styled.div`
+  display: inline-block;
 `
 export const DivContainerImage = styled.div`
   display: flex;

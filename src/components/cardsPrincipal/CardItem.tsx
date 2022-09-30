@@ -18,9 +18,8 @@ type Props = {
   valueSerie?: number
   backgroundCardItem: string
   colorCardItem: string
-  padding: string
-  fontSize: string
-  paddingCard: string
+  colorTag?: string
+  colorTextCard: string
 }
 export function CardItem({
   backgroundCardItem,
@@ -29,13 +28,11 @@ export function CardItem({
   value,
   tag,
   valueSerie,
-  paddingCard,
-  padding,
-  fontSize,
+  colorTextCard,
+  colorTag,
 }: Props) {
   return (
     <CardSecundario
-      paddingCard={paddingCard}
       backgroundCardItem={backgroundCardItem}
       colorCardItem={colorCardItem}
     >
@@ -45,13 +42,11 @@ export function CardItem({
         </ContainerGraphic>
       )}
       <ContainerInfoCard>
-        <TitleCard fontSize={fontSize} padding={padding}>
-          {text}
-        </TitleCard>
+        <TitleCard colorTextCard={colorTextCard}>{text}</TitleCard>
         <ContainerValueCard>
           <ValueData>{value}</ValueData>
-          {tag && (
-            <TagStyle value={tag}>
+          {tag && colorTag && (
+            <TagStyle colorTag={colorTag} value={tag}>
               {tag >= 0 && '+'} {tag}%
             </TagStyle>
           )}

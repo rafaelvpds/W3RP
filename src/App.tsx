@@ -1,13 +1,11 @@
 import { GlobalStyle } from './assets/css/Global.Styled'
-import { RoutesType } from './Routes'
-
-// import { Login } from './pages/Login/Login'
+import { Rotas } from './Routes'
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <RoutesType />
+      <Rotas />
     </>
   )
 }

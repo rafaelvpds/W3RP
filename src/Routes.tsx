@@ -21,7 +21,7 @@ function Private({ children }: { children: React.ReactNode }) {
   return <LayoutBase>{children}</LayoutBase>
 }
 
-export function RoutesType() {
+export function Rotas() {
   return (
     <BrowserRouter>
       <AuthProvaider>

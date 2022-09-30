@@ -58,50 +58,40 @@ export function DetalhamentoClients() {
         backgroundCard="#F5F5F5"
       >
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#02156a"
           colorCardItem="#c5cfff"
+          colorTextCard="#FFFFFF"
           text="Média 120 dias"
           value={resumClient?.media120Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 30 dias"
           value={resumClient?.ultimos30Dias}
           tag={resumClient?.percentualUltimos30Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 60 dias"
           value={resumClient?.ultimos60Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 90 dias"
           value={resumClient?.ultimos90Dias}
-          padding="20px"
-          fontSize="16px"
         />
         <CardItem
-          paddingCard="1px"
           backgroundCardItem="#FFFFFF"
           colorCardItem=" #001C98;"
+          colorTextCard="#212121"
           text="Últimos 120 dias"
           value={resumClient?.ultimos120Dias}
-          padding="20px"
-          fontSize="16px"
         />
       </CardPrincipal>
       <ContainerTableAround>
