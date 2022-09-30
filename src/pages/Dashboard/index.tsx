@@ -123,7 +123,7 @@ export function Dashboard() {
           setInAlta={() => setInAltaProduto(!inAltaProduto)}
         >
           {product.map(item => (
-            <tr key={item.id}>
+            <tr onClick={() => pageDetalharProduct(item.id)} key={item.id}>
               <STD>{item.id}</STD>
               <STD>{item.nome}</STD>
               <STD center>

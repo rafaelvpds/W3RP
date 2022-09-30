@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react'
-import { ReactNode } from 'react'
+import { ReactNode, useState } from 'react'
 import { Container } from '../App.Styled'
 import { MainMenu } from '../components/menu/MainMenu'
 import { Warpper } from '../components/menu/MainMenu.Styled'
@@ -11,11 +11,14 @@ type LayoutBaseProps = {
   children: ReactNode
 }
 export function LayoutBase({ children }: LayoutBaseProps) {
+  const [isMiniMenuController, setIsiMenuController] = useState(false)
+  const miniMenuFunction = () => setIsiMenuController(!isMiniMenuController)
+  console.log(isMiniMenuController)
   return (
     <Warpper>
-      <MainMenu />
+      <MainMenu isMinimenu={isMiniMenuController} />
       <Container>
-        <Top />
+        <Top MiniMenu={miniMenuFunction} />
         <ContainerLayout>
           <div>{children}</div>
         </ContainerLayout>

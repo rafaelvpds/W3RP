@@ -14,6 +14,7 @@ export const DivContentTablePred = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  overflow-y: scroll;
 `
 export const ContainerTablePred = styled.div`
   background: #ffffff;
@@ -22,6 +23,7 @@ export const ContainerTablePred = styled.div`
   margin-top: 32px;
   display: flex;
   flex-direction: column;
+  width: 30%;
 `
 
 export const ContainerTitleCardPred = styled.div`

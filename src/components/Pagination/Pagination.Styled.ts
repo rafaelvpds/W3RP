@@ -17,6 +17,7 @@ export const SpanNumPage = styled.span`
   width: 24px;
   height: 24px;
   text-align: center;
+  cursor: pointer;
   &.active {
     background: #001c98;
   }
@@ -27,4 +28,5 @@ export const ButtonIconPage = styled.button`
   background: none;
   border: none;
   padding-top: 3px;
+  cursor: pointer;
 `

@@ -14,6 +14,7 @@ export const DivMenu = styled.div`
 export const ButtonIconMenu = styled.button`
   background: none;
   border: none;
+  cursor: pointer;
 `
 export const ContainerUser = styled.div`
   display: flex;

@@ -78,7 +78,6 @@ export function Historico() {
         <ButtonChevron onClick={backPage}>
           <IconChevronLeft />
         </ButtonChevron>
-
         <TitePages size={20}>Predição </TitePages>
       </DivTopHistorico>
       <ContainerInfoClient>

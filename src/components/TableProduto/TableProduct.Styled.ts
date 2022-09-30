@@ -23,7 +23,7 @@ export const STRProduct = styled.tr`
   font-weight: 600;
 `
 
-export const StatusProduct = styled.p<{
+export const StatusProduct = styled.div<{
   bacgroundStatus: string
   colorStatus: string
 }>`
@@ -31,7 +31,8 @@ export const StatusProduct = styled.p<{
   color: ${({ colorStatus }) => `${colorStatus}`};
   text-align: center;
   font-size: 16px;
-  padding: 8px, 0px 8px 0px;
+  padding: 5px;
+  display: inline-block;
   border-radius: 8px;
   font-weight: 400;
   letter-spacing: 0.2px;

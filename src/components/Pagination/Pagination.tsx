@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
@@ -16,8 +15,9 @@ type Props = {
   totalItens: number
   size: number
 
-  updatePage: (pageNumber: number) => void
+  updatePage: (page: number) => void
 }
+
 export function Pagination({
   updatePage,
   currentPage,
@@ -32,9 +32,12 @@ export function Pagination({
         {(currentPage + 1) * 7} de {totalItens} itens
       </SpanQtdeLista>
       <DivNextPage>
-        <ButtonIconPage onClick={() => updatePage(currentPage - 1)}>
-          <IconChevronLeft />
-        </ButtonIconPage>
+        {length > 1 && currentPage > 1 && (
+          <ButtonIconPage onClick={() => updatePage(currentPage - 1)}>
+            <IconChevronLeft />
+          </ButtonIconPage>
+        )}
+
         {pageNumber.map(item => (
           <SpanNumPage
             onClick={() => updatePage(item)}
@@ -43,9 +46,11 @@ export function Pagination({
             {item}
           </SpanNumPage>
         ))}
-        <ButtonIconPage onClick={() => updatePage(currentPage + 1)}>
-          <IconChevronRight />
-        </ButtonIconPage>
+        {length > 1 && length < currentPage && (
+          <ButtonIconPage onClick={() => updatePage(currentPage + 1)}>
+            <IconChevronRight />
+          </ButtonIconPage>
+        )}
       </DivNextPage>
     </DivPagination>
   )

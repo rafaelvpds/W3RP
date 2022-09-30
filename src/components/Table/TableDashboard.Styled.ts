@@ -25,6 +25,7 @@ export const ButtonAlta = styled.button`
   border-radius: 8px;
   background: #00c247;
   color: #ffffff;
+  cursor: pointer;
 `
 export const ButtonBaixa = styled.button`
   width: 65px;
@@ -33,6 +34,7 @@ export const ButtonBaixa = styled.button`
   border-radius: 8px;
   background: #ff3333;
   color: #ffffff;
+  cursor: pointer;
 `
 
 export const BackgroundTable = styled.div<{ widht: string }>`
@@ -96,6 +98,7 @@ export const STD = styled.td<StdProps>`
   text-align: ${({ center }) => (center ? 'center' : 'left')};
 `
 export const ButtonDetalhes = styled.button`
+  cursor: pointer;
   background: none;
   border: none;
 `

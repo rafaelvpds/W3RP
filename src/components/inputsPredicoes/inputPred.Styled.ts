@@ -14,6 +14,7 @@ export const ContainerIconSeach = styled.div`
 export const ButtonIcon = styled.button`
   background: none;
   border: none;
+  cursor: pointer;
 `
 
 export const InputPred = styled.input`

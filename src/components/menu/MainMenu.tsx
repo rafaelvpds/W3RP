@@ -12,13 +12,16 @@ import {
   DivText,
   ImagemHands,
   ImagemLogo,
+  ImagemMiniLogo,
   LinkDirection,
   MenuPrincipal,
   SquareImage,
 } from './MainMenu.Styled'
 import logo from '../../assets/images/logo.png'
+
 import { IconProduct } from '../../assets/icons/IconProduct'
 import hands from '../../assets/images/hands.png'
+import miniLogo from '../../assets/images/miniLogo.png'
 import { Buttons } from '../buttons/Buttons'
 
 const menuMain = [
@@ -38,38 +41,82 @@ const menuMain = [
     url: '/produto',
   },
 ]
+const IconMain = [
+  {
+    icone: <Chart />,
+    url: '/dashboard',
+  },
+  {
+    icone: <IconChartLine />,
+    url: '/predicao',
+  },
+  {
+    icone: <IconProduct />,
+    url: '/produto',
+  },
+]
+type MainMenuProps = {
+  isMinimenu: boolean
+}
 
-export function MainMenu() {
+export function MainMenu({ isMinimenu }: MainMenuProps) {
+  console.log(`Aquie e isMenu do Menu latera${isMinimenu}`)
+
   return (
-    <MenuPrincipal>
+    <MenuPrincipal isMinimenu={isMinimenu}>
       <ContainerList>
-        <DivImage>
-          <ImagemLogo src={logo} />
-        </DivImage>
-        <DivList>
-          <ul>
-            {menuMain.map((newMenu, index) => (
-              <li key={index}>
-                <LinkDirection to={newMenu.url}>
-                  {newMenu.icone}
-                  {newMenu.text}
-                </LinkDirection>
-              </li>
-            ))}
-          </ul>
-        </DivList>
+        {!isMinimenu && (
+          <DivImage>
+            <ImagemLogo src={logo} />
+          </DivImage>
+        )}
+        {isMinimenu && (
+          <DivImage>
+            <ImagemMiniLogo src={miniLogo} />
+          </DivImage>
+        )}
+
+        {!isMinimenu && (
+          <DivList>
+            <ul>
+              {menuMain.map(newMenu => (
+                <li>
+                  <LinkDirection to={newMenu.url}>
+                    {newMenu.icone}
+                    {newMenu.text}
+                  </LinkDirection>
+                </li>
+              ))}
+            </ul>
+          </DivList>
+        )}
+        {isMinimenu && (
+          <DivList>
+            <ul>
+              {IconMain.map(newMenu => (
+                <li>
+                  <LinkDirection to={newMenu.url}>
+                    {newMenu.icone}
+                  </LinkDirection>
+                </li>
+              ))}
+            </ul>
+          </DivList>
+        )}
       </ContainerList>
-      <DivContainerImage>
-        <SquareImage>
-          <ImagemHands src={hands} />
-          <DivText>
-            <span>
-              Precisando de <strong> ajudau suporte </strong> o em algo?
-            </span>
-          </DivText>
-          <Buttons name="Fale Conosco" theme="faleConosco" />
-        </SquareImage>
-      </DivContainerImage>
+      {!isMinimenu && (
+        <DivContainerImage>
+          <SquareImage>
+            <ImagemHands src={hands} />
+            <DivText>
+              <span>
+                Precisando de <strong> ajudau suporte </strong> o em algo?
+              </span>
+            </DivText>
+            <Buttons name="Fale Conosco" theme="faleConosco" />
+          </SquareImage>
+        </DivContainerImage>
+      )}
     </MenuPrincipal>
   )
 }

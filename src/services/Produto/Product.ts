@@ -11,7 +11,7 @@ export const GetDataProduct = async (
       params: {
         classificacao,
         query,
-        page,
+        page: page - 1,
         size: 7,
       },
     })
@@ -19,7 +19,6 @@ export const GetDataProduct = async (
     return {
       data: result.data.content,
       totalItens: result.data.totalElements,
-      // dataSearch: result.data.content,
     }
   } catch (error) {
     console.log(error, 'Erro da Api')

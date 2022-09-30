@@ -9,11 +9,11 @@ export const Warpper = styled.div`
 export const ContainerList = styled.div`
   margin-bottom: 30px;
 `
-export const MenuPrincipal = styled.div`
+export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 271px;
+  width: ${({ isMinimenu }) => (isMinimenu ? `100px` : `271px`)};
   background-color: #001c98;
   padding: 20px;
   color: #ffff;
@@ -22,10 +22,18 @@ export const MenuPrincipal = styled.div`
     li {
       list-style: none;
       padding: 20px;
+      cursor: pointer;
+      margin-bottom: 5px;
       svg {
         margin-right: 20px;
         width: 20px;
         height: 20px;
+      }
+      &:hover {
+        width: 200px;
+        height: 56px;
+        background: #7682c1;
+        border-radius: 8px;
       }
     }
   }
@@ -35,6 +43,9 @@ export const DivImage = styled.div`
   justify-content: center;
 `
 export const ImagemLogo = styled.img`
+  margin: 30px 0;
+`
+export const ImagemMiniLogo = styled.img`
   margin: 30px 0;
 `
 export const DivList = styled.div`

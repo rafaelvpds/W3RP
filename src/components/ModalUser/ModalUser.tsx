@@ -16,12 +16,14 @@ type Props = {
   textLogOut: string
   iconConfig: ReactNode
   iconLogOut: ReactNode
+  logout: () => void
 }
 export function ModalUser({
   textConfig,
   textLogOut,
   iconConfig,
   iconLogOut,
+  logout,
 }: Props) {
   return (
     <WarperModalUser>
@@ -35,7 +37,7 @@ export function ModalUser({
         <ContainerLogout>
           <LinkLogOut to="/">
             <span>{iconLogOut}</span>
-            <SpanTextConfig> {textLogOut}</SpanTextConfig>
+            <SpanTextConfig onClick={logout}> {textLogOut}</SpanTextConfig>
           </LinkLogOut>
         </ContainerLogout>
       </ContentModalUser>

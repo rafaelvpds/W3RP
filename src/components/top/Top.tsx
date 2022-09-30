@@ -2,6 +2,7 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 
+import { useNavigate } from 'react-router-dom'
 import { IconChevronDown } from '../../assets/icons/IconChevronDown'
 import { IconLogout } from '../../assets/icons/IconLogout'
 
@@ -23,15 +24,16 @@ import {
   TopUser,
 } from './Top.Styled'
 import { User } from '../user/User'
+import { apiService } from '../../services/config/apiService'
 
-// type TopProps = {
-//   isMenu: boolean
-//   isMiniMenu: () => void
-// }
+type TopProps = {
+  MiniMenu: () => void
+}
 
-export function Top() {
+export function Top({ MiniMenu }: TopProps) {
   const [isShowModal, setIsShowModal] = useState(false)
   const [user, setUser] = useState<UserType>()
+  const navigate = useNavigate()
 
   const getDataUser = async () => {
     const data = await getCurrentUser()
@@ -40,11 +42,15 @@ export function Top() {
   useEffect(() => {
     getDataUser()
   }, [])
-
+  const sairLogOut = () => {
+    localStorage.clear()
+    apiService.defaults.headers.common.Authorization = ''
+    navigate('/', { replace: true })
+  }
   return (
     <TopUser>
       <DivMenu>
-        <ButtonIconMenu>
+        <ButtonIconMenu onClick={MiniMenu}>
           <IconMenu />
         </ButtonIconMenu>
       </DivMenu>
@@ -66,6 +72,7 @@ export function Top() {
               textConfig="Configurações"
               iconLogOut={<IconLogout />}
               textLogOut="Sair"
+              logout={sairLogOut}
             />
           </ContainerModalUser>
         )}
