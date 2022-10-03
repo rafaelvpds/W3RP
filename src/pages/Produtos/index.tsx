@@ -8,7 +8,10 @@ import { ModalFilter } from '../../components/ModalFilter'
 import { DivButtonModalFilter } from '../../components/ModalFilter/ModalFilter.Styled'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { TableProduct } from '../../components/TableProduto/TableProduct'
-import { StatusProduct } from '../../components/TableProduto/TableProduct.Styled'
+import {
+  StatusProduct,
+  STDProduct,
+} from '../../components/TableProduto/TableProduct.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetDataProduct } from '../../services/Produto/Product'
 import { Product } from '../../types'
@@ -128,9 +131,9 @@ export function Produto() {
         <TableProduct headers={['ID', 'Produto', 'Status', 'Percentual']}>
           {product.map(item => (
             <tr key={item.id} onClick={() => pageDetalharProduct(item.id)}>
-              <td>{item.id}</td>
-              <td>{item.nome}</td>
-              <td>
+              <STDProduct center>{item.id}</STDProduct>
+              <STDProduct>{item.nome}</STDProduct>
+              <STDProduct center>
                 {item.classificacao === 'EM_BAIXA' ? (
                   <StatusProduct
                     bacgroundStatus={`${Color.vermelhoClaro}`}
@@ -146,7 +149,7 @@ export function Produto() {
                     Em Alta
                   </StatusProduct>
                 )}
-              </td>
+              </STDProduct>
               <td>
                 {item.percentual > 0 && '+'} {item.percentual}%
               </td>

@@ -8,7 +8,6 @@ export const STableProduct = styled.table`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
-
   tbody > tr:nth-child(even),
   th > th:nth-child(even) {
     background-color: ${Color.cinza100};
@@ -22,6 +21,17 @@ export const STRProduct = styled.tr`
   color: #c5cfff;
   font-size: 16px;
   font-weight: 600;
+`
+export const STHProduct = styled.th`
+  &:nth-child(2) {
+    text-align: left;
+  }
+`
+type STDProdductProps = {
+  center?: boolean
+}
+export const STDProduct = styled.td<STDProdductProps>`
+  text-align: ${({ center }) => (center ? 'center' : 'left')};
 `
 
 export const StatusProduct = styled.div<{

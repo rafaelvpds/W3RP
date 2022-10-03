@@ -1,4 +1,3 @@
-/* eslint-disable react/no-array-index-key */
 import { ReactNode } from 'react'
 
 import {
@@ -49,8 +48,8 @@ export function ViewDataTable({
       <STable>
         <STHead>
           <STHeadTR>
-            {headers.map((newHeader, index) => (
-              <STH key={index}>{newHeader}</STH>
+            {headers.map(newHeader => (
+              <STH>{newHeader}</STH>
             ))}
           </STHeadTR>
         </STHead>

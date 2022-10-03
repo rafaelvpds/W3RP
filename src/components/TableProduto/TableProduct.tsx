@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { STableProduct, STRProduct } from './TableProduct.Styled'
+import { STableProduct, STHProduct, STRProduct } from './TableProduct.Styled'
 
 type Props = {
   children: React.ReactNode
@@ -11,7 +11,7 @@ export function TableProduct({ children, headers }: Props) {
       <thead>
         <STRProduct>
           {headers.map(item => (
-            <th>{item}</th>
+            <STHProduct>{item}</STHProduct>
           ))}
         </STRProduct>
       </thead>
