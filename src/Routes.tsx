@@ -11,11 +11,12 @@ import { Detalhamento } from './pages/Detalhamento/Detalhamento'
 import { DetalhamentoClients } from './pages/Detalhamento/DetalhamentoClients'
 import { AuthContext, AuthProvaider } from './context/AuthContext/AuthContext'
 import 'react-toastify/dist/ReactToastify.css'
+import { Spiner } from './components/loading/Spiner'
 
 function Private({ children }: { children: React.ReactNode }) {
   const { authentified, loading } = useContext(AuthContext)
   if (loading) {
-    return <h1> Carregando...</h1>
+    return <Spiner />
   }
   if (!authentified) {
     return <Navigate to="/" />

@@ -17,7 +17,8 @@ export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
   width: ${({ isMinimenu }) => (isMinimenu ? `100px` : `271px`)};
   background-color: ${Color.primary};
   padding: 20px;
-  color: #ffff;
+  color: ${Color.branco};
+  transition: all 0.3s;
 `
 export const DivImage = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const ImagemMiniLogo = styled.img`
   margin: 30px 0;
 `
 export const UlStyled = styled.ul<{ isMinimenu: boolean }>`
-  margin: ${({ isMinimenu }) => (isMinimenu ? `10px` : `40px`)};
+  margin: ${({ isMinimenu }) => (isMinimenu ? `10px` : `10px`)};
   list-style-type: none;
 `
 export const LiStyled = styled.li`

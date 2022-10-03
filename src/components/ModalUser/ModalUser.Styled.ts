@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Color } from '../../types/colors'
+
+const transitionModal = keyframes`
+from {
+  opacity: 0
+}
+to{
+  opacity: 1;
+}
+`
 
 export const WarperModalUser = styled.div`
   width: 200px;
@@ -9,6 +18,7 @@ export const WarperModalUser = styled.div`
   background: ${Color.branco};
   box-shadow: 0px 7px 20px rgba(187, 192, 205, 0.4);
   border-radius: 24px;
+  animation: ${transitionModal} 300ms linear 1;
 `
 export const ContentModalUser = styled.div`
   display: flex;
@@ -36,4 +46,3 @@ export const LineModalUser = styled.hr`
 export const SpanTextConfig = styled.span`
   margin: 0px 20px 0px 10px;
 `
-// 0px 20px 0px 10px
