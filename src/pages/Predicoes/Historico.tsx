@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 import { IconCheckOne } from '../../assets/icons/IconCheckOne'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconHistory } from '../../assets/icons/IconHistory'
@@ -26,6 +27,7 @@ import { GetDataClients } from '../../services/ClientesHistoricos'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { PostProduct } from '../../services/BaixaProduct'
 import { dateToBr } from '../../util/ModifyDate'
+import { Color } from '../../types/colors'
 
 export function Historico() {
   const { id } = useParams()
@@ -60,8 +62,13 @@ export function Historico() {
   }, [])
 
   const darBaixaHistorico = async (produtoId: number) => {
-    await PostProduct(id!, produtoId)
-    getHistoric()
+    const data = await PostProduct(id!, produtoId)
+    if (data.logged) {
+      getHistoric()
+      toast.success('Baixa realizada com Sucesso')
+      return
+    }
+    toast.error(data.message)
   }
   const darBaixaProdutoEsgotados = async (produtoId: number) => {
     await PostProduct(id!, produtoId)
@@ -93,13 +100,13 @@ export function Historico() {
 
       <ContainerInfoHist>
         <ViewDataTable
-          colorText="#212121"
+          colorText={`${Color.cinza900}`}
           widht="800px"
           hasButton={false}
           headers={['ID', 'Produto', 'Última compra', 'Qtd.', 'Dar baixa']}
           icon={<IconHistory />}
           text="Histórico"
-          color="#EEEEEE"
+          color={`${Color.cinza200}`}
         >
           {historic.map(item => (
             <tr key={item.id}>
@@ -119,7 +126,7 @@ export function Historico() {
           ))}
         </ViewDataTable>
         <ViewDataTable
-          colorText="#FF3333"
+          colorText={`${Color.erro}`}
           widht="100%"
           hasButton={false}
           headers={[
@@ -130,9 +137,9 @@ export function Historico() {
             'Qtd.',
             'Dar baixa',
           ]}
-          icon={<IconProduct color="#FF3333" />}
+          icon={<IconProduct color={`${Color.erro}`} />}
           text="Produtos esgotando"
-          color="#FFE1E1"
+          color={`${Color.vermelhoClaro}`}
         >
           {soldOffProduct.map(item => (
             <tr key={item.id}>

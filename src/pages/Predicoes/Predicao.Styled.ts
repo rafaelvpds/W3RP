@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ContainerTopPred = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const ContainerTopPred = styled.div`
   padding: 20px 0px 20px 16px;
   width: 100%;
   height: 100px;
-  background: #ffffff;
+  background: ${Color.branco};
 `
 
 export const DivContentTablePred = styled.div`
@@ -15,9 +16,10 @@ export const DivContentTablePred = styled.div`
   flex-wrap: wrap;
   gap: 20px;
   overflow-y: scroll;
+  height: 284px;
 `
 export const ContainerTablePred = styled.div`
-  background: #ffffff;
+  background: ${Color.branco};
   box-shadow: 0px 0px 25px rgba(163, 163, 163, 0.2);
   border-radius: 24px;
   margin-top: 32px;
@@ -56,10 +58,10 @@ export const SpanIconTablePred = styled.span`
 `
 export const TiteDataPred = styled.h1`
   font-size: 16px;
-  color: #212121;
+  color: ${Color.cinza900};
 `
 export const ContainerDataPred = styled.div`
-  background: #eeeeee;
+  background: ${Color.cinza200};
   border-radius: 16px;
   opacity: 50%;
   display: flex;

@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import { ReactNode, useState } from 'react'
 import { Container } from '../App.Styled'
@@ -13,7 +12,7 @@ type LayoutBaseProps = {
 export function LayoutBase({ children }: LayoutBaseProps) {
   const [isMiniMenuController, setIsiMenuController] = useState(false)
   const miniMenuFunction = () => setIsiMenuController(!isMiniMenuController)
-  console.log(isMiniMenuController)
+
   return (
     <Warpper>
       <MainMenu isMinimenu={isMiniMenuController} />

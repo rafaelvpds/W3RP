@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const WarperCard = styled.div`
   display: flex;
@@ -35,7 +36,8 @@ export const ContainerInfoCard = styled.div`
 export const TagStyle = styled.div<{ value: number; colorTag: string }>`
   width: 60px;
   height: 24px;
-  background: ${({ value }) => (value < 0 ? '#FF3333' : '#00C247')};
+  background: ${({ value }) =>
+    value < 0 ? `${Color.erro}` : `${Color.sucesso}`};
   border-radius: 100px;
   color: ${({ colorTag }) => `${colorTag}`};
   text-align: center;

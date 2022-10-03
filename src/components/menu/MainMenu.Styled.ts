@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const Warpper = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
   flex-direction: column;
   justify-content: space-between;
   width: ${({ isMinimenu }) => (isMinimenu ? `100px` : `271px`)};
-  background-color: #001c98;
+  background-color: ${Color.primary};
   padding: 20px;
   color: #ffff;
 `
@@ -28,8 +29,8 @@ export const ImagemLogo = styled.img`
 export const ImagemMiniLogo = styled.img`
   margin: 30px 0;
 `
-export const UlStyled = styled.ul`
-  margin: 40px;
+export const UlStyled = styled.ul<{ isMinimenu: boolean }>`
+  margin: ${({ isMinimenu }) => (isMinimenu ? `10px` : `40px`)};
   list-style-type: none;
 `
 export const LiStyled = styled.li`
@@ -78,5 +79,5 @@ export const ImagemHands = styled.img`
 `
 export const LinkDirection = styled(Link)`
   text-decoration: none;
-  color: #ffffff;
+  color: ${Color.branco};
 `

@@ -1,5 +1,6 @@
 // @flow
 import * as React from 'react'
+import { Color } from '../../types/colors'
 
 import {
   ButtonAlta,
@@ -40,7 +41,9 @@ export function TitleTable({
         <WarperButton>
           <ButtonAlta
             type="button"
-            style={{ background: inAlta ? '#00c247' : '#E0E0E0' }}
+            style={{
+              background: inAlta ? `${Color.sucesso}` : `${Color.cinza300}`,
+            }}
             onClick={() => {
               if (!inAlta) {
                 setInAlta()
@@ -52,7 +55,9 @@ export function TitleTable({
 
           <ButtonBaixa
             type="button"
-            style={{ background: !inAlta ? '#ff3333' : '#E0E0E0' }}
+            style={{
+              background: !inAlta ? `${Color.erro}` : `${Color.cinza300}`,
+            }}
             onClick={() => {
               if (inAlta) {
                 setInAlta()

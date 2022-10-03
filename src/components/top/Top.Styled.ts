@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const TopUser = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 130px;
-  background-color: #ffffff;
+  background-color: ${Color.branco};
 `
 export const DivMenu = styled.div`
   display: flex;
@@ -32,7 +33,7 @@ export const DivIcon = styled.div`
   display: flex;
   width: 56px;
   height: 56px;
-  background: #001c98;
+  background: ${Color.primary};
   border-radius: 50%;
   justify-content: center;
   align-items: center;

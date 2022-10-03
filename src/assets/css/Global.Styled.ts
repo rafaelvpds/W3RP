@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -16,6 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
   body{
-    background-color:  #F5F5F5;
+    background-color:  ${Color.cinza100};
   }
 `

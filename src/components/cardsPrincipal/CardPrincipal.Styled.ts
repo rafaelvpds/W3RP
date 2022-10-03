@@ -1,17 +1,28 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const DivTitleDashboard = styled.div`
   display: flex;
   justify-content: space-between;
 `
 export const SelectData = styled.select`
-  width: 200px;
   height: 40px;
   border-radius: 8px;
-  color: #001c98;
+  color: ${Color.primary};
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+  border: none;
+`
+export const DivSelect = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background: ${Color.branco};
+  padding-left: 20px;
+  height: 40px;
+  border-radius: 8px;
+  gap: 8px;
 `
 
 export const ContainerCardPrincipal = styled.div<{

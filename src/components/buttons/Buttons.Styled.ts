@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ActionsButtons = styled.button`
   &.faleConosco {
@@ -7,17 +8,17 @@ export const ActionsButtons = styled.button`
     position: absolute;
     top: 140px;
     border: none;
-    background: #001c98;
-    color: #ffffff;
+    background: ${Color.primary};
+    color: ${Color.branco};
     padding: 12px 50px;
     border-radius: 100px;
     font-weight: 600;
     cursor: pointer;
   }
   &.login {
-    background: #001c98;
+    background: ${Color.primary};
     padding: 12px 64px;
-    color: #ffffff;
+    color: ${Color.branco};
     border: none;
     border-radius: 16px;
     font-weight: 600;
@@ -26,8 +27,8 @@ export const ActionsButtons = styled.button`
     cursor: pointer;
   }
   &.modalFilter {
-    background: #001c98;
-    color: #ffffff;
+    background: ${Color.primary};
+    color: ${Color.branco};
     border: none;
     border-radius: 16px;
     font-weight: 600;

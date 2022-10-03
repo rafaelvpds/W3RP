@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const STablePred = styled.table`
   width: 100%;
@@ -25,7 +26,7 @@ export const STDPred = styled.td`
     line-height: 19.6px;
   }
   &:nth-child(2) {
-    color: #424242;
+    color: ${Color.cinza800};
     font-weight: 600;
     line-height: 19.6px;
   }

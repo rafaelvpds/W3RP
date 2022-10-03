@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ContainerProduct = styled.div`
-  background: #ffffff;
+  background: ${Color.branco};
   border-radius: 24px;
   padding: 20px;
 `
@@ -21,8 +22,8 @@ export const WarperModalFilter = styled.div`
 `
 
 export const ButtonDropFilter = styled.button`
-  background: #f5f5f5;
-  border: 1px solid #f5f5f5;
+  background: ${Color.cinza100};
+  border: 1px solid ${Color.cinza100};
   padding: 5px;
   border-radius: 10px;
   text-align: center;
@@ -34,13 +35,13 @@ export const ModalFilterProduct = styled.div`
   top: 30px;
   right: 0;
   width: 220px;
-  background: #ffffff;
+  background: ${Color.branco};
   box-shadow: 0px 7px 30px rgba(187, 192, 205, 0.4);
   border-radius: 16px;
   padding: 10px 0px 10px 10px;
 `
 export const SpanTitleFilter = styled.span`
-  color: #212121;
+  color: ${Color.cinza900};
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
@@ -50,7 +51,7 @@ export const LineModal = styled.hr`
   margin-top: 5px;
 `
 export const SpanSubtitleFilter = styled.span`
-  color: #212121;
+  color: ${Color.cinza900};
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;

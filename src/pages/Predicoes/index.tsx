@@ -22,6 +22,7 @@ import { IconUser } from '../../assets/icons/IconUser'
 import { PredictionPage } from '../../types'
 import { GetPrediction } from '../../services/Predicao'
 import { dateToBr } from '../../util/ModifyDate'
+import { Color } from '../../types/colors'
 
 export function Predicao() {
   const navigator = useNavigate()
@@ -59,7 +60,7 @@ export function Predicao() {
           <ContainerTablePred>
             <ContainerTitleCardPred>
               <TitleCardPred
-                icon={<IconUser color="#001C98" />}
+                icon={<IconUser color={`${Color.primary}`} />}
                 text={item.nome}
               />
               <DivButtonPred>

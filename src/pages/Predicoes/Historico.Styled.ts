@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ButtonChevron = styled.button`
   border: none;
@@ -6,7 +7,7 @@ export const ButtonChevron = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 100%;
-  background: #eeeeee;
+  background: ${Color.cinza200};
 `
 
 export const DivTopHistorico = styled.div`
@@ -18,7 +19,7 @@ export const DivTopHistorico = styled.div`
 export const ContainerInfoClient = styled.div`
   position: relative;
 
-  background-color: #001c98;
+  background-color: ${Color.primary};
 
   border-radius: 24px;
   margin-bottom: 32px;
@@ -30,9 +31,9 @@ export const ContainerInfoHist = styled.div`
 export const ButtonDetalhesCheck = styled.button`
   width: 40px;
   height: 40px;
-  background: #ffffff;
+  background: ${Color.branco};
   padding: 7px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${Color.cinza300};
   border-radius: 100%;
 `
 export const FundoImage = styled.img`

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ConteinerModalFilter = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const DivTypeFilter = styled.div`
 `
 export const SpanTypeFilter = styled.span`
   margin-left: 10px;
-  color: #212121;
+  color: ${Color.cinza900};
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
@@ -25,7 +26,7 @@ export const SpanTypeFilter = styled.span`
 export const SpanTotalFilter = styled.span`
   font-weight: 400;
   font-size: 16px;
-  color: #757575;
+  color: ${Color.cinza600};
 `
 export const DivButtonModalFilter = styled.div`
   display: flex;

@@ -14,6 +14,7 @@ import { GetListClient } from '../../services/ClientsDashboard'
 import { getProductApi } from '../../services/ProductDashboard'
 import { GetResumeDashboard } from '../../services/ResumeDashboard'
 import { ResumeDashboard, DataDashboard } from '../../types'
+import { Color } from '../../types/colors'
 
 import { dateHelper } from '../../util'
 import { ContainerTable } from './Dashboard.Styled'
@@ -71,58 +72,58 @@ export function Dashboard() {
     <>
       <CardPrincipal
         setDate={setDate}
-        backgroundCard="#001C98"
+        backgroundCard={`${Color.primary}`}
         text=" Dashboard"
-        color="#ffffff"
+        color={`${Color.branco}`}
         isFilterData
       >
         <CardItem
           backgroundCardItem="#02156a"
-          colorCardItem="#FFFFFF"
+          colorCardItem={`${Color.branco}`}
           colorTextCard="#C5CFFF"
           text="Total produtos em alta "
           tag={resume?.percentualVariacaoProdutosAlta}
           value={resume?.quantidadeProdutosAlta}
           valueSerie={resume?.percentualTotalProdutosAlta}
-          colorTag="#FFFFFF"
+          colorTag={`${Color.branco}`}
         />
         <CardItem
           backgroundCardItem="#02156a"
-          colorCardItem="#FFFFFF"
+          colorCardItem={`${Color.branco}`}
           colorTextCard="#C5CFFF"
           text="Total produtos em baixa"
           tag={resume?.percentualVariacaoProdutosBaixa}
           value={resume?.quantidadeProdutosBaixa}
           valueSerie={resume?.percentualTotalProdutosBaixa}
-          colorTag="#FFFFFF"
+          colorTag={`${Color.branco}`}
         />
         <CardItem
           backgroundCardItem="#02156a"
-          colorCardItem="#FFFFFF"
+          colorCardItem={`${Color.branco}`}
           colorTextCard="#C5CFFF"
           text="Total clientes em alta "
           tag={resume?.percentualVariacaoClientesAlta}
           value={resume?.quantidadeClientesAlta}
           valueSerie={resume?.percentualTotalClientesAlta}
-          colorTag="#FFFFFF"
+          colorTag={`${Color.branco}`}
         />
         <CardItem
           backgroundCardItem="#02156a"
-          colorCardItem="#FFFFFF"
+          colorCardItem={`${Color.branco}`}
           colorTextCard="#C5CFFF"
           text="Total clientes em baixa"
           tag={resume?.percentualVariacaoClientesBaixa}
           value={resume?.quantidadeClientesBaixa}
           valueSerie={resume?.percentualTotalClientesBaixa}
-          colorTag="#FFFFFF"
+          colorTag={`${Color.branco}`}
         />
       </CardPrincipal>
       <ContainerTable>
         <ViewDataTable
-          colorText="#212121"
+          colorText={`${Color.cinza900}`}
           widht="50%"
           color="#C5CFFF"
-          icon={<IconProduct color="#001C98" />}
+          icon={<IconProduct color={`${Color.primary}`} />}
           text="Produto"
           headers={['id', 'Produto', 'Percentual', '']}
           hasButton
@@ -148,9 +149,9 @@ export function Dashboard() {
           ))}
         </ViewDataTable>
         <ViewDataTable
-          colorText="#212121"
+          colorText={`${Color.cinza900}`}
           widht="50%"
-          color="#001C98"
+          color={`${Color.primary}`}
           icon={<IconEveryUser />}
           text="Cliente"
           headers={['id', 'Cliente', 'Percentual', '']}

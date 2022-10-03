@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const WarperModalUser = styled.div`
   width: 200px;
   height: 100px;
   padding: 14px 10px 0px 10px;
-  background: #ffffff;
+  background: ${Color.branco};
   box-shadow: 0px 7px 20px rgba(187, 192, 205, 0.4);
   border-radius: 24px;
 `
@@ -24,12 +25,12 @@ export const LinkLogOut = styled(Link)`
   text-decoration: none;
 
   &:active {
-    color: #757575;
+    color: ${Color.cinza600};
   }
 `
 
 export const LineModalUser = styled.hr`
-  background: #eeeeee;
+  background: ${Color.cinza200};
 `
 
 export const SpanTextConfig = styled.span`

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ContenerLogin = styled.div`
   display: flex;
@@ -18,17 +19,17 @@ export const ContainerLabel = styled.div`
   position: absolute;
   top: 2px;
   left: 30px;
-  background: #ffffff;
-  color: #757575;
+  background: ${Color.branco};
+  color: ${Color.cinza600};
 `
 export const ContainerSapan = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10px 0 20px;
-  color: #616161;
+  color: ${Color.cinza700};
 `
 export const SpanPassword = styled.span`
-  color: #212121;
+  color: ${Color.cinza900};
   font-weight: 600;
   display: flex;
   align-items: center;

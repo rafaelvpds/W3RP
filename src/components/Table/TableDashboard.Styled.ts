@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const WarperTitleTable = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ export const WarperButton = styled.div`
   align-items: center;
 
   padding: 10px;
-  background: #f5f5f5;
+  background: ${Color.cinza100};
   border-radius: 15px;
 `
 export const ButtonAlta = styled.button`
@@ -23,8 +24,8 @@ export const ButtonAlta = styled.button`
   height: 30px;
   border: none;
   border-radius: 8px;
-  background: #00c247;
-  color: #ffffff;
+  background: ${Color.sucesso};
+  color: ${Color.branco};
   cursor: pointer;
 `
 export const ButtonBaixa = styled.button`
@@ -32,15 +33,15 @@ export const ButtonBaixa = styled.button`
   height: 30px;
   border: none;
   border-radius: 8px;
-  background: #ff3333;
-  color: #ffffff;
+  background: ${Color.erro};
+  color: ${Color.branco};
   cursor: pointer;
 `
 
 export const BackgroundTable = styled.div<{ widht: string }>`
   width: ${({ widht }) => widht};
   border-radius: 24px;
-  background: #ffffff;
+  background: ${Color.branco};
   box-shadow: 0px 7px 30px rgba(187, 192, 205, 0.4);
   padding: 10px;
 `
@@ -57,7 +58,6 @@ export const TableTitle = styled.span<{ colorText: string }>`
   font-size: 20px;
   line-height: 28px;
   color: ${({ colorText }) => colorText};
-  /* color: #212121; */
 `
 
 export const STable = styled.table`
@@ -70,7 +70,7 @@ export const STable = styled.table`
 
   tbody > tr:nth-child(even),
   th > th:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: ${Color.cinza100};
   }
   tr td {
     padding: 15px 5px;
@@ -78,7 +78,7 @@ export const STable = styled.table`
 `
 export const STHead = styled.thead``
 export const STHeadTR = styled.tr`
-  background: #001c98;
+  background: ${Color.primary};
   color: #c5cfff;
   font-size: 16px;
   font-weight: 600;

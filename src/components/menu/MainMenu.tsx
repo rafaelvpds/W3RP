@@ -78,7 +78,7 @@ export function MainMenu({ isMinimenu }: MainMenuProps) {
 
         {!isMinimenu && (
           <DivList>
-            <UlStyled>
+            <UlStyled isMinimenu={isMinimenu}>
               {menuMain.map(item => (
                 <LinkDirection to={item.url}>
                   <LiStyled>
@@ -92,15 +92,15 @@ export function MainMenu({ isMinimenu }: MainMenuProps) {
         )}
         {isMinimenu && (
           <DivList>
-            <ul>
+            <UlStyled isMinimenu={isMinimenu}>
               {miniMenu.map(newMenu => (
-                <li>
-                  <LinkDirection to={newMenu.url}>
-                    {newMenu.icone}
-                  </LinkDirection>
-                </li>
+                <LinkDirection to={newMenu.url}>
+                  <LiStyled>
+                    <span>{newMenu.icone}</span>
+                  </LiStyled>
+                </LinkDirection>
               ))}
-            </ul>
+            </UlStyled>
           </DivList>
         )}
       </ContainerList>

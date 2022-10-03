@@ -5,11 +5,13 @@ import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react'
 import { TitleDashboard } from '../TitleDashbord/TitleDashboard'
 import {
   ContainerCardPrincipal,
+  DivSelect,
   DivTitleDashboard,
   SelectData,
 } from './CardPrincipal.Styled'
 import { WarperCard } from './CardItem.style'
 import { dateHelper } from '../../util'
+import { IconsCalendar } from '../../assets/icons/IconsCalendar'
 
 type CardPrincipalProps = {
   children: ReactNode
@@ -44,13 +46,19 @@ export function CardPrincipal({
         </TitleDashboard>
 
         {isFilterData && setDate && (
-          <SelectData onChange={changeInterval}>
-            <option value={0}>Este Mês</option>
-            <option value={30}>30 dias</option>
-            <option value={60}>60 dias</option>
-            <option value={90}>90 dias</option>
-            <option value={120}>120 dias</option>
-          </SelectData>
+          <DivSelect>
+            <span>
+              <IconsCalendar />
+            </span>
+            <span> Mostrar:</span>
+            <SelectData onChange={changeInterval}>
+              <option value={0}>Este Mês</option>
+              <option value={30}>30 dias</option>
+              <option value={60}>60 dias</option>
+              <option value={90}>90 dias</option>
+              <option value={120}>120 dias</option>
+            </SelectData>
+          </DivSelect>
         )}
       </DivTitleDashboard>
       <WarperCard>{children}</WarperCard>

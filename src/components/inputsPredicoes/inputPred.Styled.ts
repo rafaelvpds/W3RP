@@ -1,7 +1,8 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ContainerPredicao = styled.div`
-  background: #ffffff;
+  background: ${Color.branco};
 `
 export const ContainerInput = styled.div`
   position: relative;
@@ -18,7 +19,7 @@ export const ButtonIcon = styled.button`
 `
 
 export const InputPred = styled.input`
-  border: 1.5px solid #e0e0e0;
+  border: 1.5px solid ${Color.cinza300};
   border-radius: 16px;
   width: 400px;
   height: 56px;

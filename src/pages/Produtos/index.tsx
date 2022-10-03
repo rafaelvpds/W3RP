@@ -12,6 +12,7 @@ import { StatusProduct } from '../../components/TableProduto/TableProduct.Styled
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetDataProduct } from '../../services/Produto/Product'
 import { Product } from '../../types'
+import { Color } from '../../types/colors'
 import {
   DivContainerInput,
   ButtonDropFilter,
@@ -132,15 +133,15 @@ export function Produto() {
               <td>
                 {item.classificacao === 'EM_BAIXA' ? (
                   <StatusProduct
-                    bacgroundStatus="#FFE1E1"
-                    colorStatus="#FF3333"
+                    bacgroundStatus={`${Color.vermelhoClaro}`}
+                    colorStatus={`${Color.erro}`}
                   >
                     Em Baixa
                   </StatusProduct>
                 ) : (
                   <StatusProduct
-                    bacgroundStatus="#D9FEE6"
-                    colorStatus="#00C247"
+                    bacgroundStatus={`${Color.verdeClaro}`}
+                    colorStatus={`${Color.sucesso}`}
                   >
                     Em Alta
                   </StatusProduct>

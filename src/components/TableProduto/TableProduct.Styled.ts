@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const STableProduct = styled.table`
   width: 100%;
@@ -10,14 +11,14 @@ export const STableProduct = styled.table`
 
   tbody > tr:nth-child(even),
   th > th:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: ${Color.cinza100};
   }
   tr td {
     padding: 15px 5px;
   }
 `
 export const STRProduct = styled.tr`
-  background: #001c98;
+  background: ${Color.primary};
   color: #c5cfff;
   font-size: 16px;
   font-weight: 600;

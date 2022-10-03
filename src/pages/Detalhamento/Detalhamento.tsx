@@ -12,6 +12,7 @@ import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetPrediProduto } from '../../services/ProductPredicao'
 import { GetResumeProduct } from '../../services/ResumeProduct'
 import { Predicao, ResumePredicao } from '../../types'
+import { Color } from '../../types/colors'
 
 import { ButtonChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
@@ -63,56 +64,56 @@ export function Detalhamento() {
       <CardPrincipal
         isFilterData={false}
         text={resumPred?.nome || ''}
-        color="#001C98"
-        backgroundCard="#F5F5F5"
+        color={`${Color.primary}`}
+        backgroundCard={`${Color.cinza100}`}
       >
         <CardItem
           backgroundCardItem="#02156a"
           colorCardItem="#c5cfff"
-          colorTextCard="#FFFFFF"
+          colorTextCard={`${Color.branco}`}
           text="Média 120 dias"
           value={resumPred?.media120Dias}
         />
         <CardItem
-          backgroundCardItem="#FFFFFF"
-          colorCardItem=" #001C98;"
-          colorTextCard="#212121"
+          backgroundCardItem={`${Color.branco}`}
+          colorCardItem={`${Color.primary}`}
+          colorTextCard={`${Color.cinza900}`}
           text="Últimos 30 dias"
           value={resumPred?.ultimos30Dias}
           tag={resumPred?.percentualUltimos30Dias}
-          colorTag="#FFFFFF"
+          colorTag={`${Color.branco}`}
         />
         <CardItem
-          backgroundCardItem="#FFFFFF"
-          colorCardItem=" #001C98;"
-          colorTextCard="#212121"
+          backgroundCardItem={`${Color.branco}`}
+          colorCardItem={`${Color.primary}`}
+          colorTextCard={`${Color.cinza900}`}
           text="Últimos 60 dias"
           value={resumPred?.ultimos60Dias}
         />
         <CardItem
-          backgroundCardItem="#FFFFFF"
-          colorCardItem=" #001C98;"
-          colorTextCard="#212121"
+          backgroundCardItem={`${Color.branco}`}
+          colorCardItem={`${Color.primary}`}
+          colorTextCard={`${Color.cinza900}`}
           text="Últimos 90 dias"
           value={resumPred?.ultimos90Dias}
         />
         <CardItem
-          backgroundCardItem="#FFFFFF"
-          colorCardItem=" #001C98;"
-          colorTextCard="#212121"
+          backgroundCardItem={`${Color.branco}`}
+          colorCardItem={`${Color.primary}`}
+          colorTextCard={`${Color.cinza900}`}
           text="Últimos 120 dias"
           value={resumPred?.ultimos120Dias}
         />
       </CardPrincipal>
       <ContainerTableAround>
         <ViewDataTable
-          colorText="#212121"
+          colorText={`${Color.cinza900}`}
           widht="515px"
           hasButton={false}
           headers={['ID', 'Cliente', 'Percetual', 'Qtd.']}
           icon={<IconTrendingDown />}
           text="Clientes em baixa"
-          color="#FF3333"
+          color={`${Color.erro}`}
         >
           {predicaoBaixa.map(item => (
             <tr key={item.id}>
@@ -126,13 +127,13 @@ export function Detalhamento() {
           ))}
         </ViewDataTable>
         <ViewDataTable
-          colorText="#212121"
+          colorText={`${Color.cinza900}`}
           widht="515px"
           hasButton={false}
           headers={['ID', 'Cliente', 'Percetual', 'Qtd.']}
           icon={<IconTrendingUp />}
           text="Clientes em alta"
-          color="#00C247"
+          color={`${Color.sucesso}`}
         >
           {predicaoAlta.map(item => (
             <tr key={item.id}>

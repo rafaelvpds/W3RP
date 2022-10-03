@@ -1,10 +1,10 @@
-import { PredicaoClient } from '../../types'
+import axios from 'axios'
 import { apiService } from '../config/apiService'
 
 export const GetPredicaoClients = async (
   id: string,
   classificacao: 'EM_ALTA' | 'EM_BAIXA'
-): Promise<PredicaoClient[]> => {
+) => {
   try {
     const result = await apiService.get(`/cliente/${id}/produtos`, {
       params: {
@@ -12,9 +12,31 @@ export const GetPredicaoClients = async (
         classificacao,
       },
     })
-    return result.data
+    if (result.status === 200) {
+      return result.data
+    }
   } catch (error) {
-    console.log(error)
+    if (axios.isAxiosError(error)) {
+      if (error.response?.status === 400) {
+        return {
+          logged: false,
+          message: 'Campos usuário ou senha não preenchido',
+        }
+      }
+      if (error.response?.status === 401) {
+        return { logged: false, message: 'Usuário não autorizado' }
+      }
+      if (error.response?.status === 403) {
+        return { logged: false, message: 'Não possui permissão de acesso' }
+      }
+      if (error.response?.status === 404) {
+        return { logged: false, message: 'Endereço buscado não existe!' }
+      }
+    }
   }
-  return []
+
+  return {
+    logged: false,
+    message: 'error',
+  }
 }

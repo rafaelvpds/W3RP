@@ -1,3 +1,4 @@
+import 'react-toastify/dist/ReactToastify.css'
 import { GlobalStyle } from './assets/css/Global.Styled'
 import { Rotas } from './Routes'
 

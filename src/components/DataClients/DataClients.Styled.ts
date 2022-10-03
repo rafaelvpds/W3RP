@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const CotainerDataClients = styled.div`
   display: flex;
@@ -14,11 +15,11 @@ export const TitleClient = styled.span`
   font-size: 32px;
   line-height: 48px;
   font-weight: 600;
-  color: #ffffff;
+  color: ${Color.branco};
 `
 export const SpanDataClient = styled.span`
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: #ffffff;
+  color: ${Color.branco};
 `

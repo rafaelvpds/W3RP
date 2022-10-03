@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const ContainerData = styled.div`
   display: flex;
@@ -7,9 +8,9 @@ export const ContainerData = styled.div`
 export const ContainerUser = styled.p`
   font-size: 20px;
   font-weight: 600;
-  color: #212121;
+  color: ${Color.cinza900};
 `
 export const ContainerEmail = styled.p`
   font-weight: 400;
-  color: #757575;
+  color: ${Color.cinza600};
 `

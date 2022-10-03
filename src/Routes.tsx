@@ -1,5 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { useContext } from 'react'
+import { ToastContainer } from 'react-toastify'
 import { LayoutBase } from './layout'
 import { Dashboard } from './pages/Dashboard'
 import { Login } from './pages/Login/Login'
@@ -9,6 +10,7 @@ import { Produto } from './pages/Produtos'
 import { Detalhamento } from './pages/Detalhamento/Detalhamento'
 import { DetalhamentoClients } from './pages/Detalhamento/DetalhamentoClients'
 import { AuthContext, AuthProvaider } from './context/AuthContext/AuthContext'
+import 'react-toastify/dist/ReactToastify.css'
 
 function Private({ children }: { children: React.ReactNode }) {
   const { authentified, loading } = useContext(AuthContext)
@@ -77,6 +79,7 @@ export function Rotas() {
           />
         </Routes>
       </AuthProvaider>
+      <ToastContainer />
     </BrowserRouter>
   )
 }

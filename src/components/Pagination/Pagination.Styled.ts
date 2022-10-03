@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const DivPagination = styled.div`
   display: flex;
@@ -7,19 +8,19 @@ export const DivPagination = styled.div`
 `
 export const SpanQtdeLista = styled.span`
   margin-right: 20px;
-  color: #9e9e9e;
+  color: ${Color.cinza500};
 `
 export const DivNextPage = styled.div`
   display: flex;
 `
 export const SpanNumPage = styled.span`
-  color: #9e9e9e;
+  color: ${Color.cinza500};
   width: 24px;
   height: 24px;
   text-align: center;
   cursor: pointer;
   &.active {
-    background: #001c98;
+    background: ${Color.primary};
   }
   border-radius: 4px;
   margin-right: 15px;
