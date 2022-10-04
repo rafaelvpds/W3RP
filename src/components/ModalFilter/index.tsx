@@ -11,7 +11,7 @@ import {
 
 type Props = {
   typeFilter: string
-  totalFilter: number
+  totalFilter?: number
   isCheck: boolean
   setCheck: () => void
 }
@@ -26,7 +26,7 @@ export function ModalFilter({
       <ContendModal>
         <DivTypeFilter>
           <Checkbox checked={isCheck} onChange={setCheck} />
-          <SpanTypeFilter>{typeFilter}</SpanTypeFilter>
+          <SpanTypeFilter checked={isCheck}>{typeFilter}</SpanTypeFilter>
         </DivTypeFilter>
         <SpanTotalFilter>{totalFilter}</SpanTotalFilter>
       </ContendModal>

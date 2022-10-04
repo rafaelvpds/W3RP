@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
+import { Fonts } from '../../types/fonts'
 
 export const ContenerLogin = styled.div`
   display: flex;
@@ -22,6 +23,13 @@ export const ContainerLabel = styled.div`
   background: ${Color.branco};
   color: ${Color.cinza600};
 `
+export const LabelLogin = styled.label`
+  font-family: ${Fonts.primary};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+`
 export const ContainerSapan = styled.div`
   display: flex;
   justify-content: space-between;
@@ -35,6 +43,7 @@ export const SpanPassword = styled.span`
   align-items: center;
   gap: 5px;
 `
+
 export const ImagemLateral = styled.img`
   height: 100vh;
 `

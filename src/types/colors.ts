@@ -22,4 +22,7 @@ export const Color = {
   preto: '#000000',
   laranja: '#FF7C03',
   laranjaClaro: '#FEE0C5',
+  hover: '#7682C1',
+  azul4: '#C5CFFF',
+  azul1: '#02156a',
 }

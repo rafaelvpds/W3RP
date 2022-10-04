@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
+import { Fonts } from '../../types/fonts'
 
 export const STableProduct = styled.table`
   width: 100%;
@@ -18,10 +19,13 @@ export const STableProduct = styled.table`
 `
 export const STRProduct = styled.tr`
   background: ${Color.primary};
-  color: #c5cfff;
+  color: ${Color.azul4};
+  font-family: ${Fonts.primary};
   font-size: 16px;
   font-weight: 600;
+  line-height: 150%;
 `
+
 export const STHProduct = styled.th`
   &:nth-child(2) {
     text-align: left;
@@ -32,6 +36,12 @@ type STDProdductProps = {
 }
 export const STDProduct = styled.td<STDProdductProps>`
   text-align: ${({ center }) => (center ? 'center' : 'left')};
+  font-family: ${Fonts.primary};
+  color: ${Color.cinza900};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
 `
 
 export const StatusProduct = styled.div<{
@@ -41,6 +51,7 @@ export const StatusProduct = styled.div<{
   background: ${({ bacgroundStatus }) => `${bacgroundStatus}`};
   color: ${({ colorStatus }) => `${colorStatus}`};
   text-align: center;
+  font-family: ${Fonts.primary};
   font-size: 16px;
   padding: 5px;
   display: inline-block;

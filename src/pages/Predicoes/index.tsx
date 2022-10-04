@@ -44,7 +44,9 @@ export function Predicao() {
 
   return (
     <>
-      <TitePages size={32}>Predições</TitePages>
+      <TitePages lineHeight="150%" fontWeight={600} size={32}>
+        Predições
+      </TitePages>
       <ContainerTopPred>
         <InputPredicao
           value={search}

@@ -5,6 +5,7 @@ export const ContainerProduct = styled.div`
   background: ${Color.branco};
   border-radius: 24px;
   padding: 20px;
+  margin-top: 32px;
 `
 
 export const DivContainerInput = styled.div`

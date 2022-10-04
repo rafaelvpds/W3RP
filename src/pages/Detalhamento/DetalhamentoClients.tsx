@@ -51,16 +51,20 @@ export function DetalhamentoClients() {
           <IconChevronLeft />
         </ButtonChevron>
 
-        <TitePages size={20}>Detalhamento</TitePages>
+        <TitePages fontWeight={400} lineHeight="140%" size={20}>
+          Detalhamento
+        </TitePages>
       </DivTopHistorico>
       <CardPrincipal
+        fontWeight="700"
+        lineHeight="140%"
         text={resumClient?.nome || ''}
         color={`${Color.primary}`}
         backgroundCard={`${Color.cinza100}`}
       >
         <CardItem
-          backgroundCardItem="#02156a"
-          colorCardItem="#c5cfff"
+          backgroundCardItem={`${Color.azul1}`}
+          colorCardItem={`${Color.azul4}`}
           colorTextCard={`${Color.branco}`}
           text="Média 120 dias"
           value={resumClient?.media120Dias}

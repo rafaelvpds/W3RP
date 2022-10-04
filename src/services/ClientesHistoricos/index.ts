@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { apiService } from '../config/apiService'
 
-export const GetDataClients = async (id: string) => {
+export const getDataClients = async (id: string) => {
   try {
     const result = await apiService.get(`/cliente/${id}`, {
       params: {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { apiService } from '../config/apiService'
 
-export const GetListClient = async (
+export const getListClient = async (
   classificacao: 'EM_ALTA' | 'EM_BAIXA',
   dataFim: string,
   dataInicio: string

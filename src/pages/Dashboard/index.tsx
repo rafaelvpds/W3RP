@@ -10,9 +10,9 @@ import {
   ButtonDetalhes,
   STD,
 } from '../../components/Table/TableDashboard.Styled'
-import { GetListClient } from '../../services/ClientsDashboard'
+import { getListClient } from '../../services/ClientsDashboard'
 import { getProductApi } from '../../services/ProductDashboard'
-import { GetResumeDashboard } from '../../services/ResumeDashboard'
+import { getResumeDashboard } from '../../services/ResumeDashboard'
 import { ResumeDashboard, DataDashboard } from '../../types'
 import { Color } from '../../types/colors'
 
@@ -20,8 +20,8 @@ import { dateHelper } from '../../util'
 import { ContainerTable } from './Dashboard.Styled'
 
 export function Dashboard() {
-  const [inAltaProduto, setInAltaProduto] = useState(true)
-  const [inAltaCliente, setInAltaCliente] = useState(true)
+  const [inHighProduct, setInHighProduct] = useState(true)
+  const [inHighClient, setInHighClient] = useState(true)
   const [clients, setClients] = useState<DataDashboard[]>([])
   const [product, setProduct] = useState<DataDashboard[]>([])
   const [resume, setResume] = useState<ResumeDashboard>()
@@ -29,8 +29,8 @@ export function Dashboard() {
   const navigator = useNavigate()
 
   const getClients = async () => {
-    const data = await GetListClient(
-      inAltaCliente ? 'EM_ALTA' : 'EM_BAIXA',
+    const data = await getListClient(
+      inHighClient ? 'EM_ALTA' : 'EM_BAIXA',
       date.end,
       date.start
     )
@@ -39,11 +39,11 @@ export function Dashboard() {
 
   useEffect(() => {
     getClients()
-  }, [inAltaCliente, date])
+  }, [inHighClient, date])
 
   const getProduct = async () => {
     const data = await getProductApi(
-      inAltaProduto ? 'EM_ALTA' : 'EM_BAIXA',
+      inHighProduct ? 'EM_ALTA' : 'EM_BAIXA',
       date.end,
       date.start
     )
@@ -51,10 +51,10 @@ export function Dashboard() {
   }
   useEffect(() => {
     getProduct()
-  }, [inAltaProduto, date])
+  }, [inHighProduct, date])
 
   const getResumo = async () => {
-    const data = await GetResumeDashboard(date.end, date.start)
+    const data = await getResumeDashboard(date.end, date.start)
     setResume(data)
   }
 
@@ -71,6 +71,8 @@ export function Dashboard() {
   return (
     <>
       <CardPrincipal
+        fontWeight="600"
+        lineHeight="150%"
         setDate={setDate}
         backgroundCard={`${Color.primary}`}
         text=" Dashboard"
@@ -78,9 +80,9 @@ export function Dashboard() {
         isFilterData
       >
         <CardItem
-          backgroundCardItem="#02156a"
+          backgroundCardItem={`${Color.azul1}`}
           colorCardItem={`${Color.branco}`}
-          colorTextCard="#C5CFFF"
+          colorTextCard={`${Color.azul4}`}
           text="Total produtos em alta "
           tag={resume?.percentualVariacaoProdutosAlta}
           value={resume?.quantidadeProdutosAlta}
@@ -88,9 +90,9 @@ export function Dashboard() {
           colorTag={`${Color.branco}`}
         />
         <CardItem
-          backgroundCardItem="#02156a"
+          backgroundCardItem={`${Color.azul1}`}
           colorCardItem={`${Color.branco}`}
-          colorTextCard="#C5CFFF"
+          colorTextCard={`${Color.azul4}`}
           text="Total produtos em baixa"
           tag={resume?.percentualVariacaoProdutosBaixa}
           value={resume?.quantidadeProdutosBaixa}
@@ -98,9 +100,9 @@ export function Dashboard() {
           colorTag={`${Color.branco}`}
         />
         <CardItem
-          backgroundCardItem="#02156a"
+          backgroundCardItem={`${Color.azul1}`}
           colorCardItem={`${Color.branco}`}
-          colorTextCard="#C5CFFF"
+          colorTextCard={`${Color.azul4}`}
           text="Total clientes em alta "
           tag={resume?.percentualVariacaoClientesAlta}
           value={resume?.quantidadeClientesAlta}
@@ -108,9 +110,9 @@ export function Dashboard() {
           colorTag={`${Color.branco}`}
         />
         <CardItem
-          backgroundCardItem="#02156a"
+          backgroundCardItem={`${Color.azul1}`}
           colorCardItem={`${Color.branco}`}
-          colorTextCard="#C5CFFF"
+          colorTextCard={`${Color.azul4}`}
           text="Total clientes em baixa"
           tag={resume?.percentualVariacaoClientesBaixa}
           value={resume?.quantidadeClientesBaixa}
@@ -122,17 +124,17 @@ export function Dashboard() {
         <ViewDataTable
           colorText={`${Color.cinza900}`}
           widht="50%"
-          color="#C5CFFF"
+          color={`${Color.azul4}`}
           icon={<IconProduct color={`${Color.primary}`} />}
           text="Produto"
           headers={['id', 'Produto', 'Percentual', '']}
           hasButton
-          inAlta={inAltaProduto}
-          setInAlta={() => setInAltaProduto(!inAltaProduto)}
+          onHigh={inHighProduct}
+          setOnHigh={() => setInHighProduct(!inHighProduct)}
         >
           {product.map(item => (
             <tr onClick={() => pageDetalharProduct(item.id)} key={item.id}>
-              <STD>{item.id}</STD>
+              <STD center>{item.id}</STD>
               <STD>{item.nome}</STD>
               <STD center>
                 {item.percentual > 0 && '+'} {item.percentual}%
@@ -156,12 +158,12 @@ export function Dashboard() {
           text="Cliente"
           headers={['id', 'Cliente', 'Percentual', '']}
           hasButton
-          inAlta={inAltaCliente}
-          setInAlta={() => setInAltaCliente(!inAltaCliente)}
+          onHigh={inHighClient}
+          setOnHigh={() => setInHighClient(!inHighClient)}
         >
           {clients.map(item => (
             <tr key={item.id}>
-              <STD>{item.id}</STD>
+              <STD center>{item.id}</STD>
               <STD>{item.nome}</STD>
               <STD center>
                 {item.percentual > 0 && '+'} {item.percentual}%

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 import { apiService } from '../config/apiService'
 
-export const GetSoldOffProduct = async (id: string) => {
+export const getSoldOffProduct = async (id: string) => {
   try {
     const result = await apiService.get(`predicao/${id}/esgotando`, {
       params: {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { apiService } from '../config/apiService'
 
-export const GetResumeDashboard = async (
+export const getResumeDashboard = async (
   dataFim: string,
   dataInicio: string
 ) => {

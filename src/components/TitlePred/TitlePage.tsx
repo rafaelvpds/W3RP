@@ -5,7 +5,13 @@ import { TitePages } from './TitlePredicoes.Styled'
 type Props = {
   textTitle: string
   size: number
+  lineHeight: string
+  fontWeight: number
 }
-export function TitlePage({ textTitle, size }: Props) {
-  return <TitePages size={size}>{textTitle}</TitePages>
+export function TitlePage({ fontWeight, lineHeight, textTitle, size }: Props) {
+  return (
+    <TitePages lineHeight={lineHeight} fontWeight={fontWeight} size={size}>
+      {textTitle}
+    </TitePages>
+  )
 }

@@ -24,4 +24,12 @@ export const InputPred = styled.input`
   width: 400px;
   height: 56px;
   padding-left: 10px;
+  &::placeholder {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: ${Color.cinza600};
+  }
 `

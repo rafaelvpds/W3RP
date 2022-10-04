@@ -10,13 +10,18 @@ import {
   ContainerSapan,
   ContenerLogin,
   ImagemLateral,
+  LabelLogin,
   SpanPassword,
   Wrapper,
 } from './Login.Styled'
 import Imagem from '../../assets/images/BannerLatral.jpg'
-import { Label } from '../../components/label/Label'
+
 import { Checkbox } from '../../components/Checkbox/Checkbox'
 import { AuthLogin } from '../../services/Auth/Auth'
+import {
+  LabelCheck,
+  SpanForgotPass,
+} from '../../components/inputsLogins/Login.Styled'
 
 export function Login() {
   const [check, setCheck] = useState(false)
@@ -45,7 +50,7 @@ export function Login() {
             onChange={event => setEmail(event.target.value)}
           />
           <ContainerLabel>
-            <Label htmlFor="email">E-mail</Label>
+            <LabelLogin htmlFor="email">E-mail</LabelLogin>
           </ContainerLabel>
         </ContainerInput>
         <ContainerInput>
@@ -55,15 +60,15 @@ export function Login() {
             onChange={event => setSenha(event.target.value)}
           />
           <ContainerLabel>
-            <Label htmlFor="senha">Senha</Label>
+            <LabelLogin htmlFor="senha">Senha</LabelLogin>
           </ContainerLabel>
         </ContainerInput>
         <ContainerSapan>
           <SpanPassword>
             <Checkbox checked={check} onChange={() => setCheck(!check)} />
-            <label htmlFor="checkbox">Lembrar-me</label>
+            <LabelCheck htmlFor="checkbox">Lembrar-me</LabelCheck>
           </SpanPassword>
-          <span>Esqueci minha senha</span>
+          <SpanForgotPass>Esqueci minha senha</SpanForgotPass>
         </ContainerSapan>
         <Buttons theme="login" name="Entrar" onClick={doLogin} />
       </Wrapper>

@@ -8,8 +8,9 @@ import {
   DivSelect,
   DivTitleDashboard,
   SelectData,
+  WarperCard,
 } from './CardPrincipal.Styled'
-import { WarperCard } from './CardItem.style'
+
 import { dateHelper } from '../../util'
 import { IconsCalendar } from '../../assets/icons/IconsCalendar'
 
@@ -18,6 +19,8 @@ type CardPrincipalProps = {
   backgroundCard: string
   text: string
   color: string
+  lineHeight: string
+  fontWeight: string
   isFilterData?: boolean
   setDate?: Dispatch<
     SetStateAction<{
@@ -32,6 +35,8 @@ export function CardPrincipal({
   backgroundCard,
   color,
   isFilterData,
+  lineHeight,
+  fontWeight,
   setDate,
 }: CardPrincipalProps) {
   const changeInterval = (event: ChangeEvent<HTMLSelectElement>) =>
@@ -41,7 +46,12 @@ export function CardPrincipal({
   return (
     <ContainerCardPrincipal backgroundCard={backgroundCard}>
       <DivTitleDashboard>
-        <TitleDashboard color={color} isSubtitle={false}>
+        <TitleDashboard
+          lineHeight={lineHeight}
+          fontWeight={fontWeight}
+          color={color}
+          isSubtitle={false}
+        >
           {text}
         </TitleDashboard>
 

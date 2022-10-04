@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
+import { Fonts } from '../../types/fonts'
 
 export const Warpper = styled.div`
   display: flex;
@@ -33,12 +34,29 @@ export const ImagemMiniLogo = styled.img`
 export const UlStyled = styled.ul<{ isMinimenu: boolean }>`
   margin: ${({ isMinimenu }) => (isMinimenu ? `10px` : `10px`)};
   list-style-type: none;
+
+  isMinimenu &:hover {
+    border-radius: 4px;
+    background: ${Color.hover};
+  }
 `
 export const LiStyled = styled.li`
   margin-bottom: 50px;
+  margin-right: 50px;
   margin-left: 5px;
   display: flex;
-  gap: 10px;
+  gap: 20px;
+  font-family: ${Fonts.primary};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  &:hover {
+    font-weight: 600;
+    border-radius: 4px;
+    background: ${Color.hover};
+  }
 `
 
 export const DivList = styled.div`

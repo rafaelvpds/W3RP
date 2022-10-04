@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
-
-export const WarperCard = styled.div`
-  display: flex;
-  gap: 5px;
-`
+import { Fonts } from '../../types/fonts'
 
 export const CardSecundario = styled.div<{
   backgroundCardItem: string
@@ -42,16 +38,19 @@ export const TagStyle = styled.div<{ value: number; colorTag: string }>`
   color: ${({ colorTag }) => `${colorTag}`};
   text-align: center;
   padding: 2px, 13px, 2px, 13px;
+  font-family: ${Fonts.primary};
 `
 export const TitleCard = styled.span<{ colorTextCard: string }>`
-  font-weight: 600;
+  font-weight: 400;
   font-size: 11px;
   line-height: 24px;
   color: ${({ colorTextCard }) => `${colorTextCard}`};
+  font-family: ${Fonts.primary};
 `
 export const ValueData = styled.span`
   font-size: 30px;
   font-weight: 600;
+  font-family: ${Fonts.secundary};
   line-height: 48px;
   margin-left: 5px;
 `

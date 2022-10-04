@@ -16,10 +16,10 @@ export const ContendModal = styled.div`
 export const DivTypeFilter = styled.div`
   padding: 5px;
 `
-export const SpanTypeFilter = styled.span`
+export const SpanTypeFilter = styled.span<{ checked: boolean }>`
   margin-left: 10px;
   color: ${Color.cinza900};
-  font-weight: 400;
+  font-weight: ${({ checked }) => (checked ? 600 : 400)};
   font-size: 16px;
   line-height: 150%;
 `

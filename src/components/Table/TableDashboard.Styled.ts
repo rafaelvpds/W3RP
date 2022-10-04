@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
+import { Fonts } from '../../types/fonts'
 
 export const WarperTitleTable = styled.div`
   display: flex;
@@ -23,16 +24,24 @@ export const ButtonAlta = styled.button`
   width: 65px;
   height: 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
+  font-family: ${Fonts.primary};
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
   background: ${Color.sucesso};
   color: ${Color.branco};
   cursor: pointer;
 `
 export const ButtonBaixa = styled.button`
-  width: 65px;
+  width: 70px;
   height: 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
+  font-family: ${Fonts.primary};
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 140%;
   background: ${Color.erro};
   color: ${Color.branco};
   cursor: pointer;
@@ -56,8 +65,13 @@ export const IconTable = styled.span<{ color: string }>`
 `
 export const TableTitle = styled.span<{ colorText: string }>`
   font-size: 20px;
-  line-height: 28px;
+
   color: ${({ colorText }) => colorText};
+  font-family: ${Fonts.secundary};
+  font-style: normal;
+  font-weight: 600;
+
+  line-height: 140%;
 `
 
 export const STable = styled.table`
@@ -76,26 +90,29 @@ export const STable = styled.table`
     padding: 15px 5px;
   }
 `
-export const STHead = styled.thead``
 export const STHeadTR = styled.tr`
   background: ${Color.primary};
-  color: #c5cfff;
+  color: ${Color.azul4};
   font-size: 16px;
   font-weight: 600;
+  font-family: ${Fonts.primary};
 `
 export const STH = styled.th`
   &:nth-child(2) {
     text-align: left;
   }
 `
-export const STBody = styled.tbody``
-export const STBodyTR = styled.tr``
 
 type StdProps = {
   center?: boolean
 }
 export const STD = styled.td<StdProps>`
   text-align: ${({ center }) => (center ? 'center' : 'left')};
+  font-family: ${Fonts.primary};
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${Color.cinza900};
 `
 export const ButtonDetalhes = styled.button`
   cursor: pointer;

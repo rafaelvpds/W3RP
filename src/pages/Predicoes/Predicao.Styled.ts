@@ -53,7 +53,7 @@ export const SpanIconTablePred = styled.span`
   align-items: center;
   width: 48px;
   height: 48px;
-  background: #c5cfff;
+  background: ${Color.azul4};
   border-radius: 100%;
 `
 export const TiteDataPred = styled.h1`

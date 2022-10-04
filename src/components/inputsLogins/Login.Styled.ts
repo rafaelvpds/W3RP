@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Color } from '../../types/colors'
+import { Fonts } from '../../types/fonts'
 
 export const InputLogin = styled.input`
   height: 56px;
@@ -8,6 +9,38 @@ export const InputLogin = styled.input`
   border-radius: 16px;
   padding: 0 30px;
   border: 1px solid ${Color.cinza300};
+  background: ${Color.branco};
+  font-family: ${Fonts.primary};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${Color.cinza900};
+
+  &::placeholder {
+    font-family: ${Fonts.primary};
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: ${Color.cinza400};
+  }
+`
+export const LabelCheck = styled.label`
+  font-family: ${Fonts.primary};
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+`
+export const SpanForgotPass = styled.span`
+  font-family: ${Fonts.primary};
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: ${Color.cinza700};
+  cursor: pointer;
 `
 export const ButtonEyes = styled.button`
   border: none;

@@ -18,16 +18,16 @@ type Props = {
   hasButton: boolean
   color: string
   colorText: string
-  inAlta?: boolean
-  setInAlta?: () => void
+  onHigh?: boolean
+  setOnHigh?: () => void
 }
 export function TitleTable({
   text,
   icon,
   hasButton,
   color,
-  inAlta,
-  setInAlta,
+  onHigh,
+  setOnHigh,
   colorText,
 }: Props) {
   return (
@@ -37,16 +37,16 @@ export function TitleTable({
         <TableTitle colorText={colorText}>{text}</TableTitle>
       </WarperTitle>
 
-      {hasButton && setInAlta && (
+      {hasButton && setOnHigh && (
         <WarperButton>
           <ButtonAlta
             type="button"
             style={{
-              background: inAlta ? `${Color.sucesso}` : `${Color.cinza300}`,
+              background: onHigh ? `${Color.sucesso}` : `${Color.cinza300}`,
             }}
             onClick={() => {
-              if (!inAlta) {
-                setInAlta()
+              if (!onHigh) {
+                setOnHigh()
               }
             }}
           >
@@ -56,11 +56,11 @@ export function TitleTable({
           <ButtonBaixa
             type="button"
             style={{
-              background: !inAlta ? `${Color.erro}` : `${Color.cinza300}`,
+              background: !onHigh ? `${Color.erro}` : `${Color.cinza300}`,
             }}
             onClick={() => {
-              if (inAlta) {
-                setInAlta()
+              if (onHigh) {
+                setOnHigh()
               }
             }}
           >

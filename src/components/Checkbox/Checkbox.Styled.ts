@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Color } from '../../types/colors'
 
 export const Container = styled.label`
   display: block;
@@ -11,7 +12,7 @@ export const Container = styled.label`
   width: 26px;
   input:checked ~ .checkmark {
     //Colocar aqui a cor do seu sistema!
-    border: 2px solid grey; //Colocar aqui a cor do seu sistema!
+    border: 2px solid ${Color.cinza400}; //Colocar aqui a cor do seu sistema!
     &.container input:checked ~ .checkmark:after {
       display: block;
     }
@@ -20,7 +21,7 @@ export const Container = styled.label`
       top: 1px;
       width: 8px;
       height: 14px;
-      border: solid white;
+      border: solid ${Color.branco};
       border-radius: 2px 2px;
       border-width: 0 3px 3px 0;
       -webkit-transform: rotate(45deg);

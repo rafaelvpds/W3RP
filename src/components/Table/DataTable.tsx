@@ -1,13 +1,6 @@
 import { ReactNode } from 'react'
 
-import {
-  BackgroundTable,
-  STable,
-  STBody,
-  STH,
-  STHead,
-  STHeadTR,
-} from './TableDashboard.Styled'
+import { BackgroundTable, STable, STH, STHeadTR } from './TableDashboard.Styled'
 import { TitleTable } from './TitleTable'
 
 type Props = {
@@ -19,8 +12,8 @@ type Props = {
   color: string
   colorText: string
   hasButton: boolean
-  inAlta?: boolean
-  setInAlta?: () => void
+  onHigh?: boolean
+  setOnHigh?: () => void
 }
 export function ViewDataTable({
   children,
@@ -29,10 +22,10 @@ export function ViewDataTable({
   icon,
   color,
   hasButton,
-  inAlta,
+  onHigh,
   widht,
   colorText,
-  setInAlta,
+  setOnHigh,
 }: Props) {
   return (
     <BackgroundTable widht={widht}>
@@ -42,18 +35,18 @@ export function ViewDataTable({
         icon={icon}
         text={text}
         hasButton={hasButton}
-        inAlta={inAlta}
-        setInAlta={setInAlta}
+        onHigh={onHigh}
+        setOnHigh={setOnHigh}
       />
       <STable>
-        <STHead>
+        <thead>
           <STHeadTR>
             {headers.map(newHeader => (
               <STH>{newHeader}</STH>
             ))}
           </STHeadTR>
-        </STHead>
-        <STBody>{children}</STBody>
+        </thead>
+        <tbody>{children}</tbody>
       </STable>
     </BackgroundTable>
   )

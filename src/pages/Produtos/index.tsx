@@ -13,7 +13,7 @@ import {
   STDProduct,
 } from '../../components/TableProduto/TableProduct.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
-import { GetDataProduct } from '../../services/Produto/Product'
+import { getDataProduct } from '../../services/Produto/Product'
 import { Product } from '../../types'
 import { Color } from '../../types/colors'
 import {
@@ -39,33 +39,35 @@ export function Produto() {
   const [product, setProduct] = useState<Product[]>([])
   const [search, setSearch] = useState('')
 
-  const GetProduct = async () => {
+  const getProduct = async () => {
     let classificacao: 'EM_ALTA' | 'EM_BAIXA' | undefined
 
     if (!checkTodos) {
       classificacao = checkAlta ? 'EM_ALTA' : 'EM_BAIXA'
     }
-    const dataProduct = await GetDataProduct(search, page, classificacao)
+    const dataProduct = await getDataProduct(search, page, classificacao)
     setTotalPage(dataProduct.totalItens)
     setProduct(dataProduct.data)
   }
 
   useEffect(() => {
-    GetProduct()
+    getProduct()
   }, [page])
   const pageDetalharProduct = (id: number) => {
     navigator(`/detalhamento/${id}`)
   }
   return (
     <>
-      <TitePages size={20}>Produtos</TitePages>
+      <TitePages lineHeight="150%" fontWeight={600} size={20}>
+        Produtos
+      </TitePages>
       <ContainerProduct>
         <DivContainerInput>
           <InputPredicao
             value={search}
             onChange={event => setSearch(event.target.value)}
             placeholder="Pesquise uma palavra-chave"
-            filterButton={GetProduct}
+            filterButton={getProduct}
             icon={<IconSearch />}
           />
           <DivButtonFilter>
@@ -91,7 +93,7 @@ export function Produto() {
                     setCheckBaixa(false)
                   }}
                   typeFilter="Todos"
-                  totalFilter={1231}
+                  totalFilter={totalPage}
                 />
                 <ModalFilter
                   isCheck={checkAlta}
@@ -101,7 +103,6 @@ export function Produto() {
                     setCheckBaixa(false)
                   }}
                   typeFilter="Em alta"
-                  totalFilter={1231}
                 />
                 <ModalFilter
                   isCheck={checkBaixa}
@@ -111,12 +112,11 @@ export function Produto() {
                     setCheckBaixa(true)
                   }}
                   typeFilter="Em baixa"
-                  totalFilter={1231}
                 />
                 <DivButtonModalFilter>
                   <Buttons
                     onClick={() => {
-                      GetProduct()
+                      getProduct()
                       setShowFilter(false)
                     }}
                     name="Aplicar"

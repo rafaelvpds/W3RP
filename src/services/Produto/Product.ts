@@ -1,7 +1,7 @@
 import { Product } from '../../types'
 import { apiService } from '../config/apiService'
 
-export const GetDataProduct = async (
+export const getDataProduct = async (
   query: string,
   page: number,
   classificacao?: 'EM_ALTA' | 'EM_BAIXA'

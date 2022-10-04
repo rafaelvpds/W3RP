@@ -22,8 +22,8 @@ import { IconMail } from '../../assets/icons/IconMail'
 import { IconPhone } from '../../assets/icons/IconPhone'
 import { GetHistoric } from '../../services/ProductHistoric'
 import { TypeClients, Historic, SoldOffProduct } from '../../types'
-import { GetSoldOffProduct } from '../../services/ProductEsgotado'
-import { GetDataClients } from '../../services/ClientesHistoricos'
+import { getSoldOffProduct } from '../../services/ProductEsgotado'
+import { getDataClients } from '../../services/ClientesHistoricos'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { PostProduct } from '../../services/BaixaProduct'
 import { dateToBr } from '../../util/ModifyDate'
@@ -45,20 +45,20 @@ export function Historico() {
     getHistoric()
   }, [])
 
-  const getSoldOffProduct = async () => {
-    const data = await GetSoldOffProduct(id!)
+  const getProductSoldOff = async () => {
+    const data = await getSoldOffProduct(id!)
     setSoldOffProduct(data)
   }
   useEffect(() => {
-    getSoldOffProduct()
+    getProductSoldOff()
   }, [])
 
-  const getDataClients = async () => {
-    const data = await GetDataClients(id!)
+  const getClientsData = async () => {
+    const data = await getDataClients(id!)
     setClients(data)
   }
   useEffect(() => {
-    getDataClients()
+    getClientsData()
   }, [])
 
   const darBaixaHistorico = async (produtoId: number) => {
@@ -72,7 +72,7 @@ export function Historico() {
   }
   const darBaixaProdutoEsgotados = async (produtoId: number) => {
     await PostProduct(id!, produtoId)
-    getSoldOffProduct()
+    getProductSoldOff()
   }
 
   const backPage = () => {
@@ -85,7 +85,9 @@ export function Historico() {
         <ButtonChevron onClick={backPage}>
           <IconChevronLeft />
         </ButtonChevron>
-        <TitePages size={20}>Predição </TitePages>
+        <TitePages lineHeight="140%" fontWeight={400} size={20}>
+          Predição{' '}
+        </TitePages>
       </DivTopHistorico>
       <ContainerInfoClient>
         <DataClients
