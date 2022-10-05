@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
 import { toast } from 'react-toastify'
-import { Buttons } from '../../components/buttons/Buttons'
-import { Input } from '../../components/inputsLogins/InputLogin'
-import { Title } from '../../components/TitleLogin/Title'
+import { Buttons } from '../../components/Buttons/Buttons'
+import { Input } from '../../components/InputsLogins/InputLogin'
+// import { Title } from '../../components/TitleLogin/Title'
 import {
   ContainerInput,
   ContainerLabel,
@@ -12,6 +12,8 @@ import {
   ImagemLateral,
   LabelLogin,
   SpanPassword,
+  SubTitle,
+  Title,
   Wrapper,
 } from './Login.Styled'
 import Imagem from '../../assets/images/BannerLatral.jpg'
@@ -21,7 +23,7 @@ import { AuthLogin } from '../../services/Auth/Auth'
 import {
   LabelCheck,
   SpanForgotPass,
-} from '../../components/inputsLogins/Login.Styled'
+} from '../../components/InputsLogins/Style/Login.Styled'
 
 export function Login() {
   const [check, setCheck] = useState(false)
@@ -41,8 +43,11 @@ export function Login() {
   return (
     <ContenerLogin>
       <Wrapper>
-        <Title isSubtitle text="Seja bem vindo!" />
-        <Title isSubtitle={false} text="Realize seu Login" />
+        <SubTitle>Seja bem vindo!</SubTitle>
+        <Title>Realize seu Login</Title>
+
+        {/* <Title isSubtitle text="Seja bem vindo!" />
+        <Title isSubtitle={false} text="Realize seu Login" /> */}
         <ContainerInput>
           <Input
             placeholder="E-mail"

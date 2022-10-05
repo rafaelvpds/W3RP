@@ -1,5 +1,3 @@
-/* eslint-disable react/no-array-index-key */
-// @flow
 import * as React from 'react'
 import Chart from '../../assets/icons/Chart'
 import { IconChartLine } from '../../assets/icons/ChartLine'
@@ -18,13 +16,13 @@ import {
   MenuPrincipal,
   SquareImage,
   UlStyled,
-} from './MainMenu.Styled'
+} from './Style/MainMenu.Styled'
 import logo from '../../assets/images/logo.png'
 
 import { IconProduct } from '../../assets/icons/IconProduct'
 import hands from '../../assets/images/hands.png'
 import miniLogo from '../../assets/images/miniLogo.png'
-import { Buttons } from '../buttons/Buttons'
+import { Buttons } from '../Buttons/Buttons'
 
 const menuMain = [
   {

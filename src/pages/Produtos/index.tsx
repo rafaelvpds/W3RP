@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { IconFilter } from '../../assets/icons/IconFilter'
 import { IconSearch } from '../../assets/icons/IconSearch'
-import { Buttons } from '../../components/buttons/Buttons'
-import { InputPredicao } from '../../components/inputsPredicoes/InputPredicao'
+import { Buttons } from '../../components/Buttons/Buttons'
+import { InputPredicao } from '../../components/InputsPredicoes/InputPredicao'
 import { ModalFilter } from '../../components/ModalFilter'
-import { DivButtonModalFilter } from '../../components/ModalFilter/ModalFilter.Styled'
+import { DivButtonModalFilter } from '../../components/ModalFilter/Style/ModalFilter.Styled'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { TableProduct } from '../../components/TableProduto/TableProduct'
 import {
@@ -15,7 +15,7 @@ import {
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { getDataProduct } from '../../services/Produto/Product'
 import { Product } from '../../types'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 import {
   DivContainerInput,
   ButtonDropFilter,

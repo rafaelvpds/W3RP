@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import { Checkbox } from '../Checkbox/Checkbox'
 import {
@@ -7,7 +6,7 @@ import {
   DivTypeFilter,
   SpanTotalFilter,
   SpanTypeFilter,
-} from './ModalFilter.Styled'
+} from './Style/ModalFilter.Styled'
 
 type Props = {
   typeFilter: string

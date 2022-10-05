@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconSearch } from '../../assets/icons/IconSearch'
 
-import { InputPredicao } from '../../components/inputsPredicoes/InputPredicao'
+import { InputPredicao } from '../../components/InputsPredicoes/InputPredicao'
 import { TableDataPredicao } from '../../components/TablePredicao/TableDataPredicao'
-import { STDPred } from '../../components/TablePredicao/TablePred.Styled'
+import { STDPred } from '../../components/TablePredicao/style/TablePred.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { TitleCardPred } from '../../components/TitlePred/TitlePred'
 import {
@@ -22,7 +22,7 @@ import { IconUser } from '../../assets/icons/IconUser'
 import { PredictionPage } from '../../types'
 import { GetPrediction } from '../../services/Predicao'
 import { dateToBr } from '../../util/ModifyDate'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 export function Predicao() {
   const navigator = useNavigate()

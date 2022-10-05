@@ -1,5 +1,3 @@
-// @flow
-
 import { ChangeEvent, Dispatch, ReactNode, SetStateAction } from 'react'
 
 import { TitleDashboard } from '../TitleDashbord/TitleDashboard'

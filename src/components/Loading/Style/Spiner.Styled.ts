@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { Color } from '../../types/colors'
+import { Color } from '../../../theme/colors'
 
 const rotate = keyframes`
 0% {
@@ -11,10 +11,11 @@ const rotate = keyframes`
 }
 `
 export const ContainerSpiner = styled.div`
+  width: 100vw;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
 `
 export const SpinerStyled = styled.div`
   width: 50px;

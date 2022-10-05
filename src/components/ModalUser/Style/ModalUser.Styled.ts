@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styled, { keyframes } from 'styled-components'
-import { Color } from '../../types/colors'
+import { Color } from '../../../theme/colors'
 
 const transitionModal = keyframes`
 from {

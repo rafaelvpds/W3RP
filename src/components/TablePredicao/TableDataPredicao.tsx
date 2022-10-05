@@ -1,7 +1,5 @@
-/* eslint-disable react/no-array-index-key */
-// @flow
 import * as React from 'react'
-import { STablePred, STHeadTRPred, STHPred } from './TablePred.Styled'
+import { STablePred, STHeadTRPred, STHPred } from './style/TablePred.Styled'
 
 type Props = {
   children: React.ReactNode
@@ -12,8 +10,8 @@ export function TableDataPredicao({ children, headers }: Props) {
     <STablePred>
       <STHeadTRPred>
         <tr>
-          {headers.map((item, index) => (
-            <STHPred key={index}>{item}</STHPred>
+          {headers.map(item => (
+            <STHPred>{item}</STHPred>
           ))}
         </tr>
       </STHeadTRPred>

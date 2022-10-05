@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 
 import {
@@ -6,7 +5,7 @@ import {
   CotainerDataClients,
   SpanDataClient,
   TitleClient,
-} from './DataClients.Styled'
+} from './Style/DataClients.Styled'
 
 type Props = {
   nameClients: string

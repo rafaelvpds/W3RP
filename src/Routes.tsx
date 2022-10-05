@@ -11,7 +11,7 @@ import { Detalhamento } from './pages/Detalhamento/Detalhamento'
 import { DetalhamentoClients } from './pages/Detalhamento/DetalhamentoClients'
 import { AuthContext, AuthProvaider } from './context/AuthContext/AuthContext'
 import 'react-toastify/dist/ReactToastify.css'
-import { Spiner } from './components/loading/Spiner'
+import { Spiner } from './components/Loading/Spiner'
 
 function Private({ children }: { children: React.ReactNode }) {
   const { authentified, loading } = useContext(AuthContext)

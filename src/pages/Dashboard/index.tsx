@@ -3,21 +3,22 @@ import { useNavigate } from 'react-router-dom'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
 import { IconProduct } from '../../assets/icons/IconProduct'
-import { CardItem } from '../../components/CardsPrincipal/CardItem'
+
 import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
 import {
   ButtonDetalhes,
   STD,
-} from '../../components/Table/TableDashboard.Styled'
+} from '../../components/Table/Style/TableDashboard.Styled'
 import { getListClient } from '../../services/ClientsDashboard'
 import { getProductApi } from '../../services/ProductDashboard'
 import { getResumeDashboard } from '../../services/ResumeDashboard'
 import { ResumeDashboard, DataDashboard } from '../../types'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 import { dateHelper } from '../../util'
 import { ContainerTable } from './Dashboard.Styled'
+import { CardItem } from '../../components/CardItem/CardItem'
 
 export function Dashboard() {
   const [inHighProduct, setInHighProduct] = useState(true)

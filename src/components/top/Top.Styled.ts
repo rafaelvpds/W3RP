@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 export const TopUser = styled.div`
   display: flex;
@@ -15,6 +15,7 @@ export const DivMenu = styled.div`
 export const ButtonIconMenu = styled.button`
   background: none;
   border: none;
+  margin-left: 19px;
   cursor: pointer;
 `
 export const ContainerUser = styled.div`

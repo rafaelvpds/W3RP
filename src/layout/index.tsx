@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { ReactNode, useState } from 'react'
 import { Container } from '../App.Styled'
-import { MainMenu } from '../components/menu/MainMenu'
-import { Warpper } from '../components/menu/MainMenu.Styled'
+import { MainMenu } from '../components/Menu/MainMenu'
+import { Warpper } from '../components/Menu/Style/MainMenu.Styled'
 import { Top } from '../components/Top/Top'
 import { ContainerLayout } from './Layout.Styled'
 

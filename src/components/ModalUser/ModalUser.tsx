@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 import { ReactNode } from 'react'
 import {
@@ -9,7 +8,7 @@ import {
   LinkLogOut,
   SpanTextConfig,
   WarperModalUser,
-} from './ModalUser.Styled'
+} from './Style/ModalUser.Styled'
 
 type Props = {
   textConfig: string

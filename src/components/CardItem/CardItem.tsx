@@ -1,6 +1,5 @@
-// @flow
 import * as React from 'react'
-import { RadialBar } from '../grafico/RadialBar'
+import { RadialBar } from '../Grafico/RadialBar'
 import {
   TagStyle,
   TitleCard,

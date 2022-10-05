@@ -1,6 +1,5 @@
-// @flow
 import * as React from 'react'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 import {
   ButtonAlta,
@@ -10,7 +9,7 @@ import {
   WarperButton,
   WarperTitle,
   WarperTitleTable,
-} from './TableDashboard.Styled'
+} from './Style/TableDashboard.Styled'
 
 type Props = {
   text: string

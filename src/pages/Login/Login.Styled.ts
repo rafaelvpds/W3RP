@@ -1,6 +1,22 @@
 import styled from 'styled-components'
-import { Color } from '../../types/colors'
-import { Fonts } from '../../types/fonts'
+import { Color } from '../../theme/colors'
+import { Fonts } from '../../theme/fonts'
+
+export const SubTitle = styled.h1`
+  font-size: 20px;
+  font-family: ${Fonts.secundary};
+  font-weight: 400;
+  line-height: 28px;
+  font-style: normal;
+`
+export const Title = styled.h1`
+  font-size: 36px;
+  font-family: ${Fonts.secundary};
+  font-weight: 700;
+  line-height: 140%;
+  font-style: normal;
+  margin-bottom: 20px;
+`
 
 export const ContenerLogin = styled.div`
   display: flex;

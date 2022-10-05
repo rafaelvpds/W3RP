@@ -8,7 +8,7 @@ import {
   DivPagination,
   SpanNumPage,
   SpanQtdeLista,
-} from './Pagination.Styled'
+} from './Style/Pagination.Styled'
 
 type Props = {
   currentPage: number

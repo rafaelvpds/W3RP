@@ -1,4 +1,3 @@
-// @flow
 import * as React from 'react'
 
 import {
@@ -6,7 +5,7 @@ import {
   ContainerIconSeach,
   ContainerInput,
   InputPred,
-} from './inputPred.Styled'
+} from './Style/inputPred.Styled'
 
 type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void

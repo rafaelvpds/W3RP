@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 export const ContainerProduct = styled.div`
   background: ${Color.branco};

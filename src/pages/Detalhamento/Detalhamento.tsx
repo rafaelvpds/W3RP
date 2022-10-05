@@ -4,18 +4,19 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconTrendingDown } from '../../assets/icons/IconTrendingDown'
 import { IconTrendingUp } from '../../assets/icons/IconTrendingUp'
-import { CardItem } from '../../components/CardsPrincipal/CardItem'
+
 import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
 import { ViewDataTable } from '../../components/Table/DataTable'
-import { STD } from '../../components/Table/TableDashboard.Styled'
+import { STD } from '../../components/Table/Style/TableDashboard.Styled'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import { GetPrediProduto } from '../../services/ProductPredicao'
 import { GetResumeProduct } from '../../services/ResumeProduct'
 import { Predicao, ResumePredicao } from '../../types'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 import { ButtonChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
+import { CardItem } from '../../components/CardItem/CardItem'
 
 export function Detalhamento() {
   const { id } = useParams()

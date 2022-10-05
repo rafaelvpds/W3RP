@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import { Color } from '../../types/colors'
-import { Fonts } from '../../types/fonts'
+import { Color } from '../../../theme/colors'
+import { Fonts } from '../../../theme/fonts'
 
 export const Warpper = styled.div`
   display: flex;
@@ -12,6 +12,7 @@ export const ContainerList = styled.div`
   margin-bottom: 30px;
 `
 export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
+  transition: all 0.5s;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,7 +20,6 @@ export const MenuPrincipal = styled.div<{ isMinimenu: boolean }>`
   background-color: ${Color.primary};
   padding: 20px;
   color: ${Color.branco};
-  transition: all 0.3s;
 `
 export const DivImage = styled.div`
   display: flex;

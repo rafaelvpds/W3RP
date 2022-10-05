@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
-// @flow
 import * as React from 'react'
 import { useState } from 'react'
 import { IconEyeOffLine } from '../../assets/icons/IconEyeOffLine'
@@ -9,7 +7,7 @@ import {
   ContainerButton,
   ContainerInput,
   InputLogin,
-} from './Login.Styled'
+} from './Style/Login.Styled'
 
 type InputProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void

@@ -7,7 +7,7 @@ import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconHistory } from '../../assets/icons/IconHistory'
 import { IconProduct } from '../../assets/icons/IconProduct'
 import { ViewDataTable } from '../../components/Table/DataTable'
-import { STD } from '../../components/Table/TableDashboard.Styled'
+import { STD } from '../../components/Table/Style/TableDashboard.Styled'
 import fundo from '../../assets/images/fundoW3.png'
 import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
 import {
@@ -27,7 +27,7 @@ import { getDataClients } from '../../services/ClientesHistoricos'
 import { DataClients } from '../../components/DataClients/DataClients'
 import { PostProduct } from '../../services/BaixaProduct'
 import { dateToBr } from '../../util/ModifyDate'
-import { Color } from '../../types/colors'
+import { Color } from '../../theme/colors'
 
 export function Historico() {
   const { id } = useParams()

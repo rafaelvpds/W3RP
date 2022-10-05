@@ -1,4 +1,8 @@
-import { ContainerSpiner, SpinerCircle, SpinerStyled } from './Spiner.Styled'
+import {
+  ContainerSpiner,
+  SpinerCircle,
+  SpinerStyled,
+} from './Style/Spiner.Styled'
 
 export function Spiner() {
   return (

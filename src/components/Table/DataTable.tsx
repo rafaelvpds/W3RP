@@ -1,6 +1,11 @@
 import { ReactNode } from 'react'
 
-import { BackgroundTable, STable, STH, STHeadTR } from './TableDashboard.Styled'
+import {
+  BackgroundTable,
+  STable,
+  STH,
+  STHeadTR,
+} from './Style/TableDashboard.Styled'
 import { TitleTable } from './TitleTable'
 
 type Props = {
