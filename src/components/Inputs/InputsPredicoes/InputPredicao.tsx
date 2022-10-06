@@ -5,7 +5,7 @@ import {
   ContainerIconSeach,
   ContainerInput,
   InputPred,
-} from './Style/inputPred.Styled'
+} from './Styles/inputPred.Styled'
 
 type Props = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void

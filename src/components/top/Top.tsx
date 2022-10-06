@@ -21,7 +21,7 @@ import {
   DivIcon,
   DivMenu,
   TopUser,
-} from './Top.Styled'
+} from './Styles/Top.Styled'
 import { User } from '../User/User'
 import { apiService } from '../../services/config/apiService'
 

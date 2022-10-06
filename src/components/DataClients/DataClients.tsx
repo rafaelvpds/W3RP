@@ -5,7 +5,7 @@ import {
   CotainerDataClients,
   SpanDataClient,
   TitleClient,
-} from './Style/DataClients.Styled'
+} from './Styles/DataClients.Styled'
 
 type Props = {
   nameClients: string

@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 
 import * as React from 'react'
-import { ActionsButtons } from './Style/Buttons.Styled'
+import { ActionsButtons } from './Styles/Buttons.Styled'
 
 type ButtonsProps = {
   name: string

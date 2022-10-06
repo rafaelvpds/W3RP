@@ -5,7 +5,7 @@ import { IconSearch } from '../../assets/icons/IconSearch'
 import { Buttons } from '../../components/Buttons/Buttons'
 import { InputPredicao } from '../../components/Inputs/InputsPredicoes/InputPredicao'
 import { ModalFilter } from '../../components/Modal/ModalFilter'
-import { DivButtonModalFilter } from '../../components/Modal/ModalFilter/Style/ModalFilter.Styled'
+import { DivButtonModalFilter } from '../../components/Modal/ModalFilter/Styles/ModalFilter.Styled'
 import { Pagination } from '../../components/Pagination/Pagination'
 import { TableProduct } from '../../components/Table/TableProduto/TableProduct'
 import {

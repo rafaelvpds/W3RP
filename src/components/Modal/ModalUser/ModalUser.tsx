@@ -8,7 +8,7 @@ import {
   LinkLogOut,
   SpanTextConfig,
   WarperModalUser,
-} from './Style/ModalUser.Styled'
+} from './Styles/ModalUser.Styled'
 
 type Props = {
   textConfig: string

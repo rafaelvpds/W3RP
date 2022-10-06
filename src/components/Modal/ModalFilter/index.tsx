@@ -6,7 +6,7 @@ import {
   DivTypeFilter,
   SpanTotalFilter,
   SpanTypeFilter,
-} from './Style/ModalFilter.Styled'
+} from './Styles/ModalFilter.Styled'
 
 type Props = {
   typeFilter: string

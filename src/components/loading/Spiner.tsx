@@ -2,7 +2,7 @@ import {
   ContainerSpiner,
   SpinerCircle,
   SpinerStyled,
-} from './Style/Spiner.Styled'
+} from './Styles/Spiner.Styled'
 
 export function Spiner() {
   return (

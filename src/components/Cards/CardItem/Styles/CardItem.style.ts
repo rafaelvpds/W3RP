@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { Color } from '../../../theme/colors'
-import { Fonts } from '../../../theme/fonts'
+import { Color } from '../../../../theme/colors'
+import { Fonts } from '../../../../theme/fonts'
 
 export const CardSecundario = styled.div<{
   backgroundCardItem: string

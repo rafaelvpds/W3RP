@@ -7,7 +7,7 @@ import {
   ContainerButton,
   ContainerInput,
   InputLogin,
-} from './Style/Login.Styled'
+} from './Styles/Login.Styled'
 
 type InputProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void

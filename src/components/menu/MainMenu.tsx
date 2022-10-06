@@ -16,7 +16,7 @@ import {
   MenuPrincipal,
   SquareImage,
   UlStyled,
-} from './Style/MainMenu.Styled'
+} from './Styles/MainMenu.Styled'
 import logo from '../../assets/images/logo.png'
 
 import { IconProduct } from '../../assets/icons/IconProduct'

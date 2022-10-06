@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { ContainerData, ContainerEmail, ContainerUser } from './User.Styled'
+import { ContainerData, SpanEmail, SpanUser } from './Styles/User.Styled'
 
 type UserProps = {
   user: string
@@ -8,8 +8,8 @@ type UserProps = {
 export function User({ user, email }: UserProps) {
   return (
     <ContainerData>
-      <ContainerUser>{user}</ContainerUser>
-      <ContainerEmail>{email}</ContainerEmail>
+      <SpanUser>{user}</SpanUser>
+      <SpanEmail>{email}</SpanEmail>
     </ContainerData>
   )
 }

@@ -6,7 +6,7 @@ import {
   DivTitleDashboard,
   SelectData,
   WarperCard,
-} from './CardPrincipal.Styled'
+} from './Styles/CardPrincipal.Styled'
 
 import { dateHelper } from '../../../util'
 import { IconsCalendar } from '../../../assets/icons/IconsCalendar'

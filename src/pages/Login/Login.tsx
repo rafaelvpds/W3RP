@@ -23,7 +23,7 @@ import { AuthLogin } from '../../services/Auth/Auth'
 import {
   LabelCheck,
   SpanForgotPass,
-} from '../../components/Inputs/InputsLogins/Style/Login.Styled'
+} from '../../components/Inputs/InputsLogins/Styles/Login.Styled'
 
 export function Login() {
   const [check, setCheck] = useState(false)

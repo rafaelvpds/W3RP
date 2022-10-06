@@ -8,7 +8,7 @@ import {
   ContainerGraphic,
   ContainerInfoCard,
   ContainerValueCard,
-} from './CardItem.style'
+} from './Styles/CardItem.style'
 
 type Props = {
   text: string

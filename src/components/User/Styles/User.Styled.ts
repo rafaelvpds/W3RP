@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { Color } from '../../theme/colors'
-import { Fonts } from '../../theme/fonts'
+import { Color } from '../../../theme/colors'
+import { Fonts } from '../../../theme/fonts'
 
 export const ContainerData = styled.div`
   display: flex;
   flex-direction: column;
 `
-export const ContainerUser = styled.p`
+export const SpanUser = styled.span`
   font-family: ${Fonts.secundary};
   font-style: normal;
   font-weight: 600;
@@ -14,7 +14,7 @@ export const ContainerUser = styled.p`
   line-height: 140%;
   color: ${Color.cinza900};
 `
-export const ContainerEmail = styled.p`
+export const SpanEmail = styled.span`
   font-family: ${Fonts.primary};
   font-style: normal;
   font-weight: 400;

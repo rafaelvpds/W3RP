@@ -2,7 +2,7 @@ import * as React from 'react'
 import { ReactNode, useState } from 'react'
 import { Container } from '../App.Styled'
 import { MainMenu } from '../components/Menu/MainMenu'
-import { Warpper } from '../components/Menu/Style/MainMenu.Styled'
+import { Warpper } from '../components/Menu/Styles/MainMenu.Styled'
 import { Top } from '../components/Top/Top'
 import { ContainerLayout } from './Layout.Styled'
 
