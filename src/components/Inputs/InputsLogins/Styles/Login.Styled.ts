@@ -26,10 +26,10 @@ export const InputLogin = styled.input`
     color: ${Color.cinza400};
   }
 `
-export const LabelCheck = styled.label`
+export const LabelCheck = styled.label<{ check: boolean }>`
   font-family: ${Fonts.primary};
   font-style: normal;
-  font-weight: 600;
+  font-weight: ${({ check }) => (check ? 600 : 400)};
   font-size: 16px;
   line-height: 150%;
 `

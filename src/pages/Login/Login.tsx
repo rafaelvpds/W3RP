@@ -69,7 +69,9 @@ export function Login() {
         <ContainerSapan>
           <SpanPassword>
             <Checkbox checked={check} onChange={() => setCheck(!check)} />
-            <LabelCheck htmlFor="checkbox">Lembrar-me</LabelCheck>
+            <LabelCheck check={check} htmlFor="checkbox">
+              Lembrar-me
+            </LabelCheck>
           </SpanPassword>
           <SpanForgotPass>Esqueci minha senha</SpanForgotPass>
         </ContainerSapan>
