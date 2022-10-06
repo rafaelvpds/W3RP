@@ -4,17 +4,17 @@ import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconTrendingDown } from '../../assets/icons/IconTrendingDown'
 import { IconTrendingUp } from '../../assets/icons/IconTrendingUp'
 
-import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
-import { ViewDataTable } from '../../components/Table/DataTable'
-import { STD } from '../../components/Table/Style/TableDashboard.Styled'
-import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
+import { CardPrincipal } from '../../components/Cards/CardsPrincipal/CardPrincipal'
+import { ViewDataTable } from '../../components/Table/TableDashboard/DataTable'
+import { STD } from '../../components/Table/TableDashboard/Style/TableDashboard.Styled'
+import { TitePages } from '../../components/Title/TitlePages/TitlePages.Styled'
 import { GetPredicaoClients } from '../../services/ClientsPredicao'
 import { GetResumeClients } from '../../services/ResumeClients'
 import { PredicaoClient, ResumoPredicaoClients } from '../../types'
 import { Color } from '../../theme/colors'
 import { ButtonChevron, DivTopHistorico } from '../Predicoes/Historico.Styled'
 import { ContainerTableAround } from './Detalhamento.Styled'
-import { CardItem } from '../../components/CardItem/CardItem'
+import { CardItem } from '../../components/Cards/CardItem/CardItem'
 
 export function DetalhamentoClients() {
   const [predicaoAlta, setPredicaoAlta] = useState<PredicaoClient[]>([])

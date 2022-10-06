@@ -10,7 +10,7 @@ import { IconMenu } from '../../assets/icons/IconMenu'
 import { IconSetting } from '../../assets/icons/IconSetting'
 import { IconUser } from '../../assets/icons/IconUser'
 import { getCurrentUser } from '../../services/DadosUsuario/DataUser'
-import { ModalUser } from '../ModalUser/ModalUser'
+import { ModalUser } from '../Modal/ModalUser/ModalUser'
 
 import { User as UserType } from '../../types'
 import {
@@ -22,7 +22,7 @@ import {
   DivMenu,
   TopUser,
 } from './Top.Styled'
-import { User } from '../user/User'
+import { User } from '../User/User'
 import { apiService } from '../../services/config/apiService'
 
 type TopProps = {

@@ -6,10 +6,10 @@ import { IconCheckOne } from '../../assets/icons/IconCheckOne'
 import { IconChevronLeft } from '../../assets/icons/IconChevronLeft'
 import { IconHistory } from '../../assets/icons/IconHistory'
 import { IconProduct } from '../../assets/icons/IconProduct'
-import { ViewDataTable } from '../../components/Table/DataTable'
-import { STD } from '../../components/Table/Style/TableDashboard.Styled'
+import { ViewDataTable } from '../../components/Table/TableDashboard/DataTable'
+import { STD } from '../../components/Table/TableDashboard/Style/TableDashboard.Styled'
 import fundo from '../../assets/images/fundoW3.png'
-import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
+import { TitePages } from '../../components/Title/TitlePages/TitlePages.Styled'
 import {
   ButtonChevron,
   ButtonDetalhesCheck,

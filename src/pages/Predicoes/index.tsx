@@ -3,11 +3,11 @@ import { useEffect, useState } from 'react'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconSearch } from '../../assets/icons/IconSearch'
 
-import { InputPredicao } from '../../components/InputsPredicoes/InputPredicao'
-import { TableDataPredicao } from '../../components/TablePredicao/TableDataPredicao'
-import { STDPred } from '../../components/TablePredicao/style/TablePred.Styled'
-import { TitePages } from '../../components/TitlePred/TitlePredicoes.Styled'
-import { TitleCardPred } from '../../components/TitlePred/TitlePred'
+import { InputPredicao } from '../../components/Inputs/InputsPredicoes/InputPredicao'
+import { TableDataPredicao } from '../../components/Table/TablePredicao/TableDataPredicao'
+import { STDPred } from '../../components/Table/TablePredicao/style/TablePred.Styled'
+import { TitePages } from '../../components/Title/TitlePages/TitlePages.Styled'
+import { TitleCardPred } from '../../components/Title/TitleTablePred/TitleTablePred'
 import {
   ButtonPred,
   ContainerDataPred,

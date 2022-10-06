@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { toast } from 'react-toastify'
 import { Buttons } from '../../components/Buttons/Buttons'
-import { Input } from '../../components/InputsLogins/InputLogin'
+import { Input } from '../../components/Inputs/InputsLogins/InputLogin'
 
 import {
   ContainerInput,
@@ -23,7 +23,7 @@ import { AuthLogin } from '../../services/Auth/Auth'
 import {
   LabelCheck,
   SpanForgotPass,
-} from '../../components/InputsLogins/Style/Login.Styled'
+} from '../../components/Inputs/InputsLogins/Style/Login.Styled'
 
 export function Login() {
   const [check, setCheck] = useState(false)

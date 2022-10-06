@@ -4,12 +4,12 @@ import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconEveryUser } from '../../assets/icons/IconEveryUser'
 import { IconProduct } from '../../assets/icons/IconProduct'
 
-import { CardPrincipal } from '../../components/CardsPrincipal/CardPrincipal'
-import { ViewDataTable } from '../../components/Table/DataTable'
+import { CardPrincipal } from '../../components/Cards/CardsPrincipal/CardPrincipal'
+import { ViewDataTable } from '../../components/Table/TableDashboard/DataTable'
 import {
   ButtonDetalhes,
   STD,
-} from '../../components/Table/Style/TableDashboard.Styled'
+} from '../../components/Table/TableDashboard/Style/TableDashboard.Styled'
 import { getListClient } from '../../services/ClientsDashboard'
 import { getProductApi } from '../../services/ProductDashboard'
 import { getResumeDashboard } from '../../services/ResumeDashboard'
@@ -18,7 +18,7 @@ import { Color } from '../../theme/colors'
 
 import { dateHelper } from '../../util'
 import { ContainerTable } from './Dashboard.Styled'
-import { CardItem } from '../../components/CardItem/CardItem'
+import { CardItem } from '../../components/Cards/CardItem/CardItem'
 
 export function Dashboard() {
   const [inHighProduct, setInHighProduct] = useState(true)
