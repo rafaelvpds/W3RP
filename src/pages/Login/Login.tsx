@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { toast } from 'react-toastify'
-import { Buttons } from '../../components/Buttons/Buttons'
+
 import { Input } from '../../components/Inputs/InputsLogins/InputLogin'
 
 import {
@@ -24,6 +24,7 @@ import {
   LabelCheck,
   SpanForgotPass,
 } from '../../components/Inputs/InputsLogins/Styles/Login.Styled'
+import { Buttons } from '../../components/Buttons'
 
 export function Login() {
   const [check, setCheck] = useState(false)
