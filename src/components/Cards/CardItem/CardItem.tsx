@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { RadialBar } from '../../Grafico/RadialBar'
+import { RadialBar } from '../../grafico/RadialBar'
 import {
   TagStyle,
   TitleCard,
