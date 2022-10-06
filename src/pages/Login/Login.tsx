@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { Buttons } from '../../components/Buttons/Buttons'
 import { Input } from '../../components/InputsLogins/InputLogin'
-// import { Title } from '../../components/TitleLogin/Title'
+
 import {
   ContainerInput,
   ContainerLabel,
@@ -45,9 +45,6 @@ export function Login() {
       <Wrapper>
         <SubTitle>Seja bem vindo!</SubTitle>
         <Title>Realize seu Login</Title>
-
-        {/* <Title isSubtitle text="Seja bem vindo!" />
-        <Title isSubtitle={false} text="Realize seu Login" /> */}
         <ContainerInput>
           <Input
             placeholder="E-mail"

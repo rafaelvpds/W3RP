@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Chart from '../../assets/icons/Chart'
-import { IconChartLine } from '../../assets/icons/ChartLine'
+
+import { IconChartLine } from '../../assets/icons/IconChartLine'
 
 import {
   ContainerList,
@@ -23,11 +23,12 @@ import { IconProduct } from '../../assets/icons/IconProduct'
 import hands from '../../assets/images/hands.png'
 import miniLogo from '../../assets/images/miniLogo.png'
 import { Buttons } from '../Buttons/Buttons'
+import { IconChart } from '../../assets/icons/IconChart'
 
 const menuMain = [
   {
     text: 'Dashboard',
-    icone: <Chart />,
+    icone: <IconChart />,
     url: '/dashboard',
   },
   {
@@ -43,7 +44,7 @@ const menuMain = [
 ]
 const miniMenu = [
   {
-    icone: <Chart />,
+    icone: <IconChart />,
     url: '/dashboard',
   },
   {
