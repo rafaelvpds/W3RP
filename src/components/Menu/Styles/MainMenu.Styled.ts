@@ -81,6 +81,10 @@ export const SquareImage = styled.div`
   background: #796ce0;
   border-radius: 24px;
 `
+export const SpanFaleConosco = styled.span`
+  font-size: 14px;
+  text-align: justify;
+`
 export const DivText = styled.div`
   width: 177px;
   height: 180px;

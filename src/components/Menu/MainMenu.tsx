@@ -14,6 +14,7 @@ import {
   LinkDirection,
   LiStyled,
   MenuPrincipal,
+  SpanFaleConosco,
   SquareImage,
   UlStyled,
 } from './Styles/MainMenu.Styled'
@@ -108,9 +109,9 @@ export function MainMenu({ isMinimenu }: MainMenuProps) {
           <SquareImage>
             <ImagemHands src={hands} />
             <DivText>
-              <span>
+              <SpanFaleConosco>
                 Precisando de <strong> ajuda ou suporte </strong> ou em algo?
-              </span>
+              </SpanFaleConosco>
             </DivText>
             <Buttons name="Fale Conosco" theme="faleConosco" />
           </SquareImage>
