@@ -109,7 +109,7 @@ export function MainMenu({ isMinimenu }: MainMenuProps) {
             <ImagemHands src={hands} />
             <DivText>
               <span>
-                Precisando de <strong> ajudau suporte </strong> o em algo?
+                Precisando de <strong> ajuda ou suporte </strong> ou em algo?
               </span>
             </DivText>
             <Buttons name="Fale Conosco" theme="faleConosco" />
