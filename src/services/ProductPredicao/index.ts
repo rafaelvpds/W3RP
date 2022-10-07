@@ -17,12 +17,6 @@ export const GetPrediProduto = async (
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      if (error.response?.status === 400) {
-        return {
-          logged: false,
-          message: 'Campos usuário ou senha não preenchido',
-        }
-      }
       if (error.response?.status === 401) {
         return { logged: false, message: 'Usuário não autorizado' }
       }

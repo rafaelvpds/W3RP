@@ -1,3 +1,5 @@
+import axios from 'axios'
+import { toast } from 'react-toastify'
 import { Product } from '../../types'
 import { apiService } from '../config/apiService'
 
@@ -21,7 +23,17 @@ export const getDataProduct = async (
       totalItens: result.data.totalElements,
     }
   } catch (error) {
-    console.log(error, 'Erro da Api')
+    if (axios.isAxiosError(error)) {
+      if (error.response?.status === 401) {
+        toast.error('Usuário não autorizado')
+      }
+      if (error.response?.status === 403) {
+        toast.error('Não possui permissão de acesso')
+      }
+      if (error.response?.status === 404) {
+        toast.error('Endereço buscado não existe!')
+      }
+    }
   }
 
   return {
