@@ -17,6 +17,20 @@ export const DivContentTablePred = styled.div`
   gap: 20px;
   overflow-y: scroll;
   height: 284px;
+
+  scrollbar-width: thin;
+  scrollbar-color: ${Color.cinza400};
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: ${Color.cinza100};
+    box-shadow: inset 0px 4px 4px rgba(189, 189, 189, 0.5);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${Color.cinza400};
+    border-radius: 4px;
+  }
 `
 export const ContainerTablePred = styled.div`
   background: ${Color.branco};

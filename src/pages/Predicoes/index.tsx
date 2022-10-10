@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { IconChevronRight } from '../../assets/icons/IconChevronRight'
 import { IconSearch } from '../../assets/icons/IconSearch'
-
 import { InputPredicao } from '../../components/Inputs/InputsPredicoes/InputPredicao'
 import { TableDataPredicao } from '../../components/Table/TablePredicao/TableDataPredicao'
 import { STDPred } from '../../components/Table/TablePredicao/style/TablePred.Styled'
